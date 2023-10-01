@@ -87,6 +87,7 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 ## Technische Dokumentation bei Eigenleistungen
 
 ## Zusammenfassung und Ausblick, persönliche Anmerkungen
+- Einrichtung *ImageMinimizerWebpackPlugin* hat mehr Zeit gekostet, als erwartet (01.10.23)
 
 ## Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code
 
