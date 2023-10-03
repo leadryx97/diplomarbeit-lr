@@ -13,6 +13,13 @@
 
 
 ## Abstract / Management Summary
+Der Auftrag besteht darin, eine Web-Applikation für das fiktive Immobilienunternehmen "Home & House" zu entwickeln. Das Layout und Design muss anhand der Vorgaben im [Figma](https://bit.ly/3trxvOW) umgesetzt werden.
+
+Programmiert werden soll die Web-Applikation mit HTML, CSS (vorzugsweise SCSS) und JavaScript. Das Backend wird zur Verfügung gestellt.
+
+Das Projekt muss mit [GitHub](https://github.com/) versioniert werden. Dafür wird ein von der Lehrgangsleitung erstelltes [Repository](https://github.com/WebProfessionals/dev23_lea) verwendet.
+
+Neben der technischen Umsetzung soll auch eine Dokumentation mit vordefinierten Inhaltspunkten verfasst werden. Diese wird in Form einer README-Datei umgesetzt.
 
 ## Setup Guide
 
@@ -39,7 +46,7 @@ Meinen Projekt- und Zeitplan habe ich mit dem Tool [ClickUp](https://clickup.com
 - Definition von Milestones
 - Schätzung der benötigten Zeit pro Task
 
-Ich habe versucht die Planung möglichst detailliert, aber dennoch mit bedenken des zeitlich vorgegeben Rahmens, zu erarbeiten. Die Planung bringt für mich folgende Vorteile:
+Ich habe versucht, die Planung möglichst detailliert, aber dennoch mit Bedenken des zeitlich vorgegeben Rahmens, zu erarbeiten. Die Planung bringt für mich folgende Vorteile:
 - Genaue Befassung mit den Anforderungen vor Entwicklung
 - Risikominimierung, dass Anforderungen/Tasks untergehen
 - Einfachere Einhaltung der Deadlines
@@ -88,6 +95,7 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 
 ## Zusammenfassung und Ausblick, persönliche Anmerkungen
 - Einrichtung *ImageMinimizerWebpackPlugin* hat mehr Zeit gekostet, als erwartet (01.10.23)
+- Musste zuerst wieder in HTML reinkommen (02.10.2023)
 
 ## Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code
 
