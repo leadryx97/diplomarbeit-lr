@@ -3,11 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
   </head>
   <body>
-    <include src="./partials/header.html"></include>
-    <h1>Home</h1>
+    <!-- hero -->
+    <div class="hero">
+      <!-- header -->
+      <include src="./partials/header.html"></include>
+    </div>
+    <!-- page title -->
+    <h1>Die optimale Balance zwischen Ästhetik und Funktionalität</h1>
+    <!-- properties section -->
+    <div class="properties">
+      <div class="properties__search">
+        <!-- properties form -->
+        <form action="#" class="properties__form">
+          <!-- properties select object -->
+          <label for="object" class="properties__label">Was</label>
+          <select name="object" class="properties__select">
+            <option value="all-objects">Alle Objekte</option>
+            <option value="apartment">Wohnung</option>
+            <option value="house">Haus</option>
+            <option value="vacation-apartment">Ferienwohnung</option>
+            <option value="bijou">Bijou</option>
+          </select>
+          <!-- properties select location -->
+          <label for="location" class="properties__label">Wo</label>
+          <select name="location" class="properties__select">
+            <option value="all-locations">Alle Orte</option>
+            <option value="st-gallen">St.Gallen</option>
+            <option value="sursee">Sursee</option>
+            <option value="lugano">Lugano</option>
+            <option value="lenzerheide">Lenzerheide</option>
+            <option value="grabs">Grabs</option>
+            <option value="chur">Chur</option>
+          </select>
+          <!-- properties select sort -->
+          <label for="sort" class="properties__label">Sortierung</label>
+          <select name="sort" class="properties__select">
+            <option value="price-ascending">Preis aufsteigend</option>
+            <option value="price-descending">Preis absteigend</option>
+            <option value="date-ascending">Datum aufsteigend</option>
+            <option value="date-descending">Datum absteigend</option>
+          </select>
+          <!-- properties toggle switch -->
+        </form>
+      </div>
+    </div>
+
     <!---<picture>
         <source srcset="./assets/images/documentation/timetable-1.png?as=avif&width=547&height=197" width="547" height="197" type="image/avif" />
         <source srcset="./assets/images/documentation/timetable-1.png?as=webp&width=547&height=197" width="547" height="197" type="image/webp" />
