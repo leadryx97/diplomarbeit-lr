@@ -14,7 +14,7 @@ const includePreprocessor = (content, loaderContext) => {
   );
 };
 
-const pages = ["index", "aktuelles", "objekt", "newsdetail", "kontakt"];
+const pages = ["index", "aktuelles", "objekt", "newsdetail-1", "kontakt"];
 
 module.exports = {
   entry: pages.reduce((config, page) => {

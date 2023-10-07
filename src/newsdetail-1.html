@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News</title>
+  </head>
+  <body>
+    <!-- hero -->
+    <div class="hero">
+      <!-- header -->
+      <include src="./partials/header.html"></include>
+    </div>
+    <!-- news content -->
+    <div class="news">
+      <!-- page/news title (on desktop)-->
+      <h1>Neues Business-Hotel entsteht</h1>
+      <!-- news teaser -->
+      <p class="news__text">
+        Gegenüber dem See in Hokuspokus entsteht ein Business-Hotel mit 50
+        Zimmern. Der Baustart hierzu erfolgte am 10. Januar 2021. Anbei ein
+        aktuelles Bild (Baustand 14.03.2021):
+      </p>
+      <!-- news additional image -->
+      <picture class="news__additional-image">
+        <source
+          srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
+          type="image/avif"
+        />
+        <source
+          srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
+          type="image/webp"
+        />
+        <img
+          src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
+          alt="Immobilienobjekt Bijou am See"
+        />
+      </picture>
+      <!-- news text -->
+      <p class="news__text">
+        Dieses Business-Hotel am Ufer des Sees in Hokuspokus verspricht eine
+        erstklassige Unterkunftsmöglichkeit für Geschäftsreisende und Urlauber
+        gleichermassen zu werden. Die Lage bietet nicht nur eine atemberaubende
+        Aussicht, sondern auch eine ausgezeichnete Anbindung an wichtige
+        Geschäfts- und Freizeitzentren in der Umgebung.
+      </p>
+      <p class="news__text">
+        Mit dem Baustand vom 14. März 2021 zeigt sich bereits, dass das
+        Hotelprojekt zügig voranschreitet. Die Architektur verspricht ein
+        modernes und elegantes Design, das perfekt in die natürliche Umgebung
+        integriert wird. Das Hotel wird nicht nur mit komfortablen Zimmern
+        ausgestattet sein, sondern auch mit modernster Technologie und
+        Annehmlichkeiten, die den Bedürfnissen anspruchsvoller Gäste gerecht
+        werden sollen.
+      </p>
+      <p class="news__text">
+        Die Fertigstellung des Business-Hotels ist für das kommende Jahr geplant
+        und wird zweifellos eine Bereicherung für die Tourismusbranche in
+        Hokuspokus darstellen. Es wird erwartet, dass das Hotel nicht nur
+        Geschäftsreisende anzieht, sondern auch Touristen, die die Schönheit der
+        Region entdecken möchten. Wir werden die Fortschritte dieses spannenden
+        Projekts weiterhin genau verfolgen und Sie über weitere Entwicklungen
+        auf dem Laufenden halten.
+      </p>
+      <!-- news button back -->
+      <button class="news__button-back">zurück</button>
+      <!-- end of news content -->
+    </div>
+    <!-- footer -->
+    <include src="./partials/footer.html"></include>
+  </body>
+</html>
