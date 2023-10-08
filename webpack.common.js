@@ -24,6 +24,7 @@ const pages = [
   "newsdetail-4",
   "kontakt",
   "impressum",
+  "datenschutz",
 ];
 
 module.exports = {
