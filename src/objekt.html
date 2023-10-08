@@ -84,9 +84,50 @@
         </div>
         <!-- property information map -->
         <div class="property-information__map"></div>
+        <!-- property information interest modal -->
+        <dialog class="property-information__modal">
+          <div clas="property-information__modal-content">
+            <img
+              src="./assets/images/svg/close-x.svg"
+              alt="Schliessen Kreuz-Icon"
+              class="property-information__close-modal"
+            />
+            <h2>Interesse am Objekt</h2>
+            <h3>Bijou am See</h3>
+            <form class="property-information__modal-form">
+              <label for="firstname">Vorname</label>
+              <input type="text" name="firstname" required />
+              <label for="lastname">Nachname</label>
+              <input type="text" name="lastname" required />
+              <label for="address">Adresse</label>
+              <input type="text" name="address" />
+              <div class="property-information__modal-form-column">
+                <label for="postalCode">PLZ</label>
+                <input type="text" name="postalCode" />
+              </div>
+              <div class="property-information__modal-form-column">
+                <label for="location">Ort</label>
+                <input type="text" name="location" />
+              </div>
+              <label for="email">E-Mail</label>
+              <input type="email" name="email" />
+              <label for="tel">Telefonnummer</label>
+              <input type="tel" name="tel" />
+              <label for="message">Ihre Nachricht</label>
+              <textarea name="message" rows="5" cols="33"></textarea>
+              <input type="checkbox" name="information" />
+              <label for="information">Information</label>
+              <input type="checkbox" name="visit" />
+              <label for="visit">Besichtigung</label>
+              <button type="submit">Senden</button>
+            </form>
+          </div>
+          <!-- end of modal -->
+        </dialog>
         <!-- property information interest -->
         <div class="property-information__interest">
           <p>Haben wir Ihr Interesse geweckt?</p>
+          <!-- property information interest open modal (form) -->
           <button class="property-information__button-interest">
             Jetzt anfragen!
           </button>
