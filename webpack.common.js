@@ -23,6 +23,7 @@ const pages = [
   "newsdetail-3",
   "newsdetail-4",
   "kontakt",
+  "impressum",
 ];
 
 module.exports = {
