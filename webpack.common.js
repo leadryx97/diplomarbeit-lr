@@ -14,7 +14,16 @@ const includePreprocessor = (content, loaderContext) => {
   );
 };
 
-const pages = ["index", "aktuelles", "objekt", "newsdetail-1", "kontakt"];
+const pages = [
+  "index",
+  "aktuelles",
+  "objekt",
+  "newsdetail-1",
+  "newsdetail-2",
+  "newsdetail-3",
+  "newsdetail-4",
+  "kontakt",
+];
 
 module.exports = {
   entry: pages.reduce((config, page) => {
