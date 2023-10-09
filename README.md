@@ -101,6 +101,7 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 
 - Einrichtung _ImageMinimizerWebpackPlugin_ hat mehr Zeit gekostet, als erwartet (01.10.23)
 - Musste zuerst wieder in HTML reinkommen (02.10.2023)
+- Repetition & längere Recherche SCSS (Code-Struktur, Ordner/Parials) (09.10.2023)
 
 ## Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code
 
