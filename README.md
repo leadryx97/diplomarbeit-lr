@@ -103,6 +103,7 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 - Musste zuerst wieder in HTML reinkommen (02.10.2023)
 - Repetition & längere Recherche SCSS (Code-Struktur, Ordner/Parials) (09.10.2023)
 - [SCSS 7-1 Pattern](https://sass-guidelin.es/#the-7-1-pattern): Ich verwende darauf basierende Struktur (5-1). `themes/` & `vendors/` benötige ich nicht (10.10.2023)
+- Recherche bzgl. media queries - entschieden für Bootstrap 4 Breakpoints (10.10.2023) / Allenfalls werden nicht alle gebraucht
 
 ## Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code
 
