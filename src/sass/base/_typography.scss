@@ -1,0 +1,19 @@
+/* font family */
+/* google fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+/* body */
+body {
+  font-family: $font-family-body;
+  font-weight: $font-weight-regular;
+  color: $base-secondary; /* black */
+}
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-regular;
+}
