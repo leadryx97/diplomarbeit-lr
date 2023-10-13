@@ -1,11 +1,11 @@
-// abstracts
+/* abstracts */
 @import "abstracts/mixins";
-// base
+/* base */
 @import "base/reset";
 @import "base/typography";
-// components
+/* components */
 @import "components/buttons";
-// layout
+/* layout */
 @import "layout/header";
 @import "layout/footer";
 @import "layout/grid";

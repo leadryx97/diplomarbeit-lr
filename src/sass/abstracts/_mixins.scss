@@ -1,4 +1,4 @@
-// media queries
+/* media queries */
 @mixin for-size($size) {
   @if $size == small {
     @media (min-width: 576px) {
