@@ -24,6 +24,34 @@ Neben der technischen Umsetzung soll auch eine Dokumentation mit vordefinierten 
 
 ## Setup Guide
 
+Nachem das Git-Repository geklont wurde, das Projekt im Code Editor öffnen und den folgenden Befehl ausführen:
+
+```
+npm install
+```
+
+Damit werden alle verwendeten npm-Pakete installiert.
+
+Danach kann entweder der **Production-Mode** oder der **Development-Mode** gestartet werden.
+
+Um den **Development-Mode** zu starten, muss der folgende Befehl ausgeführt werden:
+
+```
+npm start
+```
+
+Um den **Production-Mode** zu starten, muss der folgende Befehl ausgeführt werden:
+
+```
+npm run build
+```
+
+Um Änderungen am SCSS Code zu beobachten, kann in einer zweiten Konsole, der untenstehende Befehl im Ordner **src/sass** ausgeführt werden:
+
+```
+sass --watch main.scss main.css
+```
+
 ## URL der lauffähigen Version
 
 ## Zeitplan / Meilensteine
