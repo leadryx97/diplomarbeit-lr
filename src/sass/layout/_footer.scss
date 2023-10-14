@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  @include for-size(medium) {
+    flex-direction: row;
+  }
+  &__logo {
+    display: none;
+    @include for-size(medium) {
+      display: inline-block;
+    }
+  }
+  &__contact-information {
+    flex-basis: 100%;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
