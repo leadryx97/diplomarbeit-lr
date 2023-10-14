@@ -28,9 +28,9 @@
 /* body */
 body {
   color: #000000; /* black */
+  font-size: 1rem;
   font-family: "Montserrat", Verdana, sans-serif;
   font-weight: 400;
-  font-size: 1rem;
   line-height: 1.5;
 }
 @media (min-width: 992px) {

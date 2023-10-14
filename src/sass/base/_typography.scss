@@ -4,9 +4,11 @@
 /* body */
 body {
   color: $base-secondary; /* black */
-  font-family: $font-family-body;
-  font-weight: $font-weight-regular;
-  font-size: 1rem;
+  font: {
+    size: 1rem;
+    family: $font-family-body;
+    weight: $font-weight-regular;
+  }
   line-height: 1.5;
   @include for-size(large) {
     font-size: 1.125rem;
@@ -20,8 +22,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family-heading;
-  font-weight: $font-weight-regular;
+  font: {
+    family: $font-family-heading;
+    weight: $font-weight-regular;
+  }
 }
 h1 {
   font-size: 3rem;
