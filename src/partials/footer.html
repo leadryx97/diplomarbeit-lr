@@ -1,10 +1,16 @@
 <footer class="footer">
   <!-- logo -->
   <picture class="footer__logo">
-    <source srcset="./assets/images/svg/logo.svg?as=avif" type="image/avif" />
-    <source srcset="./assets/images/svg/logo.svg?as=webp" type="image/webp" />
+    <source
+      srcset="./assets/images/svg/logo-footer.svg?as=avif"
+      type="image/avif"
+    />
+    <source
+      srcset="./assets/images/svg/logo-footer.svg?as=webp"
+      type="image/webp"
+    />
     <img
-      src="./assets/images/svg/logo.svg"
+      src="./assets/images/svg/logo-footer.svg"
       alt="Logo Home & House"
       class="footer__img"
     />
@@ -12,26 +18,42 @@
   <!-- contact information -->
   <div class="footer__contact-information">
     <address>
-      <b>Home & House</b><br />
-      Fabrikstrasse 24<br />
-      9472 Grabs<br />
-      Schweiz<br />
-
-      <a href="tel:081.740.00.00">081 740 00 00</a><br />
-      <a href="mailto:info@homehouse.ch">info@homehouse.ch</a>
+      <p class="footer__address">
+        <b>Home & House</b><br />
+        Fabrikstrasse 24<br />
+        9472 Grabs<br />
+        Schweiz<br />
+      </p>
+      <p class="footer__address">
+        <a href="tel:081.740.00.00" class="footer__link-item">081 740 00 00</a
+        ><br />
+        <a href="mailto:info@homehouse.ch" class="footer__link-item"
+          >info@homehouse.ch</a
+        >
+      </p>
     </address>
   </div>
   <!-- further links -->
   <div class="footer__links">
-    <div class="footer__links-row">
-      <a href="" class="footer__links-items">Immobilien</a>
-      <a href="" class="footer__links-items">Aktuelles</a>
-      <a href="" class="footer__links-items">Kontakt</a>
-    </div>
-    <div class="footer__links-row">
-      <a href="" class="footer__links-items">Impressum</a>
-      <a href="" class="footer__links-items">Datenschutz</a>
-    </div>
+    <ul class="footer__link-list">
+      <li>
+        <a href="" class="footer__link-item footer__link-item--bold"
+          >Immobilien</a
+        >
+      </li>
+      <li>
+        <a href="" class="footer__link-item footer__link-item--bold"
+          >Aktuelles</a
+        >
+      </li>
+      <li>
+        <a href="" class="footer__link-item footer__link-item--bold">Kontakt</a>
+      </li>
+    </ul>
+    <ul class="footer__link-list">
+      <li><a href="" class="footer__link-item">Impressum</a></li>
+      <li><a href="" class="footer__link-item">Datenschutz</a></li>
+    </ul>
   </div>
   <!-- scroll to top button (only on desktop)-->
   <button class="footer__scroll-to-top-button">
