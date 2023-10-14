@@ -1,3 +1,87 @@
+/* abstracts */
+/* media queries */
+/* colors */
+/* base (tier 1) */
+/* white */
+/* grey */
+/* brand (tier 1) */
+/* dark-green */
+/* light-green */
+/* background (tier 2) */
+/* light-green */
+/* dark-green */
+/* white */
+/* text (tier 2) */
+/* black */
+/* dark-green */
+/* button (tier 2) */
+/* dark-green */
+/* grey */
+/* black */
+/* white */
+/* typography */
+/* font family */
+/* font weight */
+/* base */
+/* google fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+/* body */
+body {
+  color: #000000; /* black */
+  font-family: "Montserrat", Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media (min-width: 992px) {
+  body {
+    font-size: 1.125rem;
+  }
+}
 
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", Verdana, sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+@media (min-width: 992px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* navigation */
+.navigation__link {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+@media (min-width: 992px) {
+  .navigation__link {
+    font-size: 3.5rem;
+  }
+}
+
+/* components */
+/* layout */
 
 /*# sourceMappingURL=main.css.map */

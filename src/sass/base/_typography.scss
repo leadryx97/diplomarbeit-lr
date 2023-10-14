@@ -1,12 +1,18 @@
-/* font family */
 /* google fonts import */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 /* body */
 body {
+  color: $base-secondary; /* black */
   font-family: $font-family-body;
   font-weight: $font-weight-regular;
-  color: $base-secondary; /* black */
+  font-size: 1rem;
+  line-height: 1.5;
+  @include for-size(large) {
+    font-size: 1.125rem;
+  }
 }
+
 /* headings */
 h1,
 h2,
@@ -16,4 +22,27 @@ h5,
 h6 {
   font-family: $font-family-heading;
   font-weight: $font-weight-regular;
+}
+h1 {
+  font-size: 3rem;
+  line-height: 1.5;
+  @include for-size(large) {
+    font-size: 3.5rem;
+  }
+}
+h2 {
+  font-size: 2rem;
+  line-height: 1.5;
+  @include for-size(large) {
+    font-size: 2.5rem;
+  }
+}
+
+/* navigation */
+.navigation__link {
+  font-size: 3rem;
+  line-height: 1.5;
+  @include for-size(large) {
+    font-size: 3.5rem;
+  }
 }
