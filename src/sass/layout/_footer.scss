@@ -1,23 +1,31 @@
 .footer {
+  padding: 50px 40px 50px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: flex-start;
   @include for-size(medium) {
     flex-direction: row;
+    justify-content: space-around;
   }
   &__logo {
+    display: none;
+    @include for-size(large) {
+      display: inline-block;
+      margin-top: 18px;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__link-list {
+    list-style: none;
+    padding: 0;
+  }
+  &__scroll-to-top-button {
     display: none;
     @include for-size(medium) {
       display: inline-block;
     }
-  }
-  &__contact-information {
-    flex-basis: 100%;
-  }
-  &__links {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
   }
 }

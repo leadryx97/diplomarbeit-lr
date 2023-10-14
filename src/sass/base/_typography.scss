@@ -5,13 +5,13 @@
 body {
   color: $base-secondary; /* black */
   font: {
-    size: 1rem;
+    size: 1.8rem;
     family: $font-family-body;
     weight: $font-weight-regular;
   }
   line-height: 1.5;
   @include for-size(large) {
-    font-size: 1.125rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -48,5 +48,19 @@ h2 {
   line-height: 1.5;
   @include for-size(large) {
     font-size: 3.5rem;
+  }
+}
+
+/* footer */
+.footer {
+  &__address {
+    font-style: normal;
+  }
+  &__link-item {
+    color: $base-secondary;
+    text-decoration: none;
+  }
+  &__link-item--bold {
+    font-weight: $font-weight-bold;
   }
 }
