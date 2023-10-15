@@ -1,7 +1,8 @@
-/* reset */
+/* normalize */
 /* body */
 body {
   margin: 0;
+  max-width: 100vw;
 }
 /* lists */
 li {
@@ -9,4 +10,9 @@ li {
 }
 ul {
   padding: 0;
+}
+/* links */
+a {
+  text-decoration: none;
+  color: $base-secondary; /* black */
 }
