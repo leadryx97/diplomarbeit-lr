@@ -23,19 +23,34 @@
 /* font family */
 /* font weight */
 /* base */
-/* google fonts import */
+/* reset */
+/* body */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+body {
+  margin: 0;
+}
+
+/* lists */
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+/* google fonts import */
 /* body */
 body {
   color: #000000; /* black */
-  font-size: 1rem;
+  font-size: 1.8rem;
   font-family: "Montserrat", Verdana, sans-serif;
   font-weight: 400;
   line-height: 1.5;
 }
 @media (min-width: 992px) {
   body {
-    font-size: 1.125rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -81,9 +96,26 @@ h2 {
   }
 }
 
+/* footer */
+.footer__address {
+  font-style: normal;
+}
+.footer__link-item {
+  color: #000000;
+  text-decoration: none;
+}
+.footer__link-item--bold {
+  font-weight: 700;
+}
+
 /* components */
 /* layout */
+.header {
+  background-color: #92b9af;
+}
+
 .footer {
+  padding: 50px 40px 50px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,23 +124,45 @@ h2 {
 @media (min-width: 768px) {
   .footer {
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 .footer__logo {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .footer__logo {
     display: inline-block;
+    margin-top: 18px;
   }
 }
-.footer__contact-information {
-  flex-basis: 100%;
+.footer__img {
+  max-width: 100%;
 }
-.footer__links {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.footer__scroll-to-top-button {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer__scroll-to-top-button {
+    display: inline-block;
+    align-self: flex-end;
+    width: 50px;
+    height: 50px;
+    background-color: #92b9af;
+    border: none;
+    padding-top: 12px;
+  }
+}
+@media (min-width: 768px) {
+  .footer__button-arrow {
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 6px;
+    margin: auto;
+    /*transform: rotate(-135deg);*/
+    -webkit-transform: rotate(-135deg);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
