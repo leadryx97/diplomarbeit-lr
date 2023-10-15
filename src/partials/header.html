@@ -10,37 +10,51 @@
     />
   </picture>
   <!-- navigation -->
-  <div class="navigation">
-    <div>
-      <nav class="navigation__bar">
-        <ul class="navigation__menu">
-          <li class="navigation__item">
-            <a href="#" class="navigation__link">Immobilien</a>
-          </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link">Aktuelles</a>
-          </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link">Kontakt</a>
-          </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link navigation__link--small"
-              >Impressum</a
-            >
-          </li>
-          <li class="navigation__item">
-            <a href="#" class="navigation__link navigation__link--small"
-              >Datenschutz</a
-            >
-          </li>
-        </ul>
-        <!-- navigation hamburger -->
-        <div class="hamburger">
-          <span class="hamburger__bar"></span>
-          <span class="hamburger__bar"></span>
-          <span class="hamburger__bar"></span>
-        </div>
-      </nav>
-    </div>
+  <div class="header__nav">
+    <nav class="header__nav-bar">
+      <ul class="header__nav-menu">
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Immobilien</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Aktuelles</a>
+        </li>
+        <li class=header__nav-item">
+          <a href="#" class="header__nav-link">Kontakt</a>
+        </li>
+        <li class="header__nav-item">
+          <a
+            href="#"
+            class="header__nav-link header__nav-link--small"
+            >Impressum</a
+          >
+        </li>
+        <li class="header__nav-item">
+          <a
+            href="#"
+            class="header__nav-link header__nav-link--small"
+            >Datenschutz</a
+          >
+        </li>
+      </ul>
+      <!-- navigation hamburger -->
+      <button class="header__nav-hamburger">
+        <picture class="header__nav-hamburger-icon">
+          <source
+            srcset="./assets/images/svg/hamburger.svg?as=avif"
+            type="image/avif"
+          />
+          <source
+            srcset="./assets/images/svg/hamburger.svg?as=webp"
+            type="image/webp"
+          />
+          <img
+            src="./assets/images/svg/hamburger.svg"
+            alt="Hamburger Menü Icon"
+            class="header__nav-hamburger-img"
+          />
+        </picture>
+      </button>
+    </nav>
   </div>
 </header>
