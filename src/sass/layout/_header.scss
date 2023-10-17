@@ -1,9 +1,13 @@
 .header {
   background-color: $brand-primary; /* dark-green */
-  padding: 20px;
+  padding: 10px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  flex-direction: column;
+  align-items: center;
+  &__logo-img {
+    width: 65px;
+  }
   &__nav-menu {
     position: fixed;
     transform: translateY(-100%);
@@ -13,8 +17,9 @@
     right: 0;
     bottom: 0;
     z-index: 99;
-    background-color: $base-primary; /* dark-green */
+    background-color: $brand-primary; /* dark-green */
     padding-top: 4rem;
+    margin: 0;
     &--show {
       transform: translateY(0);
     }
@@ -27,6 +32,8 @@
     padding: 4px;
     cursor: pointer;
     z-index: 100;
+    background: $brand-primary; /* dark-green */
+    border: none;
     @include for-size(large) {
       display: none;
     }
@@ -34,38 +41,4 @@
       display: none;
     }
   }
-}
-
-.hamburger {
-  position: fixed;
-  z-index: 100;
-  top: 1rem;
-  right: 1rem;
-  padding: 4px;
-  border: black solid 1px;
-  background: white;
-  cursor: pointer;
-}
-
-.closeIcon {
-  display: none;
-}
-
-.menu {
-  position: fixed;
-  transform: translateY(-100%);
-  transition: transform 0.2s;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 99;
-  background: black;
-  color: white;
-  list-style: none;
-  padding-top: 4rem;
-}
-
-.showMenu {
-  transform: translateY(0);
 }

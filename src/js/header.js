@@ -1,4 +1,6 @@
-/*console.log("hellooo");
+import "../sass/main.scss";
+
+console.log("hellooo");
 
 const nav = document.querySelector(".header__nav-menu");
 const navItems = document.querySelector(".header__nav-link");
@@ -17,4 +19,9 @@ function toggleMenu() {
     hamburgerIcon.style.display = "none";
   }
 }
-*/
+
+hamburger.addEventListener("click", toggleMenu);
+
+navItems.forEach(function (navItem) {
+  navItem.addEventListener("click", toggleMenu);
+});
