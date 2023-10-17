@@ -144,6 +144,10 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 
 ## Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code
 
+### Mobile Hamburger Navigation
+
+Für die Mobile Hamburger Navigation habe ich mich an folgendem Artikel orientiert ["Easy hamburger menu with JS - Beginners"](https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0). Den CSS und JavaScript Code habe ich in meine bereits bestehendes HTML-Struktur eingebaut. Um das gewünschte Ergebnis zu erzielen, habe ich ein paar Anpassungen und Ergänzungen vorgenommen (bspw. `overflowY`).
+
 ## Eidesstattliche Erklärung
 
 Hiermit erkläre ich, dass ich die Diplomarbeit selbständig verfasst / programmiert und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt und die aus fremden Quellen direkt oder indirekt übernommenen Gedanken als solche kenntlich gemacht habe. Die Arbeit habe ich bisher keinem anderen Prüfungsgremium in gleicher oder vergleichbarer Form vorgelegt. Sie wurde bisher auch nicht veröffentlicht.
