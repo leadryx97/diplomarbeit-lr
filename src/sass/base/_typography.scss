@@ -63,3 +63,19 @@ h2 {
     font-weight: $font-weight-bold;
   }
 }
+
+/* header navigation */
+.header {
+  &__nav-menu {
+    text-align: center;
+  }
+  &__nav-item {
+  }
+  &__nav-link {
+    font-size: 2rem;
+    line-height: 2;
+    &--small {
+      font-size: 1rem;
+    }
+  }
+}
