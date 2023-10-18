@@ -30,6 +30,7 @@
 body {
   margin: 0;
   max-width: 100vw;
+  background-color: #e5eeec;
 }
 
 /* lists */
@@ -74,12 +75,13 @@ h6 {
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: 1.3rem;
   line-height: 1.5;
+  text-align: center;
 }
 @media (min-width: 992px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -274,15 +276,47 @@ h2 {
 .hero {
   background-image: url("../assets/images/jpg/home-header.jpg");
   background-repeat: no-repeat;
-  background-size: 112%;
-  background-position: bottom 200% right 50%;
-  height: 400px;
+  background-size: cover;
+  background-position: top;
+  height: 370px;
+}
+@media (min-width: 576px) {
+  .hero {
+    background-position: center;
+  }
 }
 @media (min-width: 768px) {
   .hero {
-    background-size: cover;
-    background-position: center;
+    height: 450px;
+  }
+}
+@media (min-width: 992px) {
+  .hero {
+    height: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero {
+    height: 700px;
+  }
+}
+@media (min-width: 1400px) {
+  .hero {
     height: 822px;
+  }
+}
+
+/* properties section */
+.title-section {
+  background-color: #ffffff;
+}
+.title-section__page-title {
+  margin: 0;
+  padding: 20px;
+}
+@media (min-width: 992px) {
+  .title-section__page-title {
+    padding: 50px 300px 50px 300px;
   }
 }
 

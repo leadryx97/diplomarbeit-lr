@@ -3,15 +3,36 @@
   background: {
     image: url("../assets/images/jpg/home-header.jpg");
     repeat: no-repeat;
-    size: 112%;
-    position: bottom 200% right 50%;
+    size: cover;
+    position: top;
   }
-  height: 400px;
-  @include for-size(medium) {
+  height: 370px;
+  @include for-size(small) {
     background: {
-      size: cover;
       position: center;
     }
+  }
+  @include for-size(medium) {
+    height: 450px;
+  }
+  @include for-size(large) {
+    height: 600px;
+  }
+  @include for-size(x-large) {
+    height: 700px;
+  }
+  @include for-size(xx-large) {
     height: 822px;
+  }
+}
+/* properties section */
+.title-section {
+  background-color: $base-primary;
+  &__page-title {
+    margin: 0;
+    padding: 20px;
+    @include for-size(large) {
+      padding: 50px 300px 50px 300px;
+    }
   }
 }
