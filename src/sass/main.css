@@ -51,7 +51,7 @@ a {
 /* body */
 body {
   color: #000000; /* black */
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-family: "Montserrat", Verdana, sans-serif;
   font-weight: 400;
   line-height: 1.5;
@@ -74,7 +74,7 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.3rem;
   line-height: 1.5;
 }
 @media (min-width: 992px) {
@@ -135,12 +135,13 @@ h2 {
 /* components */
 /* layout */
 .header {
-  background-color: rgba(146, 185, 175, 0.85); /* dark-green transparency */
+  background-color: #92b9af; /* dark-green */
   padding: 15px 22px 15px 22px;
   height: 50px;
 }
 @media (min-width: 992px) {
   .header {
+    background-color: rgba(146, 185, 175, 0.85); /* dark-green transparency */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -179,7 +180,7 @@ h2 {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    gap: 20px;
+    gap: 35px;
     transform: none;
     background-color: transparent;
   }
@@ -265,6 +266,23 @@ h2 {
     margin: auto;
     /*transform: rotate(-135deg);*/
     -webkit-transform: rotate(-135deg);
+  }
+}
+
+/* pages */
+/* hero image */
+.hero {
+  background-image: url("../assets/images/jpg/home-header.jpg");
+  background-repeat: no-repeat;
+  background-size: 112%;
+  background-position: bottom 200% right 50%;
+  height: 400px;
+}
+@media (min-width: 768px) {
+  .hero {
+    background-size: cover;
+    background-position: center;
+    height: 822px;
   }
 }
 

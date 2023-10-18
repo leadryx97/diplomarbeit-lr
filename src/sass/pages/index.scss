@@ -1,0 +1,17 @@
+/* hero image */
+.hero {
+  background: {
+    image: url("../assets/images/jpg/home-header.jpg");
+    repeat: no-repeat;
+    size: 112%;
+    position: bottom 200% right 50%;
+  }
+  height: 400px;
+  @include for-size(medium) {
+    background: {
+      size: cover;
+      position: center;
+    }
+    height: 822px;
+  }
+}
