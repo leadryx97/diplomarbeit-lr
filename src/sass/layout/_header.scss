@@ -1,11 +1,22 @@
 .header {
-  background-color: $brand-primary; /* dark-green */
+  background-color: $brand-primary-transp; /* dark-green transparency */
   padding: 15px 22px 15px 22px;
   height: 50px;
+  @include for-size(large) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 45px 20px 45px;
+    height: 90px;
+  }
   &__logo-img {
     height: 50px;
     position: absolute;
     z-index: 100;
+    @include for-size(large) {
+      position: static;
+      height: 80px;
+    }
   }
   &__nav-menu {
     position: fixed;
@@ -20,13 +31,17 @@
     margin: 0;
     max-height: 100vh;
     @include for-size(large) {
+      position: static;
+      padding-top: 0px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      gap: 20px;
       transform: none;
+      background-color: transparent;
     }
     &--show {
       transform: translateY(0);
-      @include for-size(large) {
-        transform: none;
-      }
     }
   }
   &__nav-item--sm {
@@ -44,7 +59,7 @@
     right: 17px;
     cursor: pointer;
     z-index: 100;
-    background: $brand-primary; /* dark-green */
+    background-color: transparent;
     border: none;
     @include for-size(large) {
       display: none;

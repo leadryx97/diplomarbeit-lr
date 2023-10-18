@@ -6,6 +6,7 @@ $base-tertiary: #878787; /* grey */
 /* brand (tier 1) */
 $brand-primary: #92b9af; /* dark-green */
 $brand-secondary: #e5eeec; /* light-green */
+$brand-primary-transp: rgba($brand-primary, 0.85); /* dark-green transparency */
 /* background (tier 2) */
 $bg-primary: $brand-secondary; /* light-green */
 $bg-secondary: $brand-primary; /* dark-green */
@@ -25,4 +26,5 @@ $font-family-heading: "Montserrat", Verdana, sans-serif;
 $font-family-body: "Montserrat", Verdana, sans-serif;
 /* font weight */
 $font-weight-regular: 400;
+$font-weight-medium: 500;
 $font-weight-bold: 700;

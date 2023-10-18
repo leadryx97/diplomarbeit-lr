@@ -1,5 +1,5 @@
 /* google fonts import */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 /* body */
 body {
@@ -42,12 +42,31 @@ h2 {
   }
 }
 
-/* navigation */
-.navigation__link {
-  font-size: 3rem;
-  line-height: 1.5;
-  @include for-size(large) {
-    font-size: 3.5rem;
+/* header navigation */
+.header {
+  &__nav-menu {
+    text-align: center;
+    @include for-size(large) {
+      text-align: right;
+    }
+  }
+  &__nav-item {
+  }
+  &__nav-link {
+    font-size: 2rem;
+    line-height: 2;
+    @include for-size(large) {
+      font-size: 1.3rem;
+      font-weight: $font-weight-medium;
+    }
+    &--active {
+      @include for-size(large) {
+        color: $base-primary;
+      }
+    }
+    &--sm {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -61,21 +80,5 @@ h2 {
   }
   &__link-item--bold {
     font-weight: $font-weight-bold;
-  }
-}
-
-/* header navigation */
-.header {
-  &__nav-menu {
-    text-align: center;
-  }
-  &__nav-item {
-  }
-  &__nav-link {
-    font-size: 2rem;
-    line-height: 2;
-    &--sm {
-      font-size: 1rem;
-    }
   }
 }
