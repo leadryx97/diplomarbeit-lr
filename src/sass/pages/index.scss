@@ -25,7 +25,7 @@
     height: 822px;
   }
 }
-/* properties section */
+/* title */
 .title-section {
   background-color: $base-primary;
   &__page-title {
@@ -33,6 +33,18 @@
     padding: 20px;
     @include for-size(large) {
       padding: 50px 300px 50px 300px;
+    }
+  }
+}
+
+/* properties section */
+.properties {
+  &__title {
+    text-align: center;
+  }
+  &__form-item {
+    &--object {
+      grid-column: 1 / 4;
     }
   }
 }

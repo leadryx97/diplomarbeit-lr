@@ -19,53 +19,66 @@
     </div>
     <!-- properties section -->
     <div class="properties">
-      <h2>Immobilien</h2>
+      <!-- !!alle klassen benötigt? -->
       <div class="properties__search">
+        <h2 class="properties__title">Immobilien</h2>
         <!-- properties form -->
         <form action="#" class="properties__form">
-          <!-- properties select object -->
-          <label for="object" class="properties__label">Was</label>
-          <select name="object" class="properties__select">
-            <!-- !!TO BE DYNAMIC -->
-            <option value="all-objects">Alle Objekte</option>
-            <option value="apartment">Wohnung</option>
-            <option value="house">Haus</option>
-            <option value="vacation-apartment">Ferienwohnung</option>
-            <option value="bijou">Bijou</option>
-          </select>
-          <!-- properties select location -->
-          <label for="location" class="properties__label">Wo</label>
-          <select name="location" class="properties__select">
-            <!-- !!TO BE DYNAMIC -->
-            <option value="all-locations">Alle Orte</option>
-            <option value="st-gallen">St.Gallen</option>
-            <option value="sursee">Sursee</option>
-            <option value="lugano">Lugano</option>
-            <option value="lenzerheide">Lenzerheide</option>
-            <option value="grabs">Grabs</option>
-            <option value="chur">Chur</option>
-          </select>
-          <!-- properties select sort -->
-          <label for="sort" class="properties__label">Sortierung</label>
-          <select name="sort" class="properties__select">
-            <option value="price-ascending">Preis aufsteigend</option>
-            <option value="price-descending">Preis absteigend</option>
-            <option value="date-ascending">Datum aufsteigend</option>
-            <option value="date-descending">Datum absteigend</option>
-          </select>
-          <!-- properties toggle switch -->
-          <label for="toggle-switch" class="properties__switch-label">
-            <input
-              type="checkbox"
-              name="toggle-switch"
-              class="properties__switch-input"
-              checked
-            />
-            <span class="properties__switch-rent">Mieten</span>
-            <span class="properties__switch-buy">Kaufen</span>
-          </label>
-          <!-- properties search button -->
-          <button type="submit" class="properties__button">Suchen</button>
+          <div class="grid grid--properties-search">
+            <!-- properties select object -->
+            <div class="properties__form-item properties__form-item--object">
+              <label for="object" class="properties__label">Was</label>
+              <select name="object" class="properties__select">
+                <!-- !!TO BE DYNAMIC -->
+                <option value="all-objects">Alle Objekte</option>
+                <option value="apartment">Wohnung</option>
+                <option value="house">Haus</option>
+                <option value="vacation-apartment">Ferienwohnung</option>
+                <option value="bijou">Bijou</option>
+              </select>
+            </div>
+            <!-- properties select location -->
+            <div class="properties__form-item properties__form-item--location">
+              <label for="location" class="properties__label">Wo</label>
+              <select name="location" class="properties__select">
+                <!-- !!TO BE DYNAMIC -->
+                <option value="all-locations">Alle Orte</option>
+                <option value="st-gallen">St.Gallen</option>
+                <option value="sursee">Sursee</option>
+                <option value="lugano">Lugano</option>
+                <option value="lenzerheide">Lenzerheide</option>
+                <option value="grabs">Grabs</option>
+                <option value="chur">Chur</option>
+              </select>
+            </div>
+
+            <!-- properties select sort -->
+            <div class="properties__form-item properties__form-item--sort">
+              <label for="sort" class="properties__label">Sortierung</label>
+              <select name="sort" class="properties__select">
+                <option value="price-ascending">Preis aufsteigend</option>
+                <option value="price-descending">Preis absteigend</option>
+                <option value="date-ascending">Datum aufsteigend</option>
+                <option value="date-descending">Datum absteigend</option>
+              </select>
+            </div>
+            <!-- properties toggle switch -->
+            <div class="properties__form-item properties__form-item--toggle">
+              <label for="toggle-switch" class="properties__switch-label">
+                <input
+                  type="checkbox"
+                  name="toggle-switch"
+                  class="properties__switch-input"
+                  checked
+                />
+                <span class="properties__switch-rent">Mieten</span>
+                <span class="properties__switch-buy">Kaufen</span>
+              </label>
+            </div>
+            <!-- properties search button -->
+            <button type="submit" class="properties__button">Suchen</button>
+          </div>
+
           <!-- end of properties form -->
         </form>
       </div>
