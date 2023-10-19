@@ -1,8 +1,8 @@
 /* google fonts import */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
-/* body */
-body {
+/* page/body */
+.page {
   color: $base-secondary; /* black */
   font: {
     size: 1.3rem;
@@ -16,7 +16,47 @@ body {
 }
 
 /* headings */
-h1,
+/* page title */
+.page-title {
+  font: {
+    family: $font-family-heading;
+    weight: $font-weight-regular;
+    size: 1.5rem;
+  }
+  line-height: 1.5;
+  text-align: center;
+  @include for-size(large) {
+    font-size: 3.1rem;
+  }
+}
+/* page home title */
+.title-section__page-title {
+  font: {
+    family: $font-family-heading;
+    weight: $font-weight-regular;
+    size: 1.3rem;
+  }
+  line-height: 1.5;
+  text-align: center;
+  @include for-size(large) {
+    font-size: 3.5rem;
+  }
+}
+/* page home properties title */
+.properties__title {
+  font: {
+    family: $font-family-heading;
+    weight: $font-weight-regular;
+    size: 1.5rem;
+  }
+  line-height: 1.5;
+  text-align: center;
+  @include for-size(large) {
+    font-size: 3.1rem;
+  }
+}
+
+/*h1,
 h2,
 h3,
 h4,
@@ -34,7 +74,8 @@ h1 {
   @include for-size(large) {
     font-size: 3.5rem;
   }
-}
+}*/
+
 h2 {
   font-size: 2rem;
   line-height: 1.5;
@@ -82,4 +123,10 @@ h2 {
   &__link-item--bold {
     font-weight: $font-weight-bold;
   }
+}
+
+/* index page */
+/* search form */
+.properties__label {
+  font-weight: $font-weight-bold;
 }

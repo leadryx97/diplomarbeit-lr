@@ -46,8 +46,8 @@ a {
 }
 */
 /* google fonts import */
-/* body */
-body {
+/* page/body */
+.page {
   color: #000000; /* black */
   font-size: 1.3rem;
   font-family: "Montserrat", Verdana, sans-serif;
@@ -55,33 +55,73 @@ body {
   line-height: 1.5;
 }
 @media (min-width: 992px) {
-  body {
+  .page {
     font-size: 1.3rem;
   }
 }
 
 /* headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* page title */
+.page-title {
   font-family: "Montserrat", Verdana, sans-serif;
   font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .page-title {
+    font-size: 3.1rem;
+  }
 }
 
-h1 {
+/* page home title */
+.title-section__page-title {
+  font-family: "Montserrat", Verdana, sans-serif;
+  font-weight: 400;
   font-size: 1.3rem;
   line-height: 1.5;
   text-align: center;
 }
 @media (min-width: 992px) {
-  h1 {
+  .title-section__page-title {
     font-size: 3.5rem;
   }
 }
 
+/* page home properties title */
+.properties__title {
+  font-family: "Montserrat", Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .properties__title {
+    font-size: 3.1rem;
+  }
+}
+
+/*h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: {
+    family: $font-family-heading;
+    weight: $font-weight-regular;
+  }
+}
+h1 {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+  @include for-size(large) {
+    font-size: 3.5rem;
+  }
+}*/
 h2 {
   font-size: 2rem;
   line-height: 1.5;
@@ -128,6 +168,12 @@ h2 {
   color: #000000; /* black */
 }
 .footer__link-item--bold {
+  font-weight: 700;
+}
+
+/* index page */
+/* search form */
+.properties__label {
   font-weight: 700;
 }
 
@@ -290,6 +336,18 @@ h2 {
   }
 }
 
+/* main grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+@media (min-width: 1400px) {
+  .grid {
+    grid-template: 1fr 1fr/repeat(12, 1fr);
+    gap: 20px 70px;
+  }
+}
+
 /* pages */
 /* hero image */
 .hero {
@@ -325,7 +383,7 @@ h2 {
   }
 }
 
-/* properties section */
+/* title */
 .title-section {
   background-color: #ffffff;
 }
@@ -337,6 +395,14 @@ h2 {
   .title-section__page-title {
     padding: 50px 300px 50px 300px;
   }
+}
+
+/* properties section */
+.properties__title {
+  text-align: center;
+}
+.properties__form-item--object {
+  grid-column: 1/4;
 }
 
 /*# sourceMappingURL=main.css.map */

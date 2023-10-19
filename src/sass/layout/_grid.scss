@@ -1,0 +1,17 @@
+/* main grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  @include for-size(small) {
+  }
+  @include for-size(medium) {
+  }
+  @include for-size(large) {
+  }
+  @include for-size(x-large) {
+  }
+  @include for-size(xx-large) {
+    grid-template: 1fr 1fr / repeat(12, 1fr);
+    gap: 20px 70px;
+  }
+}
