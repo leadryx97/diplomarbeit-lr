@@ -15,8 +15,17 @@
       margin-top: 18px;
     }
   }
-  &__img {
+  &__logo-img {
     max-width: 100%;
+  }
+  &__link-list {
+    padding-left: 0;
+    &-item {
+      list-style: none;
+    }
+  }
+  &__link-item {
+    text-decoration: none;
   }
   &__scroll-to-top-button {
     display: none;
