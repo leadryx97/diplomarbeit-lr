@@ -440,7 +440,11 @@ h2 {
   color: #ffffff;
 }
 
-/* TEST SELF */
+/* TEST */
+.properties__form-item--toggle {
+  display: flex;
+}
+
 .properties__switch-input {
   display: none;
 }
@@ -499,108 +503,5 @@ h2 {
 .properties__switch-input:checked + .properties__switch-label {
   background: #9fd6ae;
 }
-
-/* TEST 2 */
-.tgl {
-  display: none;
-}
-.tgl + .tgl-btn {
-  outline: 0;
-  display: block;
-  width: 4em;
-  height: 2em;
-  position: relative;
-  cursor: pointer;
-  user-select: none;
-}
-.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
-  position: relative;
-  display: block;
-  content: "";
-  width: 50%;
-  height: 100%;
-}
-.tgl + .tgl-btn:after {
-  left: 0;
-}
-.tgl + .tgl-btn:before {
-  display: none;
-}
-.tgl:checked + .tgl-btn:after {
-  left: 50%;
-}
-
-.tgl-light + .tgl-btn {
-  background: #f0f0f0;
-  border-radius: 2em;
-  padding: 2px;
-  transition: all 0.4s ease;
-}
-.tgl-light + .tgl-btn:after {
-  border-radius: 50%;
-  background: #fff;
-  transition: all 0.2s ease;
-}
-.tgl-light:checked + .tgl-btn {
-  background: #9fd6ae;
-}
-
-.tgl-light + .tgl-btn {
-  background: #f0f0f0;
-  border-radius: 2em;
-  padding: 2px;
-  transition: all 0.4s ease;
-}
-.tgl-light + .tgl-btn:after {
-  border-radius: 50%;
-  background: #fff;
-  transition: all 0.2s ease;
-}
-.tgl-light:checked + .tgl-btn {
-  background: #9fd6ae;
-}
-
-/* TEST 
-input[type="checkbox"] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 200px;
-  height: 100px;
-  background: grey;
-  display: block;
-  border-radius: 100px;
-  position: relative;
-}
-
-label:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 90px;
-  height: 90px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
-}
-
-input:checked + label {
-  //background: #bada55;
-}
-
-input:checked + label:after {
-  //left: calc(100% - 5px);
-  //transform: translateX(-100%);
-}
-
-label:active:after {
-  width: 130px;
-}*/
 
 /*# sourceMappingURL=main.css.map */
