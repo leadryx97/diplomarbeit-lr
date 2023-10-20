@@ -5,7 +5,7 @@
 .page {
   color: $base-secondary; /* black */
   font: {
-    size: 1.3rem;
+    size: 1rem;
     family: $font-family-body;
     weight: $font-weight-regular;
   }
@@ -74,7 +74,7 @@ h1 {
   @include for-size(large) {
     font-size: 3.5rem;
   }
-}*/
+}
 
 h2 {
   font-size: 2rem;
@@ -82,7 +82,7 @@ h2 {
   @include for-size(large) {
     font-size: 2.5rem;
   }
-}
+}*/
 
 /* header navigation */
 .header {
@@ -98,8 +98,10 @@ h2 {
     font-size: 2rem;
     line-height: 2;
     @include for-size(large) {
-      font-size: 1.3rem;
-      font-weight: $font-weight-medium;
+      font: {
+        size: 1.3rem;
+        weight: $font-weight-medium;
+      }
     }
     &--active {
       @include for-size(large) {
@@ -127,6 +129,21 @@ h2 {
 
 /* index page */
 /* search form */
-.properties__label {
-  font-weight: $font-weight-bold;
+.properties {
+  &__label {
+    font-weight: $font-weight-bold;
+  }
+  &__select {
+    font: {
+      family: $font-family-body;
+      size: 1rem;
+    }
+  }
+  &__button {
+    font: {
+      family: $font-family-body;
+      weight: $font-weight-bold;
+      size: 1rem;
+    }
+  }
 }
