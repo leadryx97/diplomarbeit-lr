@@ -45,49 +45,39 @@
   &__form-item {
     &--object {
       grid-column: 2 / 3;
+      @include for-size(xx-large) {
+        grid-column: 2 / 5;
+        order: 1;
+      }
     }
     &--location {
       grid-column: 2 / 3;
+      @include for-size(xx-large) {
+        grid-column: 5 / 8;
+        order: 2;
+      }
     }
     &--sort {
       grid-column: 2 / 3;
-    }
-    &--toggle {
-      grid-column: 2 / 3;
-    }
-  }
-  &__label {
-    display: block;
-    padding-bottom: 10px;
-  }
-  &__select {
-    width: 100%;
-    height: 47px;
-    border: none;
-    appearance: none;
-    outline: none;
-    padding: 10px;
-    background-color: $base-primary;
-    &--drop-down {
-      background: {
-        image: url(../assets/images/svg/arrow-drop-down.svg);
-        repeat: no-repeat;
-        position: right 20px center;
-        size: 20px;
+      @include for-size(xx-large) {
+        grid-column: 2 / 5;
+        order: 4;
       }
     }
-    &--drop-down-active {
-      background-image: url(../assets/images/svg/arrow-drop-down-up.svg);
-      border: none;
-      box-shadow: none;
+    /* toggle switch */
+    &--toggle {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 25px 0px;
+      grid-column: 2 / 3;
+      @include for-size(xx-large) {
+        grid-column: 8 / 11;
+        order: 3;
+        align-self: end;
+        margin: 10px 0px;
+      }
     }
-  }
-  /* toggle switch */
-  &__form-item--toggle {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin: 25px 0px;
   }
   &__switch-input {
     display: none;
@@ -136,12 +126,43 @@
     }
   }
   /* end of toggle switch */
+  &__label {
+    display: block;
+    padding-bottom: 10px;
+  }
+  &__select {
+    width: 100%;
+    height: 47px;
+    border: none;
+    appearance: none;
+    outline: none;
+    padding: 10px;
+    background-color: $base-primary;
+    &--drop-down {
+      background: {
+        image: url(../assets/images/svg/arrow-drop-down.svg);
+        repeat: no-repeat;
+        position: right 20px center;
+        size: 20px;
+      }
+    }
+    &--drop-down-active {
+      background-image: url(../assets/images/svg/arrow-drop-down-up.svg);
+      border: none;
+      box-shadow: none;
+    }
+  }
   &__button {
     grid-column: 2 / 3;
     height: 47px;
     border: none;
     background-color: $brand-primary;
     color: $base-primary;
+    @include for-size(xx-large) {
+      grid-column: 8 / 11;
+      order: 5;
+      align-self: end;
+    }
   }
   /* properties view */
   &__view {
@@ -153,6 +174,11 @@
     margin-top: 35px;
     &-label {
       margin: 0;
+    }
+    @include for-size(xx-large) {
+      grid-column: 8 / 11;
+      order: 6;
+      margin-top: 100px;
     }
   }
   &__button-load-more {
@@ -166,6 +192,10 @@
   &__elements {
     grid-column: 2 / 3;
     border-top: solid 3px $brand-primary;
+    @include for-size(xx-large) {
+      grid-column: 2 / 11;
+      order: 7;
+    }
   }
   /* page reference */
   &__page-reference {
