@@ -146,7 +146,11 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 
 ### Mobile Hamburger Navigation
 
-Für die Mobile Hamburger Navigation habe ich mich an folgendem Artikel orientiert ["Easy hamburger menu with JS - Beginners"](https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0). Den CSS und JavaScript Code habe ich in meine bereits bestehendes HTML-Struktur eingebaut. Um das gewünschte Ergebnis zu erzielen, habe ich ein paar Anpassungen und Ergänzungen vorgenommen (bspw. `overflowY`).
+Für die Mobile Hamburger Navigation habe ich mich an folgendem Artikel orientiert: ["Easy hamburger menu with JS - Beginners"](https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0). Den CSS und JavaScript Code habe ich in meine bereits bestehendes HTML-Struktur eingebaut. Um das gewünschte Ergebnis zu erzielen, habe ich ein paar Anpassungen und Ergänzungen vorgenommen (bspw. `overflowY`).
+
+### Toggle Switch
+
+Für den Toggle Switch habe ich mich am ersten Switch "Light" aus folgendem Code orientiert: [Codepen: CSS Toggle Switch button](https://codepen.io/alvarotrigo/pen/RwjEZeJ). Auch hier habe ich den Code für meine Zwecke modifiziert.
 
 ## Eidesstattliche Erklärung
 
