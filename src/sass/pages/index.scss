@@ -56,6 +56,60 @@
       grid-column: 2 / 3;
     }
   }
+  /* toggle switch */
+  &__form-item--toggle {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 25px 0px;
+  }
+  &__switch-input {
+    display: none;
+    + .properties__switch-label {
+      outline: 0;
+      display: block;
+      width: 70px;
+      height: 17px;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      &:after,
+      &:before {
+        position: relative;
+        display: block;
+        content: "";
+        width: 17px;
+        height: 100%;
+      }
+      &:after {
+        left: 0;
+      }
+      &:before {
+        display: none;
+      }
+    }
+    &:checked + .properties__switch-label:after {
+      left: 53px;
+    }
+    + .properties__switch-label {
+      background: $base-primary;
+      border-radius: 32px;
+      padding: 4px;
+      transition: all 0.7s ease;
+      &:after {
+        border-radius: 50%;
+        background: $brand-primary;
+        transition: all 0.5s ease;
+      }
+    }
+    &:checked + .properties__switch-label {
+      background: $brand-primary;
+      &:after {
+        background: $base-primary;
+      }
+    }
+  }
+  /* end of toggle switch */
   &__label {
     display: block;
     padding-bottom: 10px;
@@ -73,80 +127,5 @@
     border: none;
     background-color: $brand-primary;
     color: $base-primary;
-  }
-}
-
-/* TEST */
-.properties__form-item--toggle {
-  display: flex;
-}
-
-.properties__switch-input {
-  display: none;
-
-  + .properties__switch-label {
-    outline: 0;
-    display: block;
-    width: 4em;
-    height: 2em;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-    &:after,
-    &:before {
-      position: relative;
-      display: block;
-      content: "";
-      width: 50%;
-      height: 100%;
-    }
-
-    &:after {
-      left: 0;
-    }
-
-    &:before {
-      display: none;
-    }
-  }
-
-  &:checked + .properties__switch-label:after {
-    left: 50%;
-  }
-}
-
-.properties__switch-input {
-  + .properties__switch-label {
-    background: #f0f0f0;
-    border-radius: 2em;
-    padding: 2px;
-    transition: all 0.4s ease;
-    &:after {
-      border-radius: 50%;
-      background: #fff;
-      transition: all 0.2s ease;
-    }
-  }
-
-  &:checked + .properties__switch-label {
-    background: #9fd6ae;
-  }
-}
-
-.properties__switch-input {
-  + .properties__switch-label {
-    background: #f0f0f0;
-    border-radius: 2em;
-    padding: 2px;
-    transition: all 0.4s ease;
-    &:after {
-      border-radius: 50%;
-      background: #fff;
-      transition: all 0.2s ease;
-    }
-  }
-
-  &:checked + .properties__switch-label {
-    background: #9fd6ae;
   }
 }

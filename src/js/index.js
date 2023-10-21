@@ -37,3 +37,19 @@ function setActiveItem(event) {
 navItems.forEach((navItem) => {
   navItem.addEventListener("click", setActiveItem);
 });
+
+/* properties form toggle switch */
+const switchToggle = document.querySelector(".properties__switch-input");
+const switchBuy = document.querySelector(".properties__switch-value--buy");
+const switchRent = document.querySelector(".properties__switch-value--rent");
+
+function toggleSwitch() {
+  if (switchToggle.checked) {
+    switchRent.classList.add("properties__switch-value--unchecked");
+    switchBuy.classList.remove("properties__switch-value--unchecked");
+  } else {
+    switchRent.classList.remove("properties__switch-value--unchecked");
+    switchBuy.classList.add("properties__switch-value--unchecked");
+  }
+}
+switchToggle.addEventListener("change", toggleSwitch);

@@ -146,4 +146,11 @@ h2 {
       size: 1rem;
     }
   }
+  /* toggle switch */
+  &__switch-value {
+    font-weight: $font-weight-bold;
+  }
+  &__switch-value--unchecked {
+    color: $brand-primary;
+  }
 }
