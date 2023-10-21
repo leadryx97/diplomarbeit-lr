@@ -53,3 +53,14 @@ function toggleSwitch() {
   }
 }
 switchToggle.addEventListener("change", toggleSwitch);
+
+/* properties form drop-down */
+const selectDropDown = document.querySelector(".properties__select--drop-down");
+
+selectDropDown.addEventListener("focus", () => {
+  selectDropDown.classList.add("properties__select--drop-down-active");
+});
+
+selectDropDown.addEventListener("blur", () => {
+  selectDropDown.classList.remove("properties__select--drop-down-active");
+});

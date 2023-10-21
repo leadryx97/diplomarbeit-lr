@@ -434,6 +434,26 @@ h2 {
 .properties__form-item--toggle {
   grid-column: 2/3;
 }
+.properties__label {
+  display: block;
+  padding-bottom: 10px;
+}
+.properties__select {
+  width: 100%;
+  height: 47px;
+  border: none;
+  appearance: none;
+  padding: 10px;
+}
+.properties__select--drop-down {
+  background-image: url(../assets/images/svg/arrow-drop-down.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 20px;
+}
+.properties__select--drop-down-active {
+  background-image: url(../assets/images/svg/arrow-drop-down-up.svg);
+}
 .properties__form-item--toggle {
   display: flex;
   justify-content: space-between;
@@ -484,17 +504,6 @@ h2 {
 }
 .properties__switch-input:checked + .properties__switch-label:after {
   background: #ffffff;
-}
-.properties__label {
-  display: block;
-  padding-bottom: 10px;
-}
-.properties__select {
-  width: 100%;
-  height: 47px;
-  border: none;
-  appearance: none;
-  padding: 10px;
 }
 .properties__button {
   grid-column: 2/3;
