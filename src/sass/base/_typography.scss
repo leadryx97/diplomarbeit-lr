@@ -145,12 +145,23 @@ h2 {
       weight: $font-weight-bold;
       size: 1rem;
     }
+    &-load-more {
+      font-size: 1.3rem;
+    }
   }
   /* toggle switch */
   &__switch-value {
     font-weight: $font-weight-bold;
   }
   &__switch-value--unchecked {
+    color: $brand-primary;
+  }
+  /* end of toggle switch */
+  &__view-label {
+    font: {
+      weight: $font-weight-bold;
+      size: 1.4rem;
+    }
     color: $brand-primary;
   }
 }

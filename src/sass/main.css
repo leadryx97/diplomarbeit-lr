@@ -173,6 +173,7 @@ h2 {
 /* search form */
 .properties {
   /* toggle switch */
+  /* end of toggle switch */
 }
 .properties__label {
   font-weight: 700;
@@ -186,10 +187,18 @@ h2 {
   font-weight: 700;
   font-size: 1rem;
 }
+.properties__button-load-more {
+  font-size: 1.3rem;
+}
 .properties__switch-value {
   font-weight: 700;
 }
 .properties__switch-value--unchecked {
+  color: #92b9af;
+}
+.properties__view-label {
+  font-weight: 700;
+  font-size: 1.4rem;
   color: #92b9af;
 }
 
@@ -293,6 +302,7 @@ h2 {
 }
 
 .footer {
+  background-color: #ffffff;
   padding: 50px 40px 50px 40px;
   display: flex;
   flex-direction: column;
@@ -416,8 +426,11 @@ h2 {
 
 /* properties section */
 .properties {
+  padding: 30px 0px 50px 0px;
   /* toggle switch */
   /* end of toggle switch */
+  /* properties view */
+  /* page reference */
 }
 .properties__title {
   text-align: center;
@@ -443,7 +456,9 @@ h2 {
   height: 47px;
   border: none;
   appearance: none;
+  outline: none;
   padding: 10px;
+  background-color: #ffffff;
 }
 .properties__select--drop-down {
   background-image: url(../assets/images/svg/arrow-drop-down.svg);
@@ -453,6 +468,8 @@ h2 {
 }
 .properties__select--drop-down-active {
   background-image: url(../assets/images/svg/arrow-drop-down-up.svg);
+  border: none;
+  box-shadow: none;
 }
 .properties__form-item--toggle {
   display: flex;
@@ -511,6 +528,39 @@ h2 {
   border: none;
   background-color: #92b9af;
   color: #ffffff;
+}
+.properties__view {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  grid-column: 2/3;
+  margin-top: 35px;
+}
+.properties__view-label {
+  margin: 0;
+}
+.properties__button-load-more {
+  background-color: #92b9af;
+  border: none;
+  grid-column: 2/3;
+}
+@media (min-width: 768px) {
+  .properties__button-load-more {
+    display: none;
+  }
+}
+.properties__elements {
+  grid-column: 2/3;
+  border-top: solid 3px #92b9af;
+}
+.properties__page-reference {
+  display: none;
+}
+@media (min-width: 768px) {
+  .properties__page-reference {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
