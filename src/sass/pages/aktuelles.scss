@@ -1,0 +1,21 @@
+.news {
+  &__element {
+    &-picture {
+      grid-column: 2 / 3;
+      &-img {
+        max-width: 150px;
+      }
+    }
+    &-specs {
+      grid-column: 2 / 3;
+      display: flex;
+      gap: 20px;
+    }
+    &-teaser {
+      grid-column: 2 / 3;
+    }
+    &-button {
+      grid-column: 2 / 3;
+    }
+  }
+}
