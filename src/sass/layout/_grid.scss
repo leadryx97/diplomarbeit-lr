@@ -12,7 +12,7 @@
   @include for-size(x-large) {
   }
   @include for-size(xx-large) {
-    grid-template: 1fr 1fr / repeat(12, 1fr);
-    gap: 20px 70px;
+    grid-template: 1fr / repeat(14, 1fr);
+    gap: 40px 100px;
   }
 }
