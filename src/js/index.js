@@ -54,13 +54,28 @@ function toggleSwitch() {
 }
 switchToggle.addEventListener("change", toggleSwitch);
 
-/* properties form drop-down */
-const selectDropDown = document.querySelector(".properties__select--drop-down");
+/* properties form drop-down (arrows) */
+const selectDropDown = document.querySelectorAll(".properties__select");
+const noDropDown = document.querySelectorAll(
+  ".properties__select--no-dropdown"
+);
 
-selectDropDown.addEventListener("focus", () => {
-  selectDropDown.classList.add("properties__select--drop-down-active");
+selectDropDown.forEach((selectElement) => {
+  selectElement.addEventListener("focus", () => {
+    selectElement.classList.add("properties__select--active");
+  });
 });
 
-selectDropDown.addEventListener("blur", () => {
-  selectDropDown.classList.remove("properties__select--drop-down-active");
+selectDropDown.forEach((selectElement) => {
+  selectElement.addEventListener("blur", () => {
+    selectElement.classList.remove("properties__select--active");
+  });
+});
+
+noDropDown.forEach((selectElement) => {
+  if (screen.width >= 576) {
+    window.addEventListener("load", () => {
+      selectElement.classList.remove("properties__select--no-dropdown");
+    });
+  }
 });

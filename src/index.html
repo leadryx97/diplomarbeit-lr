@@ -28,7 +28,10 @@
             <!-- properties select object -->
             <div class="properties__form-item properties__form-item--object">
               <label for="object" class="properties__label">Was</label>
-              <select name="object" class="properties__select">
+              <select
+                name="object"
+                class="properties__select properties__select--no-dropdown"
+              >
                 <!-- !!TO BE DYNAMIC -->
                 <option value="all-objects">Alle Objekte</option>
                 <option value="apartment">Wohnung</option>
@@ -40,7 +43,10 @@
             <!-- properties select location -->
             <div class="properties__form-item properties__form-item--location">
               <label for="location" class="properties__label">Wo</label>
-              <select name="location" class="properties__select">
+              <select
+                name="location"
+                class="properties__select properties__select--no-dropdown"
+              >
                 <!-- !!TO BE DYNAMIC -->
                 <option value="all-locations">Alle Orte</option>
                 <option value="st-gallen">St.Gallen</option>
@@ -54,10 +60,7 @@
             <!-- properties select sort -->
             <div class="properties__form-item properties__form-item--sort">
               <label for="sort" class="properties__label">Sortierung</label>
-              <select
-                name="sort"
-                class="properties__select properties__select--drop-down"
-              >
+              <select name="sort" class="properties__select">
                 <option value="price-ascending">Preis aufsteigend</option>
                 <option value="price-descending">Preis absteigend</option>
                 <option value="date-ascending">Datum aufsteigend</option>

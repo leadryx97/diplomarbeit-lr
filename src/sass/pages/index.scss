@@ -46,21 +46,21 @@
     &--object {
       grid-column: 2 / 3;
       @include for-size(xx-large) {
-        grid-column: 2 / 5;
+        grid-column: 2 / 6;
         order: 1;
       }
     }
     &--location {
       grid-column: 2 / 3;
       @include for-size(xx-large) {
-        grid-column: 5 / 8;
+        grid-column: 6 / 10;
         order: 2;
       }
     }
     &--sort {
       grid-column: 2 / 3;
       @include for-size(xx-large) {
-        grid-column: 2 / 5;
+        grid-column: 2 / 6;
         order: 4;
       }
     }
@@ -72,7 +72,7 @@
       margin: 25px 0px;
       grid-column: 2 / 3;
       @include for-size(xx-large) {
-        grid-column: 8 / 11;
+        grid-column: 10 / 14;
         order: 3;
         align-self: end;
         margin: 10px 0px;
@@ -138,18 +138,19 @@
     outline: none;
     padding: 10px;
     background-color: $base-primary;
-    &--drop-down {
-      background: {
-        image: url(../assets/images/svg/arrow-drop-down.svg);
-        repeat: no-repeat;
-        position: right 20px center;
-        size: 20px;
-      }
+    background: {
+      image: url(../assets/images/svg/arrow-drop-down.svg);
+      repeat: no-repeat;
+      position: right 20px center;
+      size: 20px;
     }
-    &--drop-down-active {
+    &--active {
       background-image: url(../assets/images/svg/arrow-drop-down-up.svg);
       border: none;
       box-shadow: none;
+    }
+    &--no-dropdown {
+      background-image: none;
     }
   }
   &__button {
@@ -159,7 +160,7 @@
     background-color: $brand-primary;
     color: $base-primary;
     @include for-size(xx-large) {
-      grid-column: 8 / 11;
+      grid-column: 10 / 14;
       order: 5;
       align-self: end;
     }
@@ -176,9 +177,9 @@
       margin: 0;
     }
     @include for-size(xx-large) {
-      grid-column: 8 / 11;
+      grid-column: 10 / 14;
       order: 6;
-      margin-top: 100px;
+      margin-top: 140px;
     }
   }
   &__button-load-more {
@@ -193,7 +194,7 @@
     grid-column: 2 / 3;
     border-top: solid 3px $brand-primary;
     @include for-size(xx-large) {
-      grid-column: 2 / 11;
+      grid-column: 2 / 14;
       order: 7;
     }
   }

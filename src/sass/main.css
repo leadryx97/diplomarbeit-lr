@@ -370,8 +370,8 @@ h2 {
 }
 @media (min-width: 1400px) {
   .grid {
-    grid-template: 1fr 1fr/repeat(12, 1fr);
-    gap: 20px 70px;
+    grid-template: 1fr/repeat(14, 1fr);
+    gap: 40px 100px;
   }
 }
 
@@ -442,7 +442,7 @@ h2 {
 }
 @media (min-width: 1400px) {
   .properties__form-item--object {
-    grid-column: 2/5;
+    grid-column: 2/6;
     order: 1;
   }
 }
@@ -451,7 +451,7 @@ h2 {
 }
 @media (min-width: 1400px) {
   .properties__form-item--location {
-    grid-column: 5/8;
+    grid-column: 6/10;
     order: 2;
   }
 }
@@ -460,7 +460,7 @@ h2 {
 }
 @media (min-width: 1400px) {
   .properties__form-item--sort {
-    grid-column: 2/5;
+    grid-column: 2/6;
     order: 4;
   }
 }
@@ -473,7 +473,7 @@ h2 {
 }
 @media (min-width: 1400px) {
   .properties__form-item--toggle {
-    grid-column: 8/11;
+    grid-column: 10/14;
     order: 3;
     align-self: end;
     margin: 10px 0px;
@@ -536,17 +536,18 @@ h2 {
   outline: none;
   padding: 10px;
   background-color: #ffffff;
-}
-.properties__select--drop-down {
   background-image: url(../assets/images/svg/arrow-drop-down.svg);
   background-repeat: no-repeat;
   background-position: right 20px center;
   background-size: 20px;
 }
-.properties__select--drop-down-active {
+.properties__select--active {
   background-image: url(../assets/images/svg/arrow-drop-down-up.svg);
   border: none;
   box-shadow: none;
+}
+.properties__select--no-dropdown {
+  background-image: none;
 }
 .properties__button {
   grid-column: 2/3;
@@ -557,7 +558,7 @@ h2 {
 }
 @media (min-width: 1400px) {
   .properties__button {
-    grid-column: 8/11;
+    grid-column: 10/14;
     order: 5;
     align-self: end;
   }
@@ -575,9 +576,9 @@ h2 {
 }
 @media (min-width: 1400px) {
   .properties__view {
-    grid-column: 8/11;
+    grid-column: 10/14;
     order: 6;
-    margin-top: 100px;
+    margin-top: 140px;
   }
 }
 .properties__button-load-more {
@@ -596,7 +597,7 @@ h2 {
 }
 @media (min-width: 1400px) {
   .properties__elements {
-    grid-column: 2/11;
+    grid-column: 2/14;
     order: 7;
   }
 }
