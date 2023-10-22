@@ -1,9 +1,9 @@
 .header {
-  background-color: $brand-primary; /* dark-green */
+  background-color: $bg-secondary; /* dark-green */
   padding: 15px 22px 15px 22px;
   height: 50px;
   @include for-size(large) {
-    background-color: $brand-primary-transp; /* dark-green transparency */
+    background-color: $bg-secondary-transp; /* dark-green transparency */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +27,7 @@
     right: 0;
     bottom: 0;
     z-index: 99;
-    background-color: $brand-primary; /* dark-green */
+    background-color: $bg-secondary; /* dark-green */
     padding-top: 150px;
     padding-left: 0;
     margin: 0;
@@ -60,10 +60,10 @@
   }
   &__nav-link {
     text-decoration: none;
-    color: $base-secondary; /* black */
+    color: $txt-primary; /* black */
     &--active {
       @include for-size(large) {
-        color: $base-primary; /* white */
+        color: $txt-tertiary; /* white */
       }
     }
   }

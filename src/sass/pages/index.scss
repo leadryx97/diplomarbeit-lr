@@ -27,7 +27,7 @@
 }
 /* title */
 .title-section {
-  background-color: $base-primary;
+  background-color: $bg-tertiary; /* white */
   &__page-title {
     margin: 0;
     padding: 20px;
@@ -108,20 +108,20 @@
       left: 53px;
     }
     + .properties__switch-label {
-      background: $base-primary;
+      background: $bg-tertiary; /* white */
       border-radius: 32px;
       padding: 4px;
       transition: all 0.7s ease;
       &:after {
         border-radius: 50%;
-        background: $brand-primary;
+        background: $bg-secondary; /* dark green */
         transition: all 0.5s ease;
       }
     }
     &:checked + .properties__switch-label {
-      background: $brand-primary;
+      background: $bg-secondary; /* dark green */
       &:after {
-        background: $base-primary;
+        background: $bg-tertiary; /* white */
       }
     }
   }
@@ -137,7 +137,7 @@
     appearance: none;
     outline: none;
     padding: 10px;
-    background-color: $base-primary;
+    background-color: $bg-tertiary; /* white */
     background: {
       image: url(../assets/images/svg/arrow-drop-down.svg);
       repeat: no-repeat;
@@ -157,8 +157,8 @@
     grid-column: 2 / 3;
     height: 47px;
     border: none;
-    background-color: $brand-primary;
-    color: $base-primary;
+    background-color: $btn-primary; /* dark green */
+    color: $btn-txt; /* white */
     @include for-size(xx-large) {
       grid-column: 10 / 14;
       order: 5;
@@ -183,7 +183,7 @@
     }
   }
   &__button-load-more {
-    background-color: $brand-primary;
+    background-color: $btn-primary; /* dark green */
     border: none;
     grid-column: 2 / 3;
     @include for-size(medium) {
@@ -192,7 +192,7 @@
   }
   &__elements {
     grid-column: 2 / 3;
-    border-top: solid 3px $brand-primary;
+    border-top: solid 3px $bg-secondary; /* dark green */
     @include for-size(xx-large) {
       grid-column: 2 / 14;
       order: 7;

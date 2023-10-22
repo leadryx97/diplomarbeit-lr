@@ -6,14 +6,16 @@ $base-tertiary: #878787; /* grey */
 /* brand (tier 1) */
 $brand-primary: #92b9af; /* dark-green */
 $brand-secondary: #e5eeec; /* light-green */
-$brand-primary-transp: rgba($brand-primary, 0.85); /* dark-green transparency */
+$brand-primary-transp: rgba($brand-primary, 0.85); /* dark-green transparent */
 /* background (tier 2) */
 $bg-primary: $brand-secondary; /* light-green */
 $bg-secondary: $brand-primary; /* dark-green */
+$bg-secondary-transp: $brand-primary-transp; /* dark-green transparent */
 $bg-tertiary: $base-primary; /* white */
 /* text (tier 2) */
 $txt-primary: $base-secondary; /* black */
 $txt-secondary: $brand-primary; /* dark-green */
+$txt-tertiary: $base-primary; /* white */
 /* button (tier 2) */
 $btn-primary: $brand-primary; /* dark-green */
 $btn-secondary: $base-tertiary; /* grey */
