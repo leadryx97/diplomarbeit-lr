@@ -153,18 +153,6 @@
       background-image: none;
     }
   }
-  &__button {
-    grid-column: 2 / 3;
-    height: 47px;
-    border: none;
-    background-color: $btn-primary; /* dark green */
-    color: $btn-txt; /* white */
-    @include for-size(xx-large) {
-      grid-column: 10 / 14;
-      order: 5;
-      align-self: end;
-    }
-  }
   /* properties view */
   &__view {
     display: flex;
@@ -180,14 +168,6 @@
       grid-column: 10 / 14;
       order: 6;
       margin-top: 140px;
-    }
-  }
-  &__button-load-more {
-    background-color: $btn-primary; /* dark green */
-    border: none;
-    grid-column: 2 / 3;
-    @include for-size(medium) {
-      display: none;
     }
   }
   &__elements {

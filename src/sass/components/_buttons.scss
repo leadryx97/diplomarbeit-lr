@@ -1,0 +1,53 @@
+/* home properties buttons */
+.properties {
+  &__button {
+    grid-column: 2 / 3;
+    height: 47px;
+    border: none;
+    background-color: $btn-primary; /* dark green */
+    color: $btn-txt; /* white */
+    &:hover {
+      background-color: $btn-secondary; /* grey */
+    }
+    @include for-size(xx-large) {
+      grid-column: 10 / 14;
+      order: 5;
+      align-self: end;
+    }
+  }
+  &__button-load-more {
+    grid-column: 2 / 3;
+    @include for-size(medium) {
+      display: none;
+    }
+  }
+}
+/* footer scroll-to-top button */
+.footer {
+  &__scroll-to-top-button {
+    display: none;
+    &:hover {
+      background-color: $btn-secondary; /* grey */
+    }
+    @include for-size(medium) {
+      display: inline-block;
+      align-self: flex-end;
+      width: 50px;
+      height: 50px;
+      background-color: $btn-primary; /* dark green */
+      border: none;
+      padding-top: 12px;
+    }
+  }
+  &__button-arrow {
+    @include for-size(medium) {
+      border: solid $btn-txt; /* white */
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 6px;
+      margin: auto;
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+    }
+  }
+}
