@@ -19,4 +19,11 @@
   &--properties-search {
     grid-template-columns: 1fr 10fr 1fr;
   }
+  /* news overview page */
+  &--news-overview {
+    margin-bottom: 60px;
+  }
+  &--news-overview-last {
+    margin-bottom: 50px;
+  }
 }
