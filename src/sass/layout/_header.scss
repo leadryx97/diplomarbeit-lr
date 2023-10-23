@@ -48,25 +48,16 @@
   }
   &__nav-item {
     list-style: none;
-  }
-  &__nav-item--sm {
-    line-height: 0;
-    &-first {
-      margin-top: 60px;
-    }
-    @include for-size(large) {
-      display: none;
-    }
-  }
-  &__nav-link {
-    text-decoration: none;
-    color: $txt-primary; /* black */
-    &--active {
+    &--sm {
       @include for-size(large) {
-        color: $txt-tertiary; /* white */
+        display: none;
       }
     }
+    &--sm-first {
+      margin-top: 60px;
+    }
   }
+
   &__nav-hamburger {
     position: absolute;
     top: 25.5px;

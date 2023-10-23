@@ -1,21 +1,25 @@
 .news {
-  &__element {
-    &-picture {
-      grid-column: 2 / 3;
-      &-img {
-        max-width: 150px;
-      }
-    }
-    &-specs {
-      grid-column: 2 / 3;
-      display: flex;
-      gap: 20px;
-    }
-    &-teaser {
-      grid-column: 2 / 3;
-    }
-    &-button {
-      grid-column: 2 / 3;
-    }
+  &__element-picture {
+    grid-column: 2 / 3;
+  }
+  &__element-picture-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  &__element-specs {
+    grid-column: 2 / 3;
+    display: flex;
+    gap: 20px;
+  }
+  &__element-category {
+    margin: 0;
+  }
+  &__element-date {
+    margin: 0;
+  }
+  &__element-teaser {
+    grid-column: 2 / 3;
+    margin: 0;
   }
 }

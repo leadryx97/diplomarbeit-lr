@@ -14,11 +14,11 @@
       order: 5;
       align-self: end;
     }
-  }
-  &__button-load-more {
-    grid-column: 2 / 3;
-    @include for-size(medium) {
-      display: none;
+    &--load-more {
+      grid-column: 2 / 3;
+      @include for-size(medium) {
+        display: none;
+      }
     }
   }
 }
@@ -49,5 +49,17 @@
       transform: rotate(-135deg);
       -webkit-transform: rotate(-135deg);
     }
+  }
+}
+
+/* news overview page */
+.news {
+  &__element-button {
+    grid-column: 2 / 3;
+    width: 90px;
+    height: 35px;
+    background-color: $btn-primary;
+    color: $btn-txt;
+    border: none;
   }
 }

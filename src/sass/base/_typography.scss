@@ -65,10 +65,15 @@
     }
   }
   &__nav-item {
+    &--sm {
+      line-height: 0;
+    }
   }
   &__nav-link {
     font-size: 2rem;
     line-height: 2;
+    text-decoration: none;
+    color: $txt-primary; /* black */
     @include for-size(large) {
       font: {
         size: 1.3rem;
@@ -117,7 +122,7 @@
       weight: $font-weight-bold;
       size: 1rem;
     }
-    &-load-more {
+    &--load-more {
       font-size: 1.3rem;
     }
   }
@@ -135,5 +140,15 @@
       size: 1.4rem;
     }
     color: $txt-secondary; /* dark green */
+  }
+}
+
+/* news overview page */
+.news {
+  &__element-category {
+    font-weight: $font-weight-bold;
+  }
+  &__element-button {
+    font-weight: $font-weight-bold;
   }
 }

@@ -100,9 +100,14 @@
     text-align: right;
   }
 }
+.header__nav-item--sm {
+  line-height: 0;
+}
 .header__nav-link {
   font-size: 2rem;
   line-height: 2;
+  text-decoration: none;
+  color: #000000; /* black */
 }
 @media (min-width: 992px) {
   .header__nav-link {
@@ -148,7 +153,7 @@
   font-weight: 700;
   font-size: 1rem;
 }
-.properties__button-load-more {
+.properties__button--load-more {
   font-size: 1.3rem;
 }
 .properties__switch-value {
@@ -161,6 +166,14 @@
   font-weight: 700;
   font-size: 1.4rem;
   color: #92b9af; /* dark green */
+}
+
+/* news overview page */
+.news__element-category {
+  font-weight: 700;
+}
+.news__element-button {
+  font-weight: 700;
 }
 
 /* components */
@@ -182,11 +195,11 @@
     align-self: end;
   }
 }
-.properties__button-load-more {
+.properties__button--load-more {
   grid-column: 2/3;
 }
 @media (min-width: 768px) {
-  .properties__button-load-more {
+  .properties__button--load-more {
     display: none;
   }
 }
@@ -219,6 +232,16 @@
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
   }
+}
+
+/* news overview page */
+.news__element-button {
+  grid-column: 2/3;
+  width: 90px;
+  height: 35px;
+  background-color: #92b9af;
+  color: #ffffff;
+  border: none;
 }
 
 /* layout */
@@ -280,25 +303,13 @@
 .header__nav-item {
   list-style: none;
 }
-.header__nav-item--sm {
-  line-height: 0;
-}
-.header__nav-item--sm-first {
-  margin-top: 60px;
-}
 @media (min-width: 992px) {
   .header__nav-item--sm {
     display: none;
   }
 }
-.header__nav-link {
-  text-decoration: none;
-  color: #000000; /* black */
-}
-@media (min-width: 992px) {
-  .header__nav-link--active {
-    color: #ffffff; /* white */
-  }
+.header__nav-item--sm-first {
+  margin-top: 60px;
 }
 .header__nav-hamburger {
   position: absolute;
@@ -358,14 +369,18 @@
 /* main grid */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: 0.6fr 10fr 0.6fr;
   grid-row-gap: 20px;
+  /* index page grid (properties search) */
 }
 @media (min-width: 1400px) {
   .grid {
     grid-template: 1fr/repeat(14, 1fr);
     gap: 40px 100px;
   }
+}
+.grid--properties-search {
+  grid-template-columns: 1fr 10fr 1fr;
 }
 
 /* pages */
@@ -484,20 +499,20 @@
   cursor: pointer;
   user-select: none;
 }
-.properties__switch-input + .properties__switch-label:after, .properties__switch-input + .properties__switch-label:before {
+.properties__switch-input + .properties__switch-label::after, .properties__switch-input + .properties__switch-label::before {
   position: relative;
   display: block;
   content: "";
   width: 17px;
   height: 100%;
 }
-.properties__switch-input + .properties__switch-label:after {
+.properties__switch-input + .properties__switch-label::after {
   left: 0;
 }
-.properties__switch-input + .properties__switch-label:before {
+.properties__switch-input + .properties__switch-label::before {
   display: none;
 }
-.properties__switch-input:checked + .properties__switch-label:after {
+.properties__switch-input:checked + .properties__switch-label::after {
   left: 53px;
 }
 .properties__switch-input + .properties__switch-label {
@@ -506,7 +521,7 @@
   padding: 4px;
   transition: all 0.7s ease;
 }
-.properties__switch-input + .properties__switch-label:after {
+.properties__switch-input + .properties__switch-label::after {
   border-radius: 50%;
   background: #92b9af; /* dark green */
   transition: all 0.5s ease;
@@ -514,7 +529,7 @@
 .properties__switch-input:checked + .properties__switch-label {
   background: #92b9af; /* dark green */
 }
-.properties__switch-input:checked + .properties__switch-label:after {
+.properties__switch-input:checked + .properties__switch-label::after {
   background: #ffffff; /* white */
 }
 .properties__label {
@@ -583,18 +598,24 @@
   grid-column: 2/3;
 }
 .news__element-picture-img {
-  max-width: 150px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 .news__element-specs {
   grid-column: 2/3;
   display: flex;
   gap: 20px;
 }
+.news__element-category {
+  margin: 0;
+}
+.news__element-date {
+  margin: 0;
+}
 .news__element-teaser {
   grid-column: 2/3;
-}
-.news__element-button {
-  grid-column: 2/3;
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
