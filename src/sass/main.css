@@ -386,6 +386,12 @@
 .grid--properties-search {
   grid-template-columns: 1fr 10fr 1fr;
 }
+@media (min-width: 1400px) {
+  .grid--properties-search {
+    grid-template: 1fr/repeat(14, 1fr);
+    gap: 40px 100px;
+  }
+}
 .grid--news-overview {
   margin-bottom: 60px;
 }
@@ -606,6 +612,11 @@
 
 .news__element-picture {
   grid-column: 2/3;
+}
+@media (min-width: 1400px) {
+  .news__element-picture {
+    grid-column: 2/5;
+  }
 }
 .news__element-picture-img {
   width: 100%;

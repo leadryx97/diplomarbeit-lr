@@ -18,6 +18,10 @@
   /* index page grid (properties search) */
   &--properties-search {
     grid-template-columns: 1fr 10fr 1fr;
+    @include for-size(xx-large) {
+      grid-template: 1fr / repeat(14, 1fr);
+      gap: 40px 100px;
+    }
   }
   /* news overview page */
   &--news-overview {

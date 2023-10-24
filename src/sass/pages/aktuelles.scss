@@ -1,6 +1,9 @@
 .news {
   &__element-picture {
     grid-column: 2 / 3;
+    @include for-size(xx-large) {
+      grid-column: 2 / 5;
+    }
   }
   &__element-picture-img {
     width: 100%;
