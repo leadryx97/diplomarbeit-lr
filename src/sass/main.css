@@ -44,7 +44,7 @@
 }
 @media (min-width: 992px) {
   .page {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -178,6 +178,11 @@
   font-weight: 700;
   font-size: 1rem;
 }
+@media (min-width: 992px) {
+  .news__element-button {
+    font-size: 1.4rem;
+  }
+}
 
 /* components */
 /* home properties buttons */
@@ -245,6 +250,21 @@
   background-color: #92b9af;
   color: #ffffff;
   border: none;
+}
+@media (min-width: 1400px) {
+  .news__element-button {
+    grid-column: 7/12;
+    grid-row: 3;
+    width: 150px;
+    height: 50px;
+    margin-left: 50px;
+  }
+}
+@media (min-width: 1400px) {
+  .news__element-button--right {
+    grid-column: 4/9;
+    margin-left: 0;
+  }
 }
 
 /* layout */
@@ -395,8 +415,19 @@
 .grid--news-overview {
   margin-bottom: 60px;
 }
+@media (min-width: 1400px) {
+  .grid--news-overview {
+    grid-template-rows: 20px 1fr 20px;
+    margin-bottom: 300px;
+  }
+}
 .grid--news-overview-last {
   margin-bottom: 50px;
+}
+@media (min-width: 1400px) {
+  .grid--news-overview-last {
+    margin-bottom: 200px;
+  }
 }
 
 /* pages */
@@ -615,7 +646,14 @@
 }
 @media (min-width: 1400px) {
   .news__element-picture {
-    grid-column: 2/5;
+    grid-column: 2/8;
+    grid-row: 1;
+  }
+}
+@media (min-width: 1400px) {
+  .news__element-picture--right {
+    grid-column: 8/14;
+    justify-self: end;
   }
 }
 .news__element-picture-img {
@@ -623,10 +661,30 @@
   height: 200px;
   object-fit: cover;
 }
+@media (min-width: 1400px) {
+  .news__element-picture-img {
+    height: 400px;
+    width: 600px;
+  }
+}
 .news__element-specs {
   grid-column: 2/3;
   display: flex;
   gap: 20px;
+}
+@media (min-width: 1400px) {
+  .news__element-specs {
+    grid-column: 7/12;
+    grid-row: 1;
+    margin-left: 50px;
+  }
+}
+@media (min-width: 1400px) {
+  .news__element-specs--right {
+    grid-column: 4/9;
+    margin-left: 0;
+    margin-right: 30px;
+  }
 }
 .news__element-category {
   margin: 0;
@@ -637,6 +695,20 @@
 .news__element-teaser {
   grid-column: 2/3;
   margin: 0;
+}
+@media (min-width: 1400px) {
+  .news__element-teaser {
+    grid-column: 7/12;
+    grid-row: 2;
+    margin-left: 50px;
+  }
+}
+@media (min-width: 1400px) {
+  .news__element-teaser--right {
+    grid-column: 4/9;
+    margin-left: 0;
+    margin-right: 30px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

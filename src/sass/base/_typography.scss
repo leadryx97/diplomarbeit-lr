@@ -11,7 +11,7 @@
   }
   line-height: 1.5;
   @include for-size(large) {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -153,5 +153,8 @@
     font-family: $font-family-body;
     font-weight: $font-weight-bold;
     font-size: 1rem;
+    @include for-size(large) {
+      font-size: 1.4rem;
+    }
   }
 }

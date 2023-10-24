@@ -26,8 +26,15 @@
   /* news overview page */
   &--news-overview {
     margin-bottom: 60px;
+    @include for-size(xx-large) {
+      grid-template-rows: 20px 1fr 20px;
+      margin-bottom: 300px;
+    }
   }
   &--news-overview-last {
     margin-bottom: 50px;
+    @include for-size(xx-large) {
+      margin-bottom: 200px;
+    }
   }
 }

@@ -2,18 +2,41 @@
   &__element-picture {
     grid-column: 2 / 3;
     @include for-size(xx-large) {
-      grid-column: 2 / 5;
+      grid-column: 2 / 8;
+      grid-row: 1;
+    }
+    &--right {
+      @include for-size(xx-large) {
+        grid-column: 8 / 14;
+        justify-self: end;
+      }
     }
   }
   &__element-picture-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    @include for-size(xx-large) {
+      height: 400px;
+      width: 600px;
+    }
   }
   &__element-specs {
     grid-column: 2 / 3;
     display: flex;
     gap: 20px;
+    @include for-size(xx-large) {
+      grid-column: 7 / 12;
+      grid-row: 1;
+      margin-left: 50px;
+    }
+    &--right {
+      @include for-size(xx-large) {
+        grid-column: 4 / 9;
+        margin-left: 0;
+        margin-right: 30px;
+      }
+    }
   }
   &__element-category {
     margin: 0;
@@ -24,5 +47,17 @@
   &__element-teaser {
     grid-column: 2 / 3;
     margin: 0;
+    @include for-size(xx-large) {
+      grid-column: 7 / 12;
+      grid-row: 2;
+      margin-left: 50px;
+    }
+    &--right {
+      @include for-size(xx-large) {
+        grid-column: 4 / 9;
+        margin-left: 0;
+        margin-right: 30px;
+      }
+    }
   }
 }
