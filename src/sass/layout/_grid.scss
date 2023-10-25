@@ -27,8 +27,8 @@
   &--news-overview {
     margin-bottom: 60px;
     @include for-size(xx-large) {
-      grid-template-rows: 20px 1fr 20px;
-      margin-bottom: 300px;
+      //grid-template-rows: 20px 1fr 20px;
+      margin-bottom: 150px;
     }
   }
   &--news-overview-last {
