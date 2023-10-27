@@ -59,7 +59,9 @@
     margin: 0;
   }
   &__element-teaser {
-    margin-top: 0;
-    margin-bottom: 15px;
+    margin: 0px 0px 5px 0px;
+    @include for-size(xx-large) {
+      margin-bottom: 15px;
+    }
   }
 }
