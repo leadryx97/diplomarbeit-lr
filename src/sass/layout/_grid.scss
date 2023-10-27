@@ -36,4 +36,10 @@
       margin-bottom: 100px;
     }
   }
+  /* news pages */
+  &--news {
+    @include for-size(xx-large) {
+      gap: 30px 100px;
+    }
+  }
 }

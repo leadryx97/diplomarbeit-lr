@@ -29,11 +29,15 @@
   @include for-size(large) {
     font-size: 3.1rem;
   }
+  /* subpages */
   &--subpage {
     margin-bottom: 20px;
     @include for-size(xx-large) {
       margin: 70px 0px 80px 0px;
     }
+  }
+  &--news {
+    text-align: left;
   }
 }
 /* page home title */
@@ -166,6 +170,25 @@
   &__element-specs {
     @include for-size(large) {
       font-size: 1rem;
+    }
+  }
+}
+
+/* news page */
+.news {
+  &__specs {
+    @include for-size(large) {
+      font-size: 1rem;
+    }
+  }
+  &__category {
+    font-weight: $font-weight-bold;
+  }
+  &__button-back {
+    font: {
+      family: $font-family-body;
+      weight: $font-weight-bold;
+      size: 1.3rem;
     }
   }
 }
