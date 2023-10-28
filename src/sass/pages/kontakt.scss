@@ -1,0 +1,20 @@
+.contact {
+  &__maps {
+    grid-column: 2 / 3;
+  }
+  &__information {
+    grid-column: 2 / 3;
+  }
+  &__links {
+    grid-column: 2 / 3;
+  }
+  &__link-list {
+    padding-left: 0;
+    &-item {
+      list-style: none;
+    }
+  }
+  &__link-item {
+    text-decoration: none;
+  }
+}

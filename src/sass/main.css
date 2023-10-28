@@ -216,6 +216,21 @@
   font-size: 1.3rem;
 }
 
+/* contact page */
+.contact__information--links {
+  color: #000000; /* black */
+  text-decoration: none;
+}
+.contact__information-address {
+  font-style: normal;
+}
+.contact__link-item {
+  color: #000000; /* black */
+}
+.contact__link-item--bold {
+  font-weight: 700;
+}
+
 /* components */
 /* home properties buttons */
 .properties__button {
@@ -897,6 +912,25 @@
   .news__button-back {
     margin-bottom: 130px;
   }
+}
+
+.contact__maps {
+  grid-column: 2/3;
+}
+.contact__information {
+  grid-column: 2/3;
+}
+.contact__links {
+  grid-column: 2/3;
+}
+.contact__link-list {
+  padding-left: 0;
+}
+.contact__link-list-item {
+  list-style: none;
+}
+.contact__link-item {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=main.css.map */

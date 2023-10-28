@@ -192,3 +192,22 @@
     }
   }
 }
+
+/* contact page */
+.contact {
+  &__information {
+    &--links {
+      color: $txt-primary; /* black */
+      text-decoration: none;
+    }
+  }
+  &__information-address {
+    font-style: normal;
+  }
+  &__link-item {
+    color: $txt-primary; /* black */
+  }
+  &__link-item--bold {
+    font-weight: $font-weight-bold;
+  }
+}

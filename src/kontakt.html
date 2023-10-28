@@ -8,30 +8,53 @@
   <body class="page">
     <!-- header -->
     <include src="./partials/header.html"></include>
-    <!-- page title -->
-    <h1 class="page-title">Kontakt</h1>
-    <!-- google maps -->
-    <div class="maps"></div>
-    <!-- contact information -->
-    <div class="contact-information">
-      <address>
-        <b>Home & House</b><br />
-        Fabrikstrasse 24<br />
-        9472 Grabs<br />
-        Schweiz<br />
-
-        <a href="tel:081.740.00.00">081 740 00 00</a><br />
-        <a href="mailto:info@homehouse.ch">info@homehouse.ch</a>
-      </address>
-    </div>
-    <!-- further links (only on mobile)-->
-    <div class="further-links">
-      <a href="">Immobilien</a>
-      <a href="">Aktuelles</a>
-      <a href="">Kontakt</a>
-
-      <a href="">Impressum</a>
-      <a href="">Datenschutz</a>
+    <div class="contact">
+      <!-- page title -->
+      <h1 class="page-title">Kontakt</h1>
+      <div class="grid">
+        <!-- google maps -->
+        <div class="contact__maps"></div>
+        <!-- contact information -->
+        <div class="contact__information">
+          <address class="contact__information-address">
+            <p>
+              <b>Home & House</b><br />
+              Fabrikstrasse 24<br />
+              9472 Grabs<br />
+              Schweiz<br />
+            </p>
+            <p>
+              <a href="tel:081.740.00.00" class="contact__information--links">081 740 00 00</a
+              ><br />
+              <a href="mailto:info@homehouse.ch" class="contact__information--links"
+                >info@homehouse.ch</a
+              >
+            </p>
+          </address>
+        </div>
+        <!-- further links (only on mobile) -->
+        <div class="contact__links">
+          <ul class="contact__link-list">
+            <li class="contact__link-list-item">
+              <a href="" class="contact__link-item contact__link-item--bold">Immobilien</a>
+            </li>
+            <li class="contact__link-list-item">
+              <a href="" class="contact__link-item contact__link-item--bold">Aktuelles</a>
+            </li>
+            <li class="contact__link-list-item">
+              <a href="" class="contact__link-item contact__link-item--bold">Kontakt</a>
+            </li>
+          </ul>
+          <ul class="contact__link-list">
+            <li class="contact__link-list-item">
+              <a href="" class="contact__link-item">Impressum</a>
+            </li>
+            <li class="contact__link-list-item">
+              <a href="" class="contact__link-item">Datenschutz</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>
