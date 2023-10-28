@@ -141,6 +141,8 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 - [SCSS 7-1 Pattern](https://sass-guidelin.es/#the-7-1-pattern): Ich verwende darauf basierende Struktur (5-1). `themes/` & `vendors/` benötige ich nicht (10.10.2023)
 - Recherche bzgl. media queries - entschieden für Bootstrap 4 Breakpoints (10.10.2023) / Allenfalls werden nicht alle gebraucht (Zeit gebraucht, die ich nicht eingeplant hatte)
 - Recherche bzgl. SCSS color variables / entschieden für "tier 1 & tier 2" Vorgehensweise [Quelle](https://markus.oberlehner.net/blog/two-tier-sass-variables-and-css-custom-properties/)
+- Einbau Google Maps anhand [Google Artikel](https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=de#javascript)
+  - Ich habe das Copyright & die Nutzungsbedingungen mit CSS ausgeblendet. Auf einer produktiven Seite ist dies vermutlich aufgrund der [Nutzungsbedingungen](https://cloud.google.com/maps-platform/terms/) nicht erlaubt.
 
 ## Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code
 

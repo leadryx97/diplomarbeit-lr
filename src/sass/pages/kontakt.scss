@@ -1,12 +1,28 @@
 .contact {
+  margin-bottom: 60px;
+  @include for-size(xx-large) {
+    margin-bottom: 120px;
+  }
   &__maps {
     grid-column: 2 / 3;
+    height: 250px;
+    width: 100%;
+    @include for-size(xx-large) {
+      grid-column: 3 / 13;
+      height: 350px;
+    }
   }
   &__information {
     grid-column: 2 / 3;
+    @include for-size(xx-large) {
+      grid-column: 3 / 13;
+    }
   }
   &__links {
     grid-column: 2 / 3;
+    @include for-size(xx-large) {
+      display: none;
+    }
   }
   &__link-list {
     padding-left: 0;
@@ -17,4 +33,10 @@
   &__link-item {
     text-decoration: none;
   }
+}
+
+/* google maps */
+/* remove copyright */
+.gmnoprint {
+  display: none;
 }

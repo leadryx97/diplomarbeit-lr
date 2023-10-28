@@ -914,14 +914,40 @@
   }
 }
 
+.contact {
+  margin-bottom: 60px;
+}
+@media (min-width: 1400px) {
+  .contact {
+    margin-bottom: 120px;
+  }
+}
 .contact__maps {
   grid-column: 2/3;
+  height: 250px;
+  width: 100%;
+}
+@media (min-width: 1400px) {
+  .contact__maps {
+    grid-column: 3/13;
+    height: 350px;
+  }
 }
 .contact__information {
   grid-column: 2/3;
 }
+@media (min-width: 1400px) {
+  .contact__information {
+    grid-column: 3/13;
+  }
+}
 .contact__links {
   grid-column: 2/3;
+}
+@media (min-width: 1400px) {
+  .contact__links {
+    display: none;
+  }
 }
 .contact__link-list {
   padding-left: 0;
@@ -931,6 +957,12 @@
 }
 .contact__link-item {
   text-decoration: none;
+}
+
+/* google maps */
+/* remove copyright */
+.gmnoprint {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
