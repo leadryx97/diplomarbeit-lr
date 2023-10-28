@@ -1,9 +1,11 @@
 .header {
-  background-color: $bg-secondary; /* dark-green */
+  background-color: $bg-secondary-transp; /* dark-green transparency */
   padding: 15px 22px 15px 22px;
   height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   @include for-size(large) {
-    background-color: $bg-secondary-transp; /* dark-green transparency */
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -311,13 +311,15 @@
 
 /* layout */
 .header {
-  background-color: #92b9af; /* dark-green */
+  background-color: rgba(146, 185, 175, 0.85); /* dark-green transparency */
   padding: 15px 22px 15px 22px;
   height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 @media (min-width: 992px) {
   .header {
-    background-color: rgba(146, 185, 175, 0.85); /* dark-green transparency */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -482,9 +484,9 @@
 .hero {
   background-image: url("../assets/images/jpg/home-header.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  height: 370px;
+  background-size: 110%;
+  background-position: center;
+  height: 285px;
 }
 @media (min-width: 576px) {
   .hero {
@@ -509,6 +511,7 @@
 @media (min-width: 1400px) {
   .hero {
     height: 822px;
+    margin-top: -130px;
   }
 }
 

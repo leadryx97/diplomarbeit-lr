@@ -3,10 +3,10 @@
   background: {
     image: url("../assets/images/jpg/home-header.jpg");
     repeat: no-repeat;
-    size: cover;
-    position: top;
+    size: 110%;
+    position: center;
   }
-  height: 370px;
+  height: 285px;
   @include for-size(small) {
     background: {
       position: center;
@@ -23,6 +23,7 @@
   }
   @include for-size(xx-large) {
     height: 822px;
+    margin-top: -130px;
   }
 }
 /* title */
