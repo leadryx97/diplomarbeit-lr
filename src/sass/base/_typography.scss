@@ -29,7 +29,6 @@
   @include for-size(large) {
     font-size: 3.1rem;
   }
-  /* subpages */
   &--subpage {
     margin-bottom: 20px;
     @include for-size(xx-large) {
@@ -38,6 +37,9 @@
   }
   &--news {
     text-align: left;
+  }
+  &--property-bold {
+    font-weight: $font-weight-bold;
   }
 }
 /* page home title */
@@ -209,5 +211,27 @@
   }
   &__link-item--bold {
     font-weight: $font-weight-bold;
+  }
+}
+
+/* property pages */
+.property-information {
+  &__title {
+    font-weight: $font-weight-bold;
+  }
+  &__button-interest {
+    font: {
+      family: $font-family-body;
+      weight: $font-weight-bold;
+      size: 1rem;
+    }
+    margin-top: 25px;
+  }
+}
+
+.latest-properties {
+  &__title {
+    text-align: center;
+    padding: 30px 0 30px 0;
   }
 }

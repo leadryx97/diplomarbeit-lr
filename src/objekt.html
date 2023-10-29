@@ -9,178 +9,178 @@
     <!-- header -->
     <include src="./partials/header.html"></include>
     <!-- page title -->
-    <h1>Zu verkaufen <span class="">Bijou am See</span></h1>
-    <!-- property image slider -->
-    <div class="slider">
-      <!-- property slider image (big on desktop) -->
-      <picture class="slider__image">
-        <source
-          srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
-          type="image/avif"
-        />
-        <source
-          srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
-          alt="Foto Immobilienobjekt"
-        />
-      </picture>
-      <!-- property slider next button (only mobile?) -->
-      <div class="slider__next-button-container">
-        <span class="slider__next-button"></span>
-      </div>
-      <!-- property slider previous button (only mobile?) -->
-      <div class="slider__previous-button-container">
-        <span class="slider__previous-button"></span>
-      </div>
-      <!-- property slider thumbnails (on desktop) -->
-      <div class="slider__thumbnails">
-        <div class="slider__thumbnail-column">
-          <picture class="slider__thumbnail-image">
-            <source
-              srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
-              type="image/avif"
-            />
-            <source
-              srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
-              type="image/webp"
-            />
-            <img
-              src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
-              alt="Thumbnail Foto Immobilienobjekt"
-            />
-          </picture>
+    <h1 class="page-title page-title--property">
+      Zu verkaufen <span class="page-title--property-bold">Bijou am See</span>
+    </h1>
+    <div class="grid">
+      <!-- property image slider -->
+      <div class="slider">
+        <!-- property slider image (big on desktop) -->
+        <picture class="slider__picture">
+          <source
+            srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
+            type="image/avif"
+          />
+          <source
+            srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
+            type="image/webp"
+          />
+          <img
+            src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
+            alt="Foto Immobilienobjekt"
+            class="slider__picture-img"
+          />
+        </picture>
+        <!-- property slider next button (only mobile?) -->
+        <div class="slider__next-button-container">
+          <span class="slider__next-button"></span>
         </div>
-        <!-- end of property slider thumbnails -->
-      </div>
-      <!-- end of property image slider -->
-    </div>
-    <!-- property information -->
-    <div class="property-information">
-      <!-- property information basics -->
-      <div class="property-information__basics">
-        <p>Verfügbarkeit</p>
-        <p>Ab sofort</p>
-        <p>Location</p>
-        <p>6210 Sursee, Luzern</p>
-        <p>Preis</p>
-        <p>CHF 2'800'000</p>
-        <p>Nutzfläche</p>
-        <p>Fläche 300m²</p>
-      </div>
-      <!-- property information details -->
-      <div class="property-information__details">
-        <!-- property information description -->
-        <div class="property-information__description">
-          <p>Beschreibung</p>
-          <p>
-            An mystischer Lage in der Nähe des berühmten Sursee-Waldes verkaufen
-            wir das vollständig renovierten Gebäude. Das Haus bietet mit den 13
-            attraktiven Räumen einem grosszügigen Umschwung am See eine nicht
-            alltägliche und einzigartige Atmosphäre.
-          </p>
+        <!-- property slider previous button (only mobile?) -->
+        <div class="slider__previous-button-container">
+          <span class="slider__previous-button"></span>
         </div>
-        <!-- property information map -->
-        <div class="property-information__map"></div>
-        <!-- property information interest modal -->
-        <dialog class="property-information__modal">
-          <div clas="property-information__modal-content">
-            <img
-              src="./assets/images/svg/close-x.svg"
-              alt="Schliessen Kreuz-Icon"
-              class="property-information__close-modal"
-            />
-            <h2>Interesse am Objekt</h2>
-            <h3>Bijou am See</h3>
-            <form class="property-information__modal-form">
-              <label for="firstname">Vorname</label>
-              <input type="text" name="firstname" required />
-              <label for="lastname">Nachname</label>
-              <input type="text" name="lastname" required />
-              <label for="address">Adresse</label>
-              <input type="text" name="address" />
-              <div class="property-information__modal-form-column">
-                <label for="postalCode">PLZ</label>
-                <input type="text" name="postalCode" />
-              </div>
-              <div class="property-information__modal-form-column">
-                <label for="location">Ort</label>
-                <input type="text" name="location" />
-              </div>
-              <label for="email">E-Mail</label>
-              <input type="email" name="email" />
-              <label for="tel">Telefonnummer</label>
-              <input type="tel" name="tel" />
-              <label for="message">Ihre Nachricht</label>
-              <textarea name="message" rows="5" cols="33"></textarea>
-              <input type="checkbox" name="information" />
-              <label for="information">Information</label>
-              <input type="checkbox" name="visit" />
-              <label for="visit">Besichtigung</label>
-              <button type="submit">Senden</button>
-            </form>
+        <!-- property slider thumbnails (on desktop) -->
+        <div class="slider__thumbnails">
+          <div class="slider__thumbnail-column">
+            <picture class="slider__thumbnail-image">
+              <source
+                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
+                type="image/avif"
+              />
+              <source
+                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
+                type="image/webp"
+              />
+              <img
+                src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
+                alt="Thumbnail Foto Immobilienobjekt"
+              />
+            </picture>
           </div>
-          <!-- end of property information interest modal -->
-        </dialog>
-        <!-- property information interest -->
-        <div class="property-information__interest">
-          <p>Haben wir Ihr Interesse geweckt?</p>
-          <!-- property information interest open modal (form) -->
-          <button class="property-information__button-interest">
-            Jetzt anfragen!
-          </button>
+          <!-- end of property slider thumbnails -->
         </div>
-        <!-- end of property information details -->
+        <!-- end of property image slider -->
       </div>
-      <!-- end of property information -->
     </div>
-    <!-- latest properties -->
-    <div class="latest-properties">
-      <!-- latest properties title (only on desktop) -->
-      <h2>Aktuellste Objekte</h2>
-      <!-- latest properties grid -->
-      <div class="latest-properties__grid">
-        <!-- latest properties object -->
-        <div class="latest-properties__object">
-          <!-- latest properties object image -->
-          <picture class="latest-properties__object-image">
-            <source
-              srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
-              type="image/avif"
-            />
-            <source
-              srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
-              type="image/webp"
-            />
-            <img
-              src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
-              alt="Foto Immobilienobjekt"
-            />
-          </picture>
-          <!-- latest properties object information -->
-          <div class="latest-properties__object-information">
-            <p class="latest-properties__object-status">
-              Zu verkaufen ab sofort
-            </p>
-            <p class="latest-properties__object-location">
-              6210 Sursee, Luzern
-            </p>
-            <p class="latest-properties__object-title">Bijou am See</p>
-            <p class="latest-properties__object-size">Fläche 300m²</p>
-            <p class="latest-properties__object-price">Preis: CHF 2'800'000</p>
-          </div>
-          <!-- end of latest properties object -->
+    <div class="grid">
+      <!-- property information -->
+      <div class="property-information">
+        <!-- property information basics -->
+        <div class="property-information__basics">
+          <p class="property-information__title">Verfügbarkeit</p>
+          <p class="property-information__specs">Ab sofort</p>
+          <p class="property-information__title">Location</p>
+          <p class="property-information__specs">6210 Sursee, Luzern</p>
+          <p class="property-information__title">Preis</p>
+          <p class="property-information__specs">CHF 2'800'000</p>
+          <p class="property-information__title">Nutzfläche</p>
+          <p class="property-information__specs">Fläche 300m²</p>
         </div>
-        <!-- end of latest properties grid -->
+        <!-- property information details -->
+        <div class="property-information__details">
+          <!-- property information description -->
+          <div class="property-information__description">
+            <p class="property-information__title">Beschreibung</p>
+            <p class="property-information__specs">
+              An mystischer Lage in der Nähe des berühmten Sursee-Waldes verkaufen wir das
+              vollständig renovierten Gebäude. Das Haus bietet mit den 13 attraktiven Räumen einem
+              grosszügigen Umschwung am See eine nicht alltägliche und einzigartige Atmosphäre.
+            </p>
+          </div>
+          <!-- property information map -->
+          <div class="property-information__map"></div>
+          <!-- property information interest modal -->
+          <dialog class="property-information__modal">
+            <div clas="property-information__modal-content">
+              <img
+                src="./assets/images/svg/close-x.svg"
+                alt="Schliessen Kreuz-Icon"
+                class="property-information__close-modal"
+              />
+              <h2>Interesse am Objekt</h2>
+              <h3>Bijou am See</h3>
+              <form class="property-information__modal-form">
+                <label for="firstname">Vorname</label>
+                <input type="text" name="firstname" required />
+                <label for="lastname">Nachname</label>
+                <input type="text" name="lastname" required />
+                <label for="address">Adresse</label>
+                <input type="text" name="address" />
+                <div class="property-information__modal-form-column">
+                  <label for="postalCode">PLZ</label>
+                  <input type="text" name="postalCode" />
+                </div>
+                <div class="property-information__modal-form-column">
+                  <label for="location">Ort</label>
+                  <input type="text" name="location" />
+                </div>
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" />
+                <label for="tel">Telefonnummer</label>
+                <input type="tel" name="tel" />
+                <label for="message">Ihre Nachricht</label>
+                <textarea name="message" rows="5" cols="33"></textarea>
+                <input type="checkbox" name="information" />
+                <label for="information">Information</label>
+                <input type="checkbox" name="visit" />
+                <label for="visit">Besichtigung</label>
+                <button type="submit">Senden</button>
+              </form>
+            </div>
+            <!-- end of property information interest modal -->
+          </dialog>
+          <!-- property information interest -->
+          <div class="property-information__interest">
+            <p class="property-information__title">Haben wir Ihr Interesse geweckt?</p>
+            <!-- property information interest open modal (form) -->
+            <button class="property-information__button-interest">Jetzt anfragen!</button>
+          </div>
+          <!-- end of property information details -->
+        </div>
+        <!-- end of property information -->
       </div>
-      <!-- latest properties link to all objects -->
-      <div class="latest-properties__all">
-        <p>Alle Objekte anzeigen</p>
-        <span class="latest-properties__all-arrow"></span>
-      </div>
-      <!-- end of latest properties -->
+    </div>
+    <div class="grid grid--latest-properties">
+ <!-- latest properties -->
+ <div class="latest-properties">
+  <!-- latest properties title (only on desktop) -->
+  <h2 class="latest-properties__title">Aktuellste Objekte</h2>
+  <!-- latest properties object -->
+  <div class="latest-properties__element">
+    <!-- latest properties object image -->
+    <picture class="latest-properties__element-picture">
+      <source
+        srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
+        type="image/avif"
+      />
+      <source
+        srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
+        type="image/webp"
+      />
+      <img
+        src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
+        alt="Foto Immobilienobjekt"
+        class="latest-properties__element-picture-img"
+      />
+    </picture>
+    <!-- latest properties object information -->
+    <div class="latest-properties__object-information">
+      <p class="latest-properties__object-status">Zu verkaufen ab sofort</p>
+      <p class="latest-properties__object-location">6210 Sursee, Luzern</p>
+      <p class="latest-properties__object-title">Bijou am See</p>
+      <p class="latest-properties__object-size">Fläche 300m²</p>
+      <p class="latest-properties__object-price">Preis: CHF 2'800'000</p>
+    </div>
+    <!-- end of latest properties object -->
+  </div>
+  <!-- latest properties link to all objects -->
+  <div class="latest-properties__all">
+    <p>Alle Objekte anzeigen</p>
+    <span class="latest-properties__all-arrow"></span>
+  </div>
+</div>
+<!-- end of latest properties -->
+</div>
     </div>
     <!-- footer -->
     <include src="./partials/footer.html"></include>

@@ -86,3 +86,14 @@
     }
   }
 }
+
+/* property pages */
+.property-information {
+  &__button-interest {
+    border: none;
+    background-color: $btn-primary; /* dark green */
+    color: $btn-txt; /* white */
+    height: 45px;
+    width: 100%;
+  }
+}

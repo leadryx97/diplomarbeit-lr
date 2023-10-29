@@ -57,7 +57,6 @@
   line-height: 1.5;
   text-align: center;
   margin-top: 30px;
-  /* subpages */
 }
 @media (min-width: 992px) {
   .page-title {
@@ -74,6 +73,9 @@
 }
 .page-title--news {
   text-align: left;
+}
+.page-title--property-bold {
+  font-weight: 700;
 }
 
 /* page home title */
@@ -231,6 +233,22 @@
   font-weight: 700;
 }
 
+/* property pages */
+.property-information__title {
+  font-weight: 700;
+}
+.property-information__button-interest {
+  font-family: "Montserrat", Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 25px;
+}
+
+.latest-properties__title {
+  text-align: center;
+  padding: 30px 0 30px 0;
+}
+
 /* components */
 /* home properties buttons */
 .properties__button {
@@ -322,6 +340,15 @@
   .news__button-back {
     grid-column: 4/12;
   }
+}
+
+/* property pages */
+.property-information__button-interest {
+  border: none;
+  background-color: #92b9af; /* dark green */
+  color: #ffffff; /* white */
+  height: 45px;
+  width: 100%;
 }
 
 /* layout */
@@ -456,6 +483,7 @@
   /* index page grid (properties search) */
   /* news overview page */
   /* news pages */
+  /* property pages */
 }
 @media (min-width: 1400px) {
   .grid {
@@ -492,6 +520,9 @@
   .grid--news {
     gap: 30px 100px;
   }
+}
+.grid--latest-properties {
+  background-color: #92b9af;
 }
 
 /* pages */
@@ -963,6 +994,54 @@
 /* remove copyright */
 .gmnoprint {
   display: none;
+}
+
+.slider {
+  grid-column: 2/3;
+}
+.slider__picture-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.slider__thumbnails {
+  display: none;
+}
+@media (min-width: 1400px) {
+  .slider__thumbnails {
+    display: block;
+  }
+}
+
+.property-information {
+  grid-column: 2/3;
+}
+.property-information__title {
+  margin: 25px 0px 5px 0px;
+}
+.property-information__specs {
+  margin: 0;
+}
+.property-information__map {
+  grid-column: 2/3;
+  height: 220px;
+  width: 100%;
+  margin: 15px 0 15px 0;
+}
+@media (min-width: 1400px) {
+  .property-information__map {
+    grid-column: 3/13;
+    height: 350px;
+  }
+}
+
+.latest-properties {
+  grid-column: 2/3;
+}
+.latest-properties__element-picture-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=main.css.map */
