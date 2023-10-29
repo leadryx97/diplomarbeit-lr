@@ -10,6 +10,9 @@ import {
   setActiveItem,
 } from "./header.js";
 
+// import location icon
+import markerIcon from "../assets/images/svg/map-location-marker.svg";
+
 // google maps
 ((g) => {
   var h,
@@ -53,7 +56,7 @@ let map;
 
 async function initMap() {
   // location
-  const position = { lat: 47.178682, lng: 9.451325 };
+  const position = { lat: 47.178561307288355, lng: 9.451303899836864 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -61,18 +64,23 @@ async function initMap() {
 
   // The map, centered at home & house
   map = new Map(document.querySelector(".contact__maps"), {
-    zoom: 15,
+    zoom: 15.7,
     center: position,
     disableDefaultUI: true,
     mapId: "560e1e5e3f75ad8c",
   });
 
   // The marker, positioned at home & house
+  const iconSize = new google.maps.Size(50, 50);
 
   new google.maps.Marker({
     position: position,
     map,
     title: "Hello World!",
+    icon: {
+      url: markerIcon,
+      scaledSize: iconSize,
+    },
   });
 }
 
