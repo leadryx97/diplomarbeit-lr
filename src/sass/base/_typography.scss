@@ -215,6 +215,12 @@
 }
 
 /* property pages */
+.property-back {
+  &__text {
+    font-weight: $font-weight-bold;
+  }
+}
+
 .property-information {
   &__title {
     font-weight: $font-weight-bold;
@@ -232,6 +238,9 @@
 .latest-properties {
   &__title {
     text-align: center;
-    padding: 30px 0 30px 0;
+    padding: 0 0 30px 0;
+  }
+  &__all-link {
+    font-weight: $font-weight-bold;
   }
 }

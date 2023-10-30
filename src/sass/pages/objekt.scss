@@ -1,9 +1,28 @@
+.property-back {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 20px;
+  &__arrow {
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5;
+    height: 22px;
+  }
+}
+
 .slider {
   grid-column: 2 / 3;
+  @include for-size(xx-large) {
+    grid-column: 4 / 12;
+  }
   &__picture-img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    @include for-size(xx-large) {
+      height: 500px;
+    }
   }
   &__thumbnails {
     display: none;
@@ -11,10 +30,27 @@
       display: block;
     }
   }
+  &__thumbnail-column {
+    @include for-size(xx-large) {
+      display: flex;
+      gap: 12px;
+    }
+  }
+  &__thumbnail-picture-img {
+    width: 120px;
+    height: 70px;
+    object-fit: cover;
+  }
 }
 
 .property-information {
   grid-column: 2 / 3;
+  @include for-size(xx-large) {
+    grid-column: 4 / 12;
+    display: flex;
+    justify-content: space-between;
+    gap: 200px;
+  }
   &__title {
     margin: 25px 0px 5px 0px;
   }
@@ -29,6 +65,7 @@
     @include for-size(xx-large) {
       grid-column: 3 / 13;
       height: 350px;
+      order: 10;
     }
   }
 }
@@ -39,5 +76,17 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+  }
+  &__all {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 20px;
+  }
+  &__all-arrow {
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5;
+    height: 22px;
   }
 }
