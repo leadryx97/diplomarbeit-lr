@@ -106,83 +106,84 @@
         <!-- end of property image slider -->
       </div>
     </div>
-    <div class="grid">
-      <!-- property information -->
-      <div class="property-information">
-        <!-- property information basics -->
-        <div class="property-information__basics">
+    <!-- property information -->
+    <div class="property-information">
+      <div class="grid">
+        <div class="property-information__category">
           <p class="property-information__title">Verfügbarkeit</p>
           <p class="property-information__specs">Ab sofort</p>
+        </div>
+        <div class="property-information__category">
           <p class="property-information__title">Location</p>
           <p class="property-information__specs">6210 Sursee, Luzern</p>
+        </div>
+        <div class="property-information__category">
           <p class="property-information__title">Preis</p>
           <p class="property-information__specs">CHF 2'800'000</p>
+        </div>
+        <div class="property-information__category">
           <p class="property-information__title">Nutzfläche</p>
           <p class="property-information__specs">Fläche 300m²</p>
         </div>
-        <!-- property information details -->
-        <div class="property-information__details">
-          <!-- property information description -->
-          <div class="property-information__description">
-            <p class="property-information__title">Beschreibung</p>
-            <p class="property-information__specs">
-              An mystischer Lage in der Nähe des berühmten Sursee-Waldes verkaufen wir das
-              vollständig renovierten Gebäude. Das Haus bietet mit den 13 attraktiven Räumen einem
-              grosszügigen Umschwung am See eine nicht alltägliche und einzigartige Atmosphäre.
-            </p>
-          </div>
-          <!-- property information map -->
-          <div class="property-information__map"></div>
-          <!-- property information interest modal -->
-          <dialog class="property-information__modal">
-            <div clas="property-information__modal-content">
-              <img
-                src="./assets/images/svg/close-x.svg"
-                alt="Schliessen Kreuz-Icon"
-                class="property-information__close-modal"
-              />
-              <h2>Interesse am Objekt</h2>
-              <h3>Bijou am See</h3>
-              <form class="property-information__modal-form">
-                <label for="firstname">Vorname</label>
-                <input type="text" name="firstname" required />
-                <label for="lastname">Nachname</label>
-                <input type="text" name="lastname" required />
-                <label for="address">Adresse</label>
-                <input type="text" name="address" />
-                <div class="property-information__modal-form-column">
-                  <label for="postalCode">PLZ</label>
-                  <input type="text" name="postalCode" />
-                </div>
-                <div class="property-information__modal-form-column">
-                  <label for="location">Ort</label>
-                  <input type="text" name="location" />
-                </div>
-                <label for="email">E-Mail</label>
-                <input type="email" name="email" />
-                <label for="tel">Telefonnummer</label>
-                <input type="tel" name="tel" />
-                <label for="message">Ihre Nachricht</label>
-                <textarea name="message" rows="5" cols="33"></textarea>
-                <input type="checkbox" name="information" />
-                <label for="information">Information</label>
-                <input type="checkbox" name="visit" />
-                <label for="visit">Besichtigung</label>
-                <button type="submit">Senden</button>
-              </form>
-            </div>
-            <!-- end of property information interest modal -->
-          </dialog>
-          <!-- property information interest -->
-          <div class="property-information__interest">
-            <p class="property-information__title">Haben wir Ihr Interesse geweckt?</p>
-            <!-- property information interest open modal (form) -->
-            <button class="property-information__button-interest">Jetzt anfragen!</button>
-          </div>
-          <!-- end of property information details -->
+        <!-- property information description -->
+        <div class="property-information__category property-information__category--right">
+          <p class="property-information__title">Beschreibung</p>
+          <p class="property-information__specs">
+            An mystischer Lage in der Nähe des berühmten Sursee-Waldes verkaufen wir das vollständig
+            renovierten Gebäude. Das Haus bietet mit den 13 attraktiven Räumen einem grosszügigen
+            Umschwung am See eine nicht alltägliche und einzigartige Atmosphäre.
+          </p>
         </div>
-        <!-- end of property information -->
+        <!-- property information map -->
+        <div class="property-information__map"></div>
+        <!-- property information interest modal -->
+        <dialog class="property-information__modal">
+          <div clas="property-information__modal-content">
+            <img
+              src="./assets/images/svg/close-x.svg"
+              alt="Schliessen Kreuz-Icon"
+              class="property-information__close-modal"
+            />
+            <h2>Interesse am Objekt</h2>
+            <h3>Bijou am See</h3>
+            <form class="property-information__modal-form">
+              <label for="firstname">Vorname</label>
+              <input type="text" name="firstname" required />
+              <label for="lastname">Nachname</label>
+              <input type="text" name="lastname" required />
+              <label for="address">Adresse</label>
+              <input type="text" name="address" />
+              <div class="property-information__modal-form-column">
+                <label for="postalCode">PLZ</label>
+                <input type="text" name="postalCode" />
+              </div>
+              <div class="property-information__modal-form-column">
+                <label for="location">Ort</label>
+                <input type="text" name="location" />
+              </div>
+              <label for="email">E-Mail</label>
+              <input type="email" name="email" />
+              <label for="tel">Telefonnummer</label>
+              <input type="tel" name="tel" />
+              <label for="message">Ihre Nachricht</label>
+              <textarea name="message" rows="5" cols="33"></textarea>
+              <input type="checkbox" name="information" />
+              <label for="information">Information</label>
+              <input type="checkbox" name="visit" />
+              <label for="visit">Besichtigung</label>
+              <button type="submit">Senden</button>
+            </form>
+          </div>
+          <!-- end of property information interest modal -->
+        </dialog>
+        <!-- property information interest -->
+        <div class="property-information__interest">
+          <p class="property-information__title">Haben wir Ihr Interesse geweckt?</p>
+          <!-- property information interest open modal (form) -->
+          <button class="property-information__button-interest">Jetzt anfragen!</button>
+        </div>
       </div>
+      <!-- end of property information -->
     </div>
     <div class="grid grid--latest-properties">
       <!-- latest properties -->

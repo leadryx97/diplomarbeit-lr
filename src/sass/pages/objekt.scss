@@ -13,6 +13,7 @@
 
 .slider {
   grid-column: 2 / 3;
+  margin-bottom: 30px;
   @include for-size(xx-large) {
     grid-column: 4 / 12;
   }
@@ -37,22 +38,27 @@
     }
   }
   &__thumbnail-picture-img {
-    width: 120px;
-    height: 70px;
+    width: 110px;
+    height: 65px;
     object-fit: cover;
   }
 }
 
 .property-information {
-  grid-column: 2 / 3;
-  @include for-size(xx-large) {
-    grid-column: 4 / 12;
-    display: flex;
-    justify-content: space-between;
-    gap: 200px;
+  &__category {
+    grid-column: 2 / 3;
+    @include for-size(xx-large) {
+      grid-column: 4 / 7;
+    }
+    &--right {
+      @include for-size(xx-large) {
+        grid-column: 7 / 12;
+        grid-row: 1 / 4;
+      }
+    }
   }
   &__title {
-    margin: 25px 0px 5px 0px;
+    margin: 0 0 5px 0;
   }
   &__specs {
     margin: 0;
@@ -63,9 +69,17 @@
     width: 100%;
     margin: 15px 0 15px 0;
     @include for-size(xx-large) {
-      grid-column: 3 / 13;
-      height: 350px;
-      order: 10;
+      height: 300px;
+      grid-column: 4 / 12;
+      margin-top: -10px;
+    }
+  }
+  &__interest {
+    grid-column: 2 / 3;
+    @include for-size(xx-large) {
+      grid-column: 7 / 12;
+      grid-row: 3 / 5;
+      align-self: end;
     }
   }
 }
