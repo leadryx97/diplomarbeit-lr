@@ -147,31 +147,60 @@
             <h2>Interesse am Objekt</h2>
             <h3>Bijou am See</h3>
             <form class="property-information__modal-form">
-              <label for="firstname">Vorname</label>
-              <input type="text" name="firstname" required />
-              <label for="lastname">Nachname</label>
-              <input type="text" name="lastname" required />
-              <label for="address">Adresse</label>
-              <input type="text" name="address" />
-              <div class="property-information__modal-form-column">
-                <label for="postalCode">PLZ</label>
-                <input type="text" name="postalCode" />
+              <div class="grid">
+                <div class="property-information__modal-element">
+                  <label for="firstname">Vorname</label>
+                  <input
+                    type="text"
+                    name="firstname"
+                    class="property-information__modal-input"
+                    required
+                  />
+                </div>
+                <div class="property-information__modal-element">
+                  <label for="lastname">Nachname</label>
+                  <input
+                    type="text"
+                    name="lastname"
+                    class="property-information__modal-input"
+                    required
+                  />
+                </div>
+                <div class="property-information__modal-element">
+                  <label for="address">Adresse</label>
+                  <input type="text" name="address" class="property-information__modal-input" />
+                </div>
+                <div class="property-information__modal-element">
+                  <label for="postalCode">PLZ</label>
+                  <input type="text" name="postalCode" class="property-information__modal-input" />
+                </div>
+                <div class="property-information__modal-element">
+                  <label for="location">Ort</label>
+                  <input type="text" name="location" class="property-information__modal-input" />
+                </div>
+                <div class="property-information__modal-element">
+                  <label for="email">E-Mail</label>
+                  <input type="email" name="email" class="property-information__modal-input" />
+                </div>
+                <div class="property-information__modal-element">
+                  <label for="tel">Telefonnummer</label>
+                  <input type="tel" name="tel" class="property-information__modal-input" />
+                </div>
+                <div class="property-information__modal-element">
+                  <label for="message">Ihre Nachricht</label>
+                  <textarea name="message" rows="9" cols="33"></textarea>
+                </div>
+                <div class="property-information__modal-element">
+                  <input type="checkbox" name="information" />
+                  <label for="information">Information</label>
+                </div>
+                <div class="property-information__modal-element">
+                  <input type="checkbox" name="visit" /> <label for="visit">Besichtigung</label>
+                </div>
+                <div class="property-information__modal-element">
+                  <button type="submit" class="property-information__modal-button">Senden</button>
+                </div>
               </div>
-              <div class="property-information__modal-form-column">
-                <label for="location">Ort</label>
-                <input type="text" name="location" />
-              </div>
-              <label for="email">E-Mail</label>
-              <input type="email" name="email" />
-              <label for="tel">Telefonnummer</label>
-              <input type="tel" name="tel" />
-              <label for="message">Ihre Nachricht</label>
-              <textarea name="message" rows="5" cols="33"></textarea>
-              <input type="checkbox" name="information" />
-              <label for="information">Information</label>
-              <input type="checkbox" name="visit" />
-              <label for="visit">Besichtigung</label>
-              <button type="submit">Senden</button>
             </form>
           </div>
           <!-- end of property information interest modal -->

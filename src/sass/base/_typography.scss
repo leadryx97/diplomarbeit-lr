@@ -233,6 +233,13 @@
     }
     margin-top: 25px;
   }
+  &__modal-button {
+    font: {
+      family: $font-family-body;
+      weight: $font-weight-bold;
+      size: 1rem;
+    }
+  }
 }
 
 .latest-properties {

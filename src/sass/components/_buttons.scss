@@ -99,4 +99,11 @@
       margin: 10px 0 0 0;
     }
   }
+  &__modal-button {
+    border: none;
+    background-color: $btn-tertiary; /* black */
+    color: $btn-txt; /* white */
+    height: 45px;
+    width: 100%;
+  }
 }

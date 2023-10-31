@@ -85,3 +85,16 @@ async function initMap() {
 }
 
 initMap();
+
+// modal form
+const requestButton = document.querySelector(".property-information__button-interest");
+const modal = document.querySelector(".property-information__modal");
+const closeModal = document.querySelector(".property-information__close-modal");
+
+requestButton.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
