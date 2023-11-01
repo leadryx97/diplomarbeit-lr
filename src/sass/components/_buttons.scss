@@ -97,6 +97,7 @@
     width: 100%;
     @include for-size(xx-large) {
       margin: 10px 0 0 0;
+      width: 400px;
     }
   }
   &__modal-button {
@@ -105,5 +106,6 @@
     color: $btn-txt; /* white */
     height: 45px;
     width: 100%;
+    margin: 15px 0 70px 0;
   }
 }

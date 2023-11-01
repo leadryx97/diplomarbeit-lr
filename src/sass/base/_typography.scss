@@ -162,9 +162,11 @@
     font-weight: $font-weight-bold;
   }
   &__element-button {
-    font-family: $font-family-body;
-    font-weight: $font-weight-bold;
-    font-size: 1rem;
+    font: {
+      family: $font-family-body;
+      weight: $font-weight-bold;
+      size: 1rem;
+    }
     @include for-size(large) {
       font-size: 1.3rem;
     }
@@ -238,6 +240,18 @@
       family: $font-family-body;
       weight: $font-weight-bold;
       size: 1rem;
+    }
+  }
+  &__modal-title {
+    font-weight: $font-weight-regular;
+    font-size: 1.7rem;
+  }
+  &__modal-property {
+    font-size: 1.6rem;
+  }
+  &__modal-label {
+    &--bold {
+      font-weight: $font-weight-bold;
     }
   }
 }

@@ -138,71 +138,115 @@
         <div class="property-information__map"></div>
         <!-- property information interest modal -->
         <dialog class="property-information__modal">
-          <div clas="property-information__modal-content">
+          <div class="grid grid--modal">
             <img
               src="./assets/images/svg/close-x.svg"
               alt="Schliessen Kreuz-Icon"
               class="property-information__close-modal"
             />
-            <h2>Interesse am Objekt</h2>
-            <h3>Bijou am See</h3>
-            <form class="property-information__modal-form">
-              <div class="grid">
+            <h2 class="property-information__modal-title">Interesse am Objekt</h2>
+            <h3 class="property-information__modal-property">Bijou am See</h3>
+          </div>
+          <form class="property-information__modal-form">
+            <div class="grid">
+              <div class="property-information__modal-element">
+                <label for="firstname" class="property-information__modal-label">Vorname</label>
+                <input
+                  type="text"
+                  name="firstname"
+                  class="property-information__modal-input"
+                  required
+                />
+              </div>
+              <div
+                class="property-information__modal-element property-information__modal-element--right"
+              >
+                <label for="lastname" class="property-information__modal-label">Nachname</label>
+                <input
+                  type="text"
+                  name="lastname"
+                  class="property-information__modal-input"
+                  required
+                />
+              </div>
+              <div class="property-information__modal-element">
+                <label for="address" class="property-information__modal-label">Adresse</label>
+                <input type="text" name="address" class="property-information__modal-input" />
+              </div>
+              <div
+                class="property-information__modal-element-sm property-information__modal-element-sm--right"
+              >
                 <div class="property-information__modal-element">
-                  <label for="firstname">Vorname</label>
+                  <label for="postalCode" class="property-information__modal-label">PLZ</label>
                   <input
                     type="text"
-                    name="firstname"
-                    class="property-information__modal-input"
-                    required
+                    name="postalCode"
+                    class="property-information__modal-input property-information__modal-input--postal"
                   />
                 </div>
                 <div class="property-information__modal-element">
-                  <label for="lastname">Nachname</label>
+                  <label for="location" class="property-information__modal-label">Ort</label>
                   <input
                     type="text"
-                    name="lastname"
-                    class="property-information__modal-input"
-                    required
+                    name="location"
+                    class="property-information__modal-input property-information__modal-input--location"
                   />
-                </div>
-                <div class="property-information__modal-element">
-                  <label for="address">Adresse</label>
-                  <input type="text" name="address" class="property-information__modal-input" />
-                </div>
-                <div class="property-information__modal-element">
-                  <label for="postalCode">PLZ</label>
-                  <input type="text" name="postalCode" class="property-information__modal-input" />
-                </div>
-                <div class="property-information__modal-element">
-                  <label for="location">Ort</label>
-                  <input type="text" name="location" class="property-information__modal-input" />
-                </div>
-                <div class="property-information__modal-element">
-                  <label for="email">E-Mail</label>
-                  <input type="email" name="email" class="property-information__modal-input" />
-                </div>
-                <div class="property-information__modal-element">
-                  <label for="tel">Telefonnummer</label>
-                  <input type="tel" name="tel" class="property-information__modal-input" />
-                </div>
-                <div class="property-information__modal-element">
-                  <label for="message">Ihre Nachricht</label>
-                  <textarea name="message" rows="9" cols="33"></textarea>
-                </div>
-                <div class="property-information__modal-element">
-                  <input type="checkbox" name="information" />
-                  <label for="information">Information</label>
-                </div>
-                <div class="property-information__modal-element">
-                  <input type="checkbox" name="visit" /> <label for="visit">Besichtigung</label>
-                </div>
-                <div class="property-information__modal-element">
-                  <button type="submit" class="property-information__modal-button">Senden</button>
                 </div>
               </div>
-            </form>
-          </div>
+              <div
+                class="property-information__modal-element property-information__modal-element--right"
+              >
+                <label for="email" class="property-information__modal-label">E-Mail</label>
+                <input type="email" name="email" class="property-information__modal-input" />
+              </div>
+              <div
+                class="property-information__modal-element property-information__modal-element--after"
+              >
+                <label for="tel" class="property-information__modal-label">Telefonnummer</label>
+                <input type="tel" name="tel" class="property-information__modal-input" />
+              </div>
+              <div
+                class="property-information__modal-element property-information__modal-element--big"
+              >
+                <label for="message" class="property-information__modal-label"
+                  >Ihre Nachricht</label
+                >
+                <textarea
+                  name="message"
+                  rows="9"
+                  cols="33"
+                  class="property-information__modal-textarea"
+                ></textarea>
+              </div>
+              <div
+                class="property-information__modal-element property-information__modal-element--checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="information"
+                  class="property-information__modal-checkbox"
+                />
+                <label
+                  for="information"
+                  class="property-information__modal-label property-information__modal-label--bold"
+                  >Information</label
+                >
+              </div>
+              <div
+                class="property-information__modal-element property-information__modal-element--checkbox"
+              >
+                <input type="checkbox" name="visit" class="property-information__modal-checkbox" />
+                <label
+                  for="visit"
+                  class="property-information__modal-label property-information__modal-label--bold"
+                  >Besichtigung</label
+                >
+              </div>
+              <div class="property-information__modal-element">
+                <button type="submit" class="property-information__modal-button">Senden</button>
+              </div>
+            </div>
+          </form>
           <!-- end of property information interest modal -->
         </dialog>
         <!-- property information interest -->

@@ -83,24 +83,102 @@
     }
   }
   &__modal {
+    position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
     background-color: $bg-secondary;
     border: none;
-    max-height: 100%;
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 19px;
+    @include for-size(xx-large) {
+      padding: 25px;
+    }
+  }
+  &__close-modal {
+    grid-column: 3;
+    @include for-size(xx-large) {
+      grid-column: 15;
+    }
+  }
+  &__modal-title {
+    grid-column: 2 / 3;
+    margin: 30px 0 0 0;
+    @include for-size(xx-large) {
+      grid-column: 2 / 12;
+    }
+  }
+  &__modal-property {
+    grid-column: 2 / 3;
+    margin: 0 0 60px 0;
+    @include for-size(xx-large) {
+      grid-column: 2 / 12;
+    }
   }
   &__modal-element {
     grid-column: 2 / 3;
     display: flex;
     flex-direction: column;
+    @include for-size(xx-large) {
+      grid-column: 2 / 8;
+    }
+    &--right {
+      @include for-size(xx-large) {
+        grid-column: 8 / 14;
+      }
+    }
+    &--after {
+      margin-bottom: 20px;
+    }
+    &--checkbox {
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+    }
+    &--big {
+      @include for-size(xx-large) {
+        grid-column: 2 / 14;
+      }
+    }
+  }
+  &__modal-element-sm {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &--right {
+      @include for-size(xx-large) {
+        grid-column: 8 / 14;
+      }
+    }
   }
   &__modal-input {
     height: 40px;
+    margin-top: 5px;
+    &--postal {
+      width: 110px;
+      @include for-size(xx-large) {
+        width: 200px;
+      }
+    }
+    &--location {
+      width: 150px;
+      @include for-size(xx-large) {
+        width: 350px;
+      }
+    }
+  }
+  &__modal-textarea {
+    margin: 5px 0 15px 0;
+    border: none;
+  }
+  &__modal-checkbox {
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: $bg-tertiary;
+    margin: 0;
   }
 }
 
