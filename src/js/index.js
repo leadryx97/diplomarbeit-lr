@@ -10,6 +10,54 @@ import {
   setActiveItem,
 } from "./header.js";
 
+// import graphql
+import { GraphQLClient, gql } from "graphql-request";
+
+const graphQLClient = new GraphQLClient("https://dev22-api.web-professionals.ch/graphql");
+
+let properties = [];
+
+// graphql: show properties
+async function showProperties() {
+  try {
+    const showQuery = gql`
+      query {
+        estates {
+          id
+          estate_type
+          availability
+          canton
+          city
+          title
+          usable_area
+          prize
+        }
+      }
+    `;
+    const response = await graphQLClient.request(showQuery);
+    const allProperties = response.estates;
+
+    properties = allProperties;
+    console.log(response);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  showProperties();
+});
+
+// graphql: create list of properties
+/*
+function renderList() {
+  list.innerHTML = '';
+  properties.forEach(function (property) => {
+    const li = document.createElement('div');
+    div.classList.add
+  })
+}
+*/
 // properties form toggle switch
 const switchToggle = document.querySelector(".properties__switch-input");
 const switchBuy = document.querySelector(".properties__switch-value--buy");
