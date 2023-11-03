@@ -107,5 +107,10 @@
     height: 45px;
     width: 100%;
     margin: 15px 0 70px 0;
+    @include for-size(xx-large) {
+      margin: 0;
+      width: 300px;
+      align-self: end;
+    }
   }
 }

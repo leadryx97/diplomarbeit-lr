@@ -98,3 +98,12 @@ requestButton.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
   modal.close();
 });
+
+// icon checkbox
+const checkbox = document.querySelectorAll(".property-information__modal-checkbox");
+
+checkbox.forEach((checkboxElement) => {
+  checkboxElement.addEventListener("click", () => {
+    checkboxElement.classList.toggle("property-information__modal-checkbox--checked");
+  });
+});

@@ -241,13 +241,22 @@
       weight: $font-weight-bold;
       size: 1rem;
     }
+    @include for-size(xx-large) {
+      font-size: 1.2rem;
+    }
   }
   &__modal-title {
     font-weight: $font-weight-regular;
     font-size: 1.7rem;
+    @include for-size(xx-large) {
+      font-size: 2rem;
+    }
   }
   &__modal-property {
     font-size: 1.6rem;
+    @include for-size(xx-large) {
+      font-size: 1.9rem;
+    }
   }
   &__modal-label {
     &--bold {

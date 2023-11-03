@@ -148,7 +148,7 @@
             <h3 class="property-information__modal-property">Bijou am See</h3>
           </div>
           <form class="property-information__modal-form">
-            <div class="grid">
+            <div class="grid grid--modal-inside">
               <div class="property-information__modal-element">
                 <label for="firstname" class="property-information__modal-label">Vorname</label>
                 <input
@@ -176,7 +176,9 @@
               <div
                 class="property-information__modal-element-sm property-information__modal-element-sm--right"
               >
-                <div class="property-information__modal-element">
+                <div
+                  class="property-information__modal-element property-information__modal-element--postal"
+                >
                   <label for="postalCode" class="property-information__modal-label">PLZ</label>
                   <input
                     type="text"
@@ -184,7 +186,9 @@
                     class="property-information__modal-input property-information__modal-input--postal"
                   />
                 </div>
-                <div class="property-information__modal-element">
+                <div
+                  class="property-information__modal-element property-information__modal-element--location"
+                >
                   <label for="location" class="property-information__modal-label">Ort</label>
                   <input
                     type="text"
@@ -193,20 +197,22 @@
                   />
                 </div>
               </div>
-              <div
-                class="property-information__modal-element property-information__modal-element--right"
-              >
-                <label for="email" class="property-information__modal-label">E-Mail</label>
-                <input type="email" name="email" class="property-information__modal-input" />
+              <div class="property-information__modal-flex">
+                <div
+                  class="property-information__modal-element property-information__modal-element--flex"
+                >
+                  <label for="email" class="property-information__modal-label">E-Mail</label>
+                  <input type="email" name="email" class="property-information__modal-input" />
+                </div>
+                <div
+                  class="property-information__modal-element property-information__modal-element--flex"
+                >
+                  <label for="tel" class="property-information__modal-label">Telefonnummer</label>
+                  <input type="tel" name="tel" class="property-information__modal-input" />
+                </div>
               </div>
               <div
-                class="property-information__modal-element property-information__modal-element--after"
-              >
-                <label for="tel" class="property-information__modal-label">Telefonnummer</label>
-                <input type="tel" name="tel" class="property-information__modal-input" />
-              </div>
-              <div
-                class="property-information__modal-element property-information__modal-element--big"
+                class="property-information__modal-element property-information__modal-element--message"
               >
                 <label for="message" class="property-information__modal-label"
                   >Ihre Nachricht</label
@@ -218,31 +224,39 @@
                   class="property-information__modal-textarea"
                 ></textarea>
               </div>
-              <div
-                class="property-information__modal-element property-information__modal-element--checkbox"
-              >
-                <input
-                  type="checkbox"
-                  name="information"
-                  class="property-information__modal-checkbox"
-                />
-                <label
-                  for="information"
-                  class="property-information__modal-label property-information__modal-label--bold"
-                  >Information</label
+              <div class="property-information__modal-checkbox-flex">
+                <div
+                  class="property-information__modal-element property-information__modal-element--checkbox"
                 >
+                  <input
+                    type="checkbox"
+                    name="information"
+                    class="property-information__modal-checkbox"
+                  />
+                  <label
+                    for="information"
+                    class="property-information__modal-label property-information__modal-label--bold"
+                    >Information</label
+                  >
+                </div>
+                <div
+                  class="property-information__modal-element property-information__modal-element--checkbox"
+                >
+                  <input
+                    type="checkbox"
+                    name="visit"
+                    class="property-information__modal-checkbox"
+                  />
+                  <label
+                    for="visit"
+                    class="property-information__modal-label property-information__modal-label--bold"
+                    >Besichtigung</label
+                  >
+                </div>
               </div>
               <div
-                class="property-information__modal-element property-information__modal-element--checkbox"
+                class="property-information__modal-element property-information__modal-element--right"
               >
-                <input type="checkbox" name="visit" class="property-information__modal-checkbox" />
-                <label
-                  for="visit"
-                  class="property-information__modal-label property-information__modal-label--bold"
-                  >Besichtigung</label
-                >
-              </div>
-              <div class="property-information__modal-element">
                 <button type="submit" class="property-information__modal-button">Senden</button>
               </div>
             </div>

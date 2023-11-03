@@ -51,4 +51,9 @@
   &--modal {
     gap: 0px;
   }
+  &--modal-inside {
+    @include for-size(xx-large) {
+      gap: 30px 50px;
+    }
+  }
 }
