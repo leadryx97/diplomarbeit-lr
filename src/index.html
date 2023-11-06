@@ -27,27 +27,28 @@
             <!-- properties select object -->
             <div class="properties__form-item properties__form-item--object">
               <label for="object" class="properties__label">Was</label>
-              <select name="object" class="properties__select properties__select--no-dropdown">
-                <!-- !!TO BE DYNAMIC -->
-                <option value="all-objects">Alle Objekte</option>
-                <option value="apartment">Wohnung</option>
-                <option value="house">Haus</option>
-                <option value="vacation-apartment">Ferienwohnung</option>
-                <option value="bijou">Bijou</option>
+              <select
+                name="object"
+                class="properties__select properties__select--no-dropdown properties__select--properties"
+              >
+                <!-- dynamic graphql options -->
               </select>
             </div>
             <!-- properties select location -->
             <div class="properties__form-item properties__form-item--location">
               <label for="location" class="properties__label">Wo</label>
-              <select name="location" class="properties__select properties__select--no-dropdown">
-                <!-- !!TO BE DYNAMIC -->
+              <select
+                name="location"
+                class="properties__select properties__select--no-dropdown properties__select--location"
+              >
+                <!-- !!TO BE DYNAMIC 
                 <option value="all-locations">Alle Orte</option>
                 <option value="st-gallen">St.Gallen</option>
                 <option value="sursee">Sursee</option>
                 <option value="lugano">Lugano</option>
                 <option value="lenzerheide">Lenzerheide</option>
                 <option value="grabs">Grabs</option>
-                <option value="chur">Chur</option>
+                <option value="chur">Chur</option>-->
               </select>
             </div>
             <!-- properties select sort -->
@@ -104,17 +105,7 @@
         <!-- properties button load more (mobile) -->
         <button class="properties__button properties__button--load-more">Mehr laden</button>
         <!-- properties page reference (desktop) -->
-        <div class="properties__page-reference">
-          <!--<p class="properties__pagination">
-            Seite <span class="properties__current-page">1</span> von
-            <span class="properties__total-pages">8</span>
-          </p>
-          <img
-            src="./assets/images/svg/next-page-arrow.svg"
-            alt="Pfeil Icon nächste Seite"
-            class="properties__pagination-arrow"
-          />-->
-        </div>
+        <div class="properties__page-reference"></div>
         <!-- end of properties view grid -->
       </div>
       <!-- end of properties -->

@@ -155,6 +155,93 @@ loadNextPage.addEventListener("click", () => {
   showProperties();
 });
 
+// graphql properties filter/select
+let selectProperties = [];
+
+async function selectProperty() {
+  try {
+    const selectPropertyQuery = gql`
+      query {
+        estates {
+          ref_type {
+            title
+          }
+        }
+      }
+    `;
+    const response = await graphQLClient.request(selectPropertyQuery);
+    const selectPropertiesAll = response.estates;
+
+    selectProperties = selectPropertiesAll;
+    renderPropertiesSelect();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+selectProperty();
+
+// add new option to properties filter/select
+function renderPropertiesSelect() {
+  const propertiesSelect = document.querySelector(".properties__select--properties");
+  const existingOptions = new Set();
+
+  selectProperties.forEach((selectProperty) => {
+    const refType = selectProperty.ref_type;
+    const refTypeTitle = refType.title;
+    // check if option already exists
+    if (!existingOptions.has(refTypeTitle)) {
+      const opt = document.createElement("option");
+      opt.value = refType.title;
+      opt.text = refType.title;
+      propertiesSelect.appendChild(opt);
+      existingOptions.add(refTypeTitle);
+    }
+  });
+}
+
+// graphql location filter/select
+let selectLocations = [];
+
+async function selectLocation() {
+  try {
+    const selectLocationQuery = gql`
+      query {
+        estates {
+          city
+        }
+      }
+    `;
+    const response = await graphQLClient.request(selectLocationQuery);
+    const selectLocationAll = response.estates;
+
+    selectLocations = selectLocationAll;
+    renderLocationSelect();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+selectLocation();
+
+// add new option to location filter/select
+function renderLocationSelect() {
+  const locationSelect = document.querySelector(".properties__select--location");
+  const existingOptions = new Set();
+
+  selectLocations.forEach((selectLocation) => {
+    const location = selectLocation.city;
+    // check if option already exists
+    if (!existingOptions.has(location)) {
+      const opt = document.createElement("option");
+      opt.value = location;
+      opt.text = location;
+      locationSelect.appendChild(opt);
+      existingOptions.add(location);
+    }
+  });
+}
+
 // properties form toggle switch
 const switchToggle = document.querySelector(".properties__switch-input");
 const switchBuy = document.querySelector(".properties__switch-value--buy");
