@@ -585,7 +585,7 @@
   padding: 30px 0 30px 0;
 }
 .grid--modal {
-  gap: 0px;
+  gap: 0pxs;
 }
 @media (min-width: 1400px) {
   .grid--modal-inside {
@@ -795,6 +795,24 @@
     grid-column: 2/14;
     order: 7;
   }
+}
+.properties__element-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin: 30px 0 20px 0;
+}
+.properties__element-status {
+  margin: 5px 0 5px 0;
+}
+.properties__element-location {
+  margin: 5px 0 5px 0;
+}
+.properties__element-title {
+  margin: 5px 0 5px 0;
+}
+.properties__element-value {
+  margin: 5px 0 5px 0;
 }
 .properties__page-reference {
   display: none;

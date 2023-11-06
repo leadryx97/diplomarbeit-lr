@@ -28,9 +28,24 @@ async function showProperties() {
           availability
           canton
           city
+          zip
           title
           usable_area
           prize
+          images {
+            id
+            image_path
+            title
+            filename
+            estate {
+              id
+              ref_type_id
+              ref_type {
+                id
+                title
+              }
+            }
+          }
         }
       }
     `;
@@ -38,7 +53,9 @@ async function showProperties() {
     const allProperties = response.estates;
 
     properties = allProperties;
+    renderList();
     console.log(response);
+    console.log(properties.slice(0, 3));
   } catch (error) {
     console.error("Error:", error);
   }
@@ -49,15 +66,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // graphql: create list of properties
-/*
+const propertiesElements = document.querySelector(".properties__elements");
+
 function renderList() {
-  list.innerHTML = '';
-  properties.forEach(function (property) => {
-    const li = document.createElement('div');
-    div.classList.add
-  })
+  propertiesElements.innerHTML = "";
+
+  properties.forEach(function (property) {
+    const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
+    const formattedPrice = property.prize.toLocaleString("de-CH", {
+      style: "currency",
+      currency: "CHF",
+      maximumFractionDigits: 0,
+    }); // format price to swiss franc
+
+    const div = document.createElement("div");
+    div.classList.add("properties__element");
+    div.innerHTML = `
+    <picture class="properties__element-picture">
+              <source
+                srcset="${firstImagePath}?as=avif"
+                type="image/avif"
+              />
+              <source
+                srcset="${firstImagePath}?as=webp"
+                type="image/webp"
+              />
+              <img
+                src="${firstImagePath}"
+                alt="Immobilienobjekt Bijou am See"
+                class="properties__element-img"
+              />
+            </picture>
+    <p class="properties__element-status">${property.estate_type}, ${property.availability}</p>
+    <p class="properties__element-location">${property.zip} ${property.city}, ${property.canton}</p>
+    <h3 class="properties__element-title">${property.title}</h3>
+    <p class="properties__element-value">Fläche ${property.usable_area}m&sup2;, Preis: ${formattedPrice}</p>
+    `;
+    propertiesElements.appendChild(div);
+  });
 }
-*/
+
 // properties form toggle switch
 const switchToggle = document.querySelector(".properties__switch-input");
 const switchBuy = document.querySelector(".properties__switch-value--buy");
