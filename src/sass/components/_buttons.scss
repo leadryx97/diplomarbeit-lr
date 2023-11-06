@@ -16,7 +16,7 @@
     }
     &--load-more {
       grid-column: 2 / 3;
-      @include for-size(medium) {
+      @include for-size(xx-large) {
         display: none;
       }
     }

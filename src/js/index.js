@@ -10,6 +10,9 @@ import {
   setActiveItem,
 } from "./header.js";
 
+// import pagination icon
+import paginationIcon from "../assets/images/svg/next-page-arrow.svg";
+
 // import graphql
 import { GraphQLClient, gql } from "graphql-request";
 
@@ -43,7 +46,7 @@ async function showProperties() {
 
     properties = allProperties;
     renderList();
-    console.log(response);
+    pagination();
   } catch (error) {
     console.error("Error:", error);
   }
@@ -58,11 +61,16 @@ const propertiesElements = document.querySelector(".properties__elements");
 
 // limit results
 let displayedResults = 3;
+let firstDisplayedResult = 0;
+
+if (screen.width >= 1400) {
+  displayedResults = 6;
+}
 
 function renderList() {
   propertiesElements.innerHTML = "";
 
-  properties.slice(0, displayedResults).forEach(function (property) {
+  properties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
     const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
     const formattedPrice = property.prize.toLocaleString("de-CH", {
       style: "currency",
@@ -97,11 +105,53 @@ function renderList() {
   });
 }
 
-// load more results button
+// load more results button (mobile)
 const loadMoreButton = document.querySelector(".properties__button--load-more");
 
 loadMoreButton.addEventListener("click", () => {
   displayedResults += 3;
+  showProperties();
+});
+
+// pagination (desktop)
+let currentPage = 1;
+let endPage = 1;
+let resultsPerPage = 6;
+const paginationLink = document.querySelector(".properties__page-reference");
+
+function calculateEndPage() {
+  endPage = Math.ceil(properties.length / resultsPerPage);
+}
+
+function pagination() {
+  calculateEndPage();
+  paginationLink.innerHTML = `<p class="properties__pagination">
+    Seite <span class="properties__current-page">${currentPage}</span> von
+    <span class="properties__total-pages">${endPage}</span>
+  </p>
+  <img
+    src="${paginationIcon}"
+    alt="Pfeil Icon nächste Seite"
+    class="properties__pagination-arrow"
+  />`;
+}
+
+function paginationIncrease() {
+  if (currentPage < endPage) {
+    currentPage++;
+  }
+}
+
+paginationLink.addEventListener("click", () => {
+  paginationIncrease();
+});
+
+// load next page (desktop)
+const loadNextPage = document.querySelector(".properties__page-reference");
+
+loadNextPage.addEventListener("click", () => {
+  displayedResults += 6;
+  firstDisplayedResult += 6;
   showProperties();
 });
 

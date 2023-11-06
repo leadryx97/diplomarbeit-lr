@@ -154,6 +154,12 @@
     }
     color: $txt-secondary; /* dark green */
   }
+  &__pagination {
+    font: {
+      weight: $font-weight-bold;
+    }
+    color: $txt-secondary;
+  }
 }
 
 /* news overview page */
