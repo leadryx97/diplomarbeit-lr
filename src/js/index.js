@@ -33,18 +33,7 @@ async function showProperties() {
           usable_area
           prize
           images {
-            id
             image_path
-            title
-            filename
-            estate {
-              id
-              ref_type_id
-              ref_type {
-                id
-                title
-              }
-            }
           }
         }
       }
@@ -55,7 +44,6 @@ async function showProperties() {
     properties = allProperties;
     renderList();
     console.log(response);
-    console.log(properties.slice(0, 3));
   } catch (error) {
     console.error("Error:", error);
   }
@@ -68,10 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // graphql: create list of properties
 const propertiesElements = document.querySelector(".properties__elements");
 
+// limit results
+let displayedResults = 3;
+
 function renderList() {
   propertiesElements.innerHTML = "";
 
-  properties.forEach(function (property) {
+  properties.slice(0, displayedResults).forEach(function (property) {
     const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
     const formattedPrice = property.prize.toLocaleString("de-CH", {
       style: "currency",
@@ -105,6 +96,14 @@ function renderList() {
     propertiesElements.appendChild(div);
   });
 }
+
+// load more results button
+const loadMoreButton = document.querySelector(".properties__button--load-more");
+
+loadMoreButton.addEventListener("click", () => {
+  displayedResults += 3;
+  showProperties();
+});
 
 // properties form toggle switch
 const switchToggle = document.querySelector(".properties__switch-input");
