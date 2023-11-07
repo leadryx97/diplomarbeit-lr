@@ -41,20 +41,13 @@
                 name="location"
                 class="properties__select properties__select--no-dropdown properties__select--location"
               >
-                <!-- !!TO BE DYNAMIC 
-                <option value="all-locations">Alle Orte</option>
-                <option value="st-gallen">St.Gallen</option>
-                <option value="sursee">Sursee</option>
-                <option value="lugano">Lugano</option>
-                <option value="lenzerheide">Lenzerheide</option>
-                <option value="grabs">Grabs</option>
-                <option value="chur">Chur</option>-->
+                <!-- dynamic graphql options -->
               </select>
             </div>
             <!-- properties select sort -->
             <div class="properties__form-item properties__form-item--sort">
               <label for="sort" class="properties__label">Sortierung</label>
-              <select name="sort" class="properties__select">
+              <select name="sort" class="properties__select properties__select--sort">
                 <option value="price-ascending">Preis aufsteigend</option>
                 <option value="price-descending">Preis absteigend</option>
                 <option value="date-ascending">Datum aufsteigend</option>

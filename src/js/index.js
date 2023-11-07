@@ -38,6 +38,9 @@ async function showProperties() {
           images {
             image_path
           }
+          ref_type {
+            title
+          }
         }
       }
     `;
@@ -67,9 +70,24 @@ if (screen.width >= 1400) {
   displayedResults = 6;
 }
 
+/* TEST 
+// filter property
+function filterProperty() {
+  const propertiesSelect = document.querySelector(".properties__select--properties");
+  const existingOptions = new Set();
+
+  selectProperties.forEach((selectProperty) => {
+    const refType = selectProperty.ref_type;
+    const refTypeTitle = refType.title;
+    if (propertySelection === refType.title) {
+      // show element
+    }
+  });
+}*/
+
 function renderList() {
   propertiesElements.innerHTML = "";
-
+  //filterProperties();
   properties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
     const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
     const formattedPrice = property.prize.toLocaleString("de-CH", {
@@ -78,6 +96,10 @@ function renderList() {
       maximumFractionDigits: 0,
     }); // format price to swiss franc
 
+    const refType = property.ref_type;
+    const refTypeTitle = refType.title;
+    // if (propertySelection === refTypeTitle) {
+    //console.log(propertySelection);
     const div = document.createElement("div");
     div.classList.add("properties__element");
     div.innerHTML = `
@@ -102,6 +124,7 @@ function renderList() {
     <p class="properties__element-value">Fläche ${property.usable_area}m&sup2;, Preis: ${formattedPrice}</p>
     `;
     propertiesElements.appendChild(div);
+    //  }
   });
 }
 
@@ -236,11 +259,128 @@ function renderLocationSelect() {
       const opt = document.createElement("option");
       opt.value = location;
       opt.text = location;
+      opt.classList.add("properties__locationOptions");
       locationSelect.appendChild(opt);
       existingOptions.add(location);
     }
   });
 }
+/*
+// filter functionality
+function filterProperties() {
+  return new Promise((resolve) => {
+    // listen to changes in select options
+    const locationSelect = document.querySelector(".properties__select--location");
+    const propertiesSelect = document.querySelector(".properties__select--properties");
+    let locationSelectValue = null;
+    let propertiesSelectValue = null;
+
+    function checkLocationValue(event) {
+      locationSelectValue = event.target.value;
+      resolve({ locationSelectValue, propertiesSelectValue });
+    }
+
+    function checkPropertiesValue(event) {
+      propertiesSelectValue = event.target.value;
+      resolve({ locationSelectValue, propertiesSelectValue });
+    }
+
+    locationSelect.addEventListener("change", checkLocationValue);
+    propertiesSelect.addEventListener("change", checkPropertiesValue);
+  });
+}*/
+/*
+// filter functionality
+// select properties
+function filterProperties() {
+  return new Promise((resolve) => {
+    // listen to changes in select options
+    const propertiesSelect = document.querySelector(".properties__select--properties");
+
+    let propertiesSelectValue = null;
+
+    function checkPropertiesValue(event) {
+      propertiesSelectValue = event.target.value;
+      resolve(propertiesSelectValue);
+    }
+
+    propertiesSelect.addEventListener("change", checkPropertiesValue);
+  });
+}
+
+async function filterPropertiesResult() {
+  try {
+    while (true) {
+      const propertiesValue = await filterProperties();
+      console.log(propertiesValue);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// select location
+function filterLocation() {
+  return new Promise((resolve) => {
+    // listen to changes in select options
+    const locationSelect = document.querySelector(".properties__select--location");
+
+    let locationSelectValue = null;
+
+    function checkLocationValue(event) {
+      locationSelectValue = event.target.value;
+      resolve(locationSelectValue);
+    }
+
+    locationSelect.addEventListener("change", checkLocationValue);
+  });
+}
+
+async function filterLocationResult() {
+  try {
+    while (true) {
+      const locationValue = await filterLocation();
+      console.log(locationValue);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+filterPropertiesResult();
+filterLocationResult();
+*/
+
+// form selections
+let propertySelection = null;
+let locationSelection = null;
+let sortSelection = null;
+
+const propertySelect = document.querySelector(".properties__select--properties");
+const locationSelect = document.querySelector(".properties__select--location");
+const sortSelect = document.querySelector(".properties__select--sort");
+const filterButton = document.querySelector(".properties__button");
+
+function propertySelectValue(event) {
+  propertySelection = event.target.value;
+}
+function locationSelectValue(event) {
+  locationSelection = event.target.value;
+}
+function sortSelectValue(event) {
+  sortSelection = event.target.value;
+}
+
+propertySelect.addEventListener("change", propertySelectValue);
+locationSelect.addEventListener("change", locationSelectValue);
+sortSelect.addEventListener("change", sortSelectValue);
+
+filterButton.addEventListener("click", (event) => {
+  event.preventDefault(); // Prevent the form from actually submitting
+  console.log(propertySelection);
+  console.log(locationSelection);
+  console.log(sortSelection);
+});
 
 // properties form toggle switch
 const switchToggle = document.querySelector(".properties__switch-input");
