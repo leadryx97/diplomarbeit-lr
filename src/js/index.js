@@ -70,24 +70,18 @@ if (screen.width >= 1400) {
   displayedResults = 6;
 }
 
-/* TEST 
-// filter property
-function filterProperty() {
-  const propertiesSelect = document.querySelector(".properties__select--properties");
-  const existingOptions = new Set();
-
-  selectProperties.forEach((selectProperty) => {
-    const refType = selectProperty.ref_type;
-    const refTypeTitle = refType.title;
-    if (propertySelection === refType.title) {
-      // show element
-    }
-  });
-}*/
+/* TEST
+if (
+  (propertySelection === "Alle Objekte" || propertySelection === propertyTypeTitle) &&
+  (locationSelection === "Alle Orte" || locationSelection === propertyLocation) &&
+  (estateTypeSelection === "all" || estateTypeSelection === propertyEstateType)
+) {
+  console.log(`Test ${properties.length}`);
+} */
 
 function renderList() {
   propertiesElements.innerHTML = "";
-  //filterProperties();
+
   properties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
     const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
     const formattedPrice = property.prize.toLocaleString("de-CH", {
@@ -96,35 +90,42 @@ function renderList() {
       maximumFractionDigits: 0,
     }); // format price to swiss franc
 
-    const refType = property.ref_type;
-    const refTypeTitle = refType.title;
-    // if (propertySelection === refTypeTitle) {
-    //console.log(propertySelection);
-    const div = document.createElement("div");
-    div.classList.add("properties__element");
-    div.innerHTML = `
-    <picture class="properties__element-picture">
-              <source
-                srcset="${firstImagePath}?as=avif"
-                type="image/avif"
-              />
-              <source
-                srcset="${firstImagePath}?as=webp"
-                type="image/webp"
-              />
-              <img
-                src="${firstImagePath}"
-                alt="Immobilienobjekt Bijou am See"
-                class="properties__element-img"
-              />
-            </picture>
-    <p class="properties__element-status">${property.estate_type}, ${property.availability}</p>
-    <p class="properties__element-location">${property.zip} ${property.city}, ${property.canton}</p>
-    <h3 class="properties__element-title">${property.title}</h3>
-    <p class="properties__element-value">Fläche ${property.usable_area}m&sup2;, Preis: ${formattedPrice}</p>
-    `;
-    propertiesElements.appendChild(div);
-    //  }
+    const propertyType = property.ref_type;
+    const propertyTypeTitle = propertyType.title;
+    const propertyLocation = property.city;
+    const propertyEstateType = property.estate_type;
+
+    if (
+      (propertySelection === "Alle Objekte" || propertySelection === propertyTypeTitle) &&
+      (locationSelection === "Alle Orte" || locationSelection === propertyLocation) &&
+      (estateTypeSelection === "all" || estateTypeSelection === propertyEstateType)
+    ) {
+      console.log(estateTypeSelection);
+      const div = document.createElement("div");
+      div.classList.add("properties__element");
+      div.innerHTML = `
+        <picture class="properties__element-picture">
+                  <source
+                    srcset="${firstImagePath}?as=avif"
+                    type="image/avif"
+                  />
+                  <source
+                    srcset="${firstImagePath}?as=webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${firstImagePath}"
+                    alt="Immobilienobjekt Bijou am See"
+                    class="properties__element-img"
+                  />
+                </picture>
+        <p class="properties__element-status">${property.estate_type}, ${property.availability}</p>
+        <p class="properties__element-location">${property.zip} ${property.city}, ${property.canton}</p>
+        <h3 class="properties__element-title">${property.title}</h3>
+        <p class="properties__element-value">Fläche ${property.usable_area}m&sup2;, Preis: ${formattedPrice}</p>
+        `;
+      propertiesElements.appendChild(div);
+    }
   });
 }
 
@@ -265,100 +266,17 @@ function renderLocationSelect() {
     }
   });
 }
-/*
-// filter functionality
-function filterProperties() {
-  return new Promise((resolve) => {
-    // listen to changes in select options
-    const locationSelect = document.querySelector(".properties__select--location");
-    const propertiesSelect = document.querySelector(".properties__select--properties");
-    let locationSelectValue = null;
-    let propertiesSelectValue = null;
-
-    function checkLocationValue(event) {
-      locationSelectValue = event.target.value;
-      resolve({ locationSelectValue, propertiesSelectValue });
-    }
-
-    function checkPropertiesValue(event) {
-      propertiesSelectValue = event.target.value;
-      resolve({ locationSelectValue, propertiesSelectValue });
-    }
-
-    locationSelect.addEventListener("change", checkLocationValue);
-    propertiesSelect.addEventListener("change", checkPropertiesValue);
-  });
-}*/
-/*
-// filter functionality
-// select properties
-function filterProperties() {
-  return new Promise((resolve) => {
-    // listen to changes in select options
-    const propertiesSelect = document.querySelector(".properties__select--properties");
-
-    let propertiesSelectValue = null;
-
-    function checkPropertiesValue(event) {
-      propertiesSelectValue = event.target.value;
-      resolve(propertiesSelectValue);
-    }
-
-    propertiesSelect.addEventListener("change", checkPropertiesValue);
-  });
-}
-
-async function filterPropertiesResult() {
-  try {
-    while (true) {
-      const propertiesValue = await filterProperties();
-      console.log(propertiesValue);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// select location
-function filterLocation() {
-  return new Promise((resolve) => {
-    // listen to changes in select options
-    const locationSelect = document.querySelector(".properties__select--location");
-
-    let locationSelectValue = null;
-
-    function checkLocationValue(event) {
-      locationSelectValue = event.target.value;
-      resolve(locationSelectValue);
-    }
-
-    locationSelect.addEventListener("change", checkLocationValue);
-  });
-}
-
-async function filterLocationResult() {
-  try {
-    while (true) {
-      const locationValue = await filterLocation();
-      console.log(locationValue);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-filterPropertiesResult();
-filterLocationResult();
-*/
 
 // form selections
-let propertySelection = null;
-let locationSelection = null;
+let propertySelection = "Alle Objekte";
+let locationSelection = "Alle Orte";
+let estateTypeSelection = "all";
 let sortSelection = null;
 
 const propertySelect = document.querySelector(".properties__select--properties");
 const locationSelect = document.querySelector(".properties__select--location");
 const sortSelect = document.querySelector(".properties__select--sort");
+const estateTypeCheckbox = document.querySelector(".properties__switch-input");
 const filterButton = document.querySelector(".properties__button");
 
 function propertySelectValue(event) {
@@ -370,16 +288,25 @@ function locationSelectValue(event) {
 function sortSelectValue(event) {
   sortSelection = event.target.value;
 }
+function estateTypeCheckboxValue() {
+  if (estateTypeCheckbox.checked) {
+    estateTypeSelection = "zu verkaufen";
+    console.log("feld angeklickt");
+  } else {
+    estateTypeSelection = "zu vermieten";
+    console.log("feld nicht angeklickt");
+  }
+}
 
 propertySelect.addEventListener("change", propertySelectValue);
 locationSelect.addEventListener("change", locationSelectValue);
 sortSelect.addEventListener("change", sortSelectValue);
+estateTypeCheckbox.addEventListener("change", estateTypeCheckboxValue);
 
 filterButton.addEventListener("click", (event) => {
   event.preventDefault(); // Prevent the form from actually submitting
-  console.log(propertySelection);
-  console.log(locationSelection);
-  console.log(sortSelection);
+  estateTypeCheckboxValue();
+  showProperties();
 });
 
 // properties form toggle switch
