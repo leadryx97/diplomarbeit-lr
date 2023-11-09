@@ -48,7 +48,8 @@ async function showProperties() {
     const allProperties = response.estates;
 
     properties = allProperties;
-    renderList();
+    //renderList();
+    filterProperties();
     pagination();
   } catch (error) {
     console.error("Error:", error);
@@ -65,24 +66,36 @@ const propertiesElements = document.querySelector(".properties__elements");
 // limit results
 let displayedResults = 3;
 let firstDisplayedResult = 0;
+let filteredPropertyIndex = [];
+let filteredProperties = [];
 
 if (screen.width >= 1400) {
   displayedResults = 6;
 }
 
-/* TEST
-if (
-  (propertySelection === "Alle Objekte" || propertySelection === propertyTypeTitle) &&
-  (locationSelection === "Alle Orte" || locationSelection === propertyLocation) &&
-  (estateTypeSelection === "all" || estateTypeSelection === propertyEstateType)
-) {
-  console.log(`Test ${properties.length}`);
-} */
+function filterProperties() {
+  filteredProperties = [];
+
+  properties.forEach(function (property) {
+    const propertyType = property.ref_type;
+    const propertyTypeTitle = propertyType.title;
+    const propertyLocation = property.city;
+    const propertyEstateType = property.estate_type;
+    if (
+      (propertySelection === "Alle Objekte" || propertySelection === propertyTypeTitle) &&
+      (locationSelection === "Alle Orte" || locationSelection === propertyLocation) &&
+      (estateTypeSelection === "all" || estateTypeSelection === propertyEstateType)
+    ) {
+      filteredProperties.push(property);
+    }
+  });
+  renderList();
+}
 
 function renderList() {
   propertiesElements.innerHTML = "";
 
-  properties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
+  filteredProperties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
     const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
     const formattedPrice = property.prize.toLocaleString("de-CH", {
       style: "currency",
@@ -90,20 +103,9 @@ function renderList() {
       maximumFractionDigits: 0,
     }); // format price to swiss franc
 
-    const propertyType = property.ref_type;
-    const propertyTypeTitle = propertyType.title;
-    const propertyLocation = property.city;
-    const propertyEstateType = property.estate_type;
-
-    if (
-      (propertySelection === "Alle Objekte" || propertySelection === propertyTypeTitle) &&
-      (locationSelection === "Alle Orte" || locationSelection === propertyLocation) &&
-      (estateTypeSelection === "all" || estateTypeSelection === propertyEstateType)
-    ) {
-      console.log(estateTypeSelection);
-      const div = document.createElement("div");
-      div.classList.add("properties__element");
-      div.innerHTML = `
+    const div = document.createElement("div");
+    div.classList.add("properties__element");
+    div.innerHTML = `
         <picture class="properties__element-picture">
                   <source
                     srcset="${firstImagePath}?as=avif"
@@ -124,8 +126,7 @@ function renderList() {
         <h3 class="properties__element-title">${property.title}</h3>
         <p class="properties__element-value">Fläche ${property.usable_area}m&sup2;, Preis: ${formattedPrice}</p>
         `;
-      propertiesElements.appendChild(div);
-    }
+    propertiesElements.appendChild(div);
   });
 }
 
@@ -306,6 +307,10 @@ estateTypeCheckbox.addEventListener("change", estateTypeCheckboxValue);
 filterButton.addEventListener("click", (event) => {
   event.preventDefault(); // Prevent the form from actually submitting
   estateTypeCheckboxValue();
+  displayedResults = 3; // show only 3 results after changing filter
+  if (screen.width >= 1400) {
+    displayedResults = 6;
+  }
   showProperties();
 });
 
