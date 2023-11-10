@@ -35,6 +35,7 @@ async function showProperties() {
           title
           usable_area
           prize
+          created_at
           images {
             image_path
           }
@@ -48,7 +49,6 @@ async function showProperties() {
     const allProperties = response.estates;
 
     properties = allProperties;
-    //renderList();
     filterProperties();
     pagination();
   } catch (error) {
@@ -66,7 +66,6 @@ const propertiesElements = document.querySelector(".properties__elements");
 // limit results
 let displayedResults = 3;
 let firstDisplayedResult = 0;
-let filteredPropertyIndex = [];
 let filteredProperties = [];
 
 if (screen.width >= 1400) {
@@ -89,9 +88,62 @@ function filterProperties() {
       filteredProperties.push(property);
     }
   });
+
+  if (sortSelection === "price-ascending") {
+    sortPriceAscending();
+  } else if (sortSelection === "price-descending") {
+    sortPriceDescending();
+  } else if (sortSelection === "date-ascending") {
+    sortDateAscending();
+  } else if (sortSelection === "date-descending") {
+    sortDateDescending();
+  }
+
   renderList();
 }
 
+// sorting functions
+function sortPriceAscending() {
+  filteredProperties.sort(function (a, b) {
+    return a.prize - b.prize;
+  });
+  for (const property of filteredProperties) {
+    console.log(property.prize);
+  }
+}
+
+function sortPriceDescending() {
+  filteredProperties.sort(function (a, b) {
+    return b.prize - a.prize;
+  });
+  for (const property of filteredProperties) {
+    console.log(property.prize);
+  }
+}
+
+function sortDateAscending() {
+  filteredProperties.sort(function (a, b) {
+    const dateA = new Date(a.created_at);
+    const dateB = new Date(b.created_at);
+    return dateA - dateB;
+  });
+  for (const property of filteredProperties) {
+    console.log(property.created_at);
+  }
+}
+
+function sortDateDescending() {
+  filteredProperties.sort(function (a, b) {
+    const dateA = new Date(a.created_at);
+    const dateB = new Date(b.created_at);
+    return dateB - dateA;
+  });
+  for (const property of filteredProperties) {
+    console.log(property.created_at);
+  }
+}
+
+// render properties
 function renderList() {
   propertiesElements.innerHTML = "";
 
@@ -292,10 +344,8 @@ function sortSelectValue(event) {
 function estateTypeCheckboxValue() {
   if (estateTypeCheckbox.checked) {
     estateTypeSelection = "zu verkaufen";
-    console.log("feld angeklickt");
   } else {
     estateTypeSelection = "zu vermieten";
-    console.log("feld nicht angeklickt");
   }
 }
 
@@ -303,6 +353,16 @@ propertySelect.addEventListener("change", propertySelectValue);
 locationSelect.addEventListener("change", locationSelectValue);
 sortSelect.addEventListener("change", sortSelectValue);
 estateTypeCheckbox.addEventListener("change", estateTypeCheckboxValue);
+
+// sort select: handle placeholder text
+function sortSelectPlaceholder() {
+  const placeholderOption = document.querySelector(".properties__option--placeholder");
+  if (placeholderOption && placeholderOption.selected) {
+    sortSelect.removeChild(placeholderOption);
+  }
+}
+
+sortSelect.addEventListener("click", sortSelectPlaceholder);
 
 filterButton.addEventListener("click", (event) => {
   event.preventDefault(); // Prevent the form from actually submitting

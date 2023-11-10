@@ -182,6 +182,9 @@
       flex-wrap: wrap;
     }
   }
+  &__element {
+    // flex-grow: 1;
+  }
   &__element-img {
     width: 100%;
     height: 180px;
