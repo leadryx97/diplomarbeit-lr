@@ -799,8 +799,14 @@
     grid-column: 2/14;
     order: 7;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
+    gap: 6.5%;
+  }
+}
+@media (min-width: 1400px) {
+  .properties__element {
+    width: 29%;
   }
 }
 .properties__element-img {
@@ -811,7 +817,6 @@
 }
 @media (min-width: 1400px) {
   .properties__element-img {
-    width: 420px;
     height: 220px;
   }
 }

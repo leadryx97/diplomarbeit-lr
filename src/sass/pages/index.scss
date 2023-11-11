@@ -178,12 +178,15 @@
       grid-column: 2 / 14;
       order: 7;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       flex-wrap: wrap;
+      gap: 6.5%;
     }
   }
   &__element {
-    // flex-grow: 1;
+    @include for-size(xx-large) {
+      width: 29%;
+    }
   }
   &__element-img {
     width: 100%;
@@ -191,7 +194,6 @@
     object-fit: cover;
     margin: 30px 0 20px 0;
     @include for-size(xx-large) {
-      width: 420px;
       height: 220px;
     }
   }
