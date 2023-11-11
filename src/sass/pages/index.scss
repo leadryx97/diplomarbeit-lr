@@ -182,6 +182,9 @@
       flex-wrap: wrap;
       gap: 6.5%;
     }
+    &--hidden {
+      display: none;
+    }
   }
   &__element {
     @include for-size(xx-large) {
@@ -209,6 +212,64 @@
   &__element-value {
     margin: 5px 0 5px 0;
   }
+  &__table {
+    grid-column: 2 / 3;
+    margin-top: 40px;
+    border-collapse: collapse;
+    @include for-size(xx-large) {
+      grid-column: 2 / 14;
+      order: 7;
+      margin-top: 0px;
+    }
+    &--hidden {
+      display: none;
+    }
+  }
+  &__table-header {
+    height: 60px;
+    border-top: 2px solid $bg-secondary;
+    &--hidden {
+      display: none;
+    }
+    &--title {
+      @include for-size(xx-large) {
+        width: 30%;
+      }
+    }
+    &--location {
+      @include for-size(xx-large) {
+        width: 35%;
+      }
+    }
+    &--area {
+      @include for-size(xx-large) {
+        width: 20%;
+      }
+    }
+    &--price {
+      text-align: right;
+      width: 40%;
+      @include for-size(xx-large) {
+        width: 15%;
+      }
+    }
+  }
+  &__table-icon {
+    margin-left: 10px;
+    @include for-size(xx-large) {
+      margin-left: 20px;
+    }
+  }
+  &__table-row {
+    height: 60px;
+    border-top: 2px solid $bg-secondary;
+    border-bottom: 2px solid $bg-secondary;
+  }
+  &__table-cell {
+    &--hidden {
+      display: none;
+    }
+  }
   /* page reference */
   &__page-reference {
     display: none;
@@ -219,6 +280,9 @@
       justify-self: end;
       display: flex;
       gap: 15px;
+    }
+    &--hidden {
+      display: none;
     }
   }
   &__pagination-arrow {

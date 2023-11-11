@@ -155,6 +155,7 @@
 .properties {
   /* toggle switch */
   /* end of toggle switch */
+  /* table / list view */
 }
 .properties__label {
   font-weight: 700;
@@ -185,6 +186,16 @@
 .properties__pagination {
   font-weight: 700;
   color: #92b9af;
+}
+.properties__table-header {
+  text-align: left;
+  color: #92b9af;
+}
+.properties__table-cell--title {
+  font-weight: 700;
+}
+.properties__table-cell--price {
+  text-align: right;
 }
 
 /* news overview page */
@@ -316,6 +327,9 @@
   .properties__button--load-more {
     display: none;
   }
+}
+.properties__button--load-more-hidden {
+  display: none;
 }
 
 /* footer scroll-to-top button */
@@ -804,6 +818,9 @@
     gap: 6.5%;
   }
 }
+.properties__elements--hidden {
+  display: none;
+}
 @media (min-width: 1400px) {
   .properties__element {
     width: 29%;
@@ -832,6 +849,68 @@
 .properties__element-value {
   margin: 5px 0 5px 0;
 }
+.properties__table {
+  grid-column: 2/3;
+  margin-top: 40px;
+  border-collapse: collapse;
+}
+@media (min-width: 1400px) {
+  .properties__table {
+    grid-column: 2/14;
+    order: 7;
+    margin-top: 0px;
+  }
+}
+.properties__table--hidden {
+  display: none;
+}
+.properties__table-header {
+  height: 60px;
+  border-top: 2px solid #92b9af;
+}
+.properties__table-header--hidden {
+  display: none;
+}
+@media (min-width: 1400px) {
+  .properties__table-header--title {
+    width: 30%;
+  }
+}
+@media (min-width: 1400px) {
+  .properties__table-header--location {
+    width: 35%;
+  }
+}
+@media (min-width: 1400px) {
+  .properties__table-header--area {
+    width: 20%;
+  }
+}
+.properties__table-header--price {
+  text-align: right;
+  width: 40%;
+}
+@media (min-width: 1400px) {
+  .properties__table-header--price {
+    width: 15%;
+  }
+}
+.properties__table-icon {
+  margin-left: 10px;
+}
+@media (min-width: 1400px) {
+  .properties__table-icon {
+    margin-left: 20px;
+  }
+}
+.properties__table-row {
+  height: 60px;
+  border-top: 2px solid #92b9af;
+  border-bottom: 2px solid #92b9af;
+}
+.properties__table-cell--hidden {
+  display: none;
+}
 .properties__page-reference {
   display: none;
 }
@@ -844,6 +923,9 @@
     display: flex;
     gap: 15px;
   }
+}
+.properties__page-reference--hidden {
+  display: none;
 }
 .properties__pagination-arrow {
   width: 10px;

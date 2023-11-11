@@ -18,7 +18,6 @@
     </div>
     <!-- properties section -->
     <div class="properties">
-      <!-- !!alle klassen benötigt? -->
       <div class="properties__search">
         <h2 class="properties__title">Immobilien</h2>
         <!-- properties form -->
@@ -93,22 +92,75 @@
           <p class="properties__view-label">Ansicht:</p>
           <!-- properties grid view -->
           <div class="properties__view-grid">
-            <img src="./assets/images/svg/view-grid.svg" alt="Icon Kachelansicht" />
+            <img
+              src="./assets/images/svg/view-grid.svg"
+              alt="Icon Kachelansicht"
+              class="properties__view-grid-icon"
+            />
           </div>
           <!-- properties list view -->
           <div class="properties__view-list">
-            <img src="./assets/images/svg/view-list.svg" alt="Icon Listenansicht" />
+            <img
+              src="./assets/images/svg/view-list.svg"
+              alt="Icon Listenansicht"
+              class="properties__view-list-icon"
+            />
           </div>
           <!-- end of properties view -->
         </div>
-        <!-- properties elements -->
+        <!-- properties elements / grid view -->
         <div class="properties__elements">
           <!-- properties of graphql request -->
         </div>
+        <!-- properties table / list view -->
+        <table class="properties__table">
+          <tr>
+            <th class="properties__table-header properties__table-header--title">
+              Objekt
+              <img
+                src="./assets/images/svg/table-arrow-up.svg"
+                alt="Icon Tabllen Sortierung"
+                class="properties__table-icon properties__table-icon--title"
+              />
+            </th>
+            <th
+              class="properties__table-header properties__table-header--location properties__table-header--hidden"
+            >
+              Ort
+              <img
+                src="./assets/images/svg/table-arrow-up.svg"
+                alt="Icon Tabllen Sortierung"
+                class="properties__table-icon properties__table-icon--location"
+              />
+            </th>
+            <th
+              class="properties__table-header properties__table-header--area properties__table-header--hidden"
+            >
+              Fläche
+              <img
+                src="./assets/images/svg/table-arrow-up.svg"
+                alt="Icon Tabllen Sortierung"
+                class="properties__table-icon properties__table-icon--area"
+              />
+            </th>
+            <th class="properties__table-header properties__table-header--price">
+              Preis/Miete
+              <img
+                src="./assets/images/svg/table-arrow-up.svg"
+                alt="Icon Tabllen Sortierung"
+                class="properties__table-icon properties__table-icon--price"
+              />
+            </th>
+          </tr>
+        </table>
         <!-- properties button load more (mobile) -->
-        <button class="properties__button properties__button--load-more">Mehr laden</button>
+        <button
+          class="properties__button properties__button--load-more properties__button--load-more-grid"
+        >
+          Mehr laden
+        </button>
         <!-- properties page reference (desktop) -->
-        <div class="properties__page-reference"></div>
+        <div class="properties__page-reference properties__page-reference--grid"></div>
         <!-- end of properties view grid -->
       </div>
       <!-- end of properties -->

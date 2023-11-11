@@ -12,6 +12,8 @@ import {
 
 // import pagination icon
 import paginationIcon from "../assets/images/svg/next-page-arrow.svg";
+import tableIconUp from "../assets/images/svg/table-arrow-up.svg";
+import tableIconDown from "../assets/images/svg/table-arrow-down.svg";
 
 // import graphql
 import { GraphQLClient, gql } from "graphql-request";
@@ -36,6 +38,7 @@ async function showProperties() {
           usable_area
           prize
           created_at
+          country
           images {
             image_path
           }
@@ -57,6 +60,7 @@ async function showProperties() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  gridView();
   showProperties();
 });
 
@@ -99,7 +103,11 @@ function filterProperties() {
     sortDateDescending();
   }
 
-  renderList();
+  if (propertiesTable.classList.contains("properties__table--hidden")) {
+    renderList();
+  } else {
+    listViewRenderList();
+  }
 }
 
 // sorting functions
@@ -107,18 +115,12 @@ function sortPriceAscending() {
   filteredProperties.sort(function (a, b) {
     return a.prize - b.prize;
   });
-  for (const property of filteredProperties) {
-    console.log(property.prize);
-  }
 }
 
 function sortPriceDescending() {
   filteredProperties.sort(function (a, b) {
     return b.prize - a.prize;
   });
-  for (const property of filteredProperties) {
-    console.log(property.prize);
-  }
 }
 
 function sortDateAscending() {
@@ -127,9 +129,6 @@ function sortDateAscending() {
     const dateB = new Date(b.created_at);
     return dateA - dateB;
   });
-  for (const property of filteredProperties) {
-    console.log(property.created_at);
-  }
 }
 
 function sortDateDescending() {
@@ -138,15 +137,11 @@ function sortDateDescending() {
     const dateB = new Date(b.created_at);
     return dateB - dateA;
   });
-  for (const property of filteredProperties) {
-    console.log(property.created_at);
-  }
 }
 
-// render properties
+// render properties grid view
 function renderList() {
   propertiesElements.innerHTML = "";
-
   filteredProperties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
     const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
     const formattedPrice = property.prize.toLocaleString("de-CH", {
@@ -176,9 +171,59 @@ function renderList() {
         <p class="properties__element-status">${property.estate_type}, ${property.availability}</p>
         <p class="properties__element-location">${property.zip} ${property.city}, ${property.canton}</p>
         <h3 class="properties__element-title">${property.title}</h3>
-        <p class="properties__element-value">Fläche ${property.usable_area}m&sup2;, Preis: ${formattedPrice}</p>
+        <p class="properties__element-value">Fläche ${property.usable_area}m², Preis: ${formattedPrice}</p>
         `;
     propertiesElements.appendChild(div);
+  });
+}
+
+// render properties list view
+function listViewRenderList() {
+  const table = document.querySelector(".properties__table");
+  const tableRows = document.querySelectorAll(".properties__table-row");
+  for (let i = 0; i < tableRows.length; i++) {
+    tableRows[i].parentNode.removeChild(tableRows[i]);
+  }
+
+  filteredProperties.forEach(function (property) {
+    const formattedPrice = property.prize.toLocaleString("de-CH", {
+      style: "currency",
+      currency: "CHF",
+      maximumFractionDigits: 0,
+    }); // format price to swiss franc
+
+    let tableRow = table.insertRow();
+    tableRow.classList.add("properties__table-row");
+    let tableCellTitle = tableRow.insertCell(0);
+    tableCellTitle.classList.add("properties__table-cell", "properties__table-cell--title");
+    let cellTextTitle = document.createTextNode(`${property.title}`);
+    tableCellTitle.appendChild(cellTextTitle);
+
+    let tableCellLocation = null;
+    let tableCellArea = null;
+    let tableCellPrice = null;
+
+    if (screen.width >= 1400) {
+      tableCellLocation = tableRow.insertCell(1);
+      tableCellLocation.classList.add("properties__table-cell");
+      let cellTextLocation = document.createTextNode(
+        `${property.zip} ${property.city}, ${property.country}`
+      );
+      tableCellLocation.appendChild(cellTextLocation);
+      tableCellArea = tableRow.insertCell(2);
+      tableCellArea.classList.add("properties__table-cell");
+      let cellTextArea = document.createTextNode(`${property.usable_area}m²`);
+      tableCellArea.appendChild(cellTextArea);
+      tableCellPrice = tableRow.insertCell(3);
+      tableCellPrice.classList.add("properties__table-cell", "properties__table-cell--price");
+      let cellTextPrice = document.createTextNode(formattedPrice);
+      tableCellPrice.appendChild(cellTextPrice);
+    } else {
+      tableCellPrice = tableRow.insertCell(1);
+      tableCellPrice.classList.add("properties__table-cell", "properties__table-cell--price");
+      let cellTextPrice = document.createTextNode(formattedPrice);
+      tableCellPrice.appendChild(cellTextPrice);
+    }
   });
 }
 
@@ -413,3 +458,168 @@ noDropDown.forEach((selectElement) => {
     });
   }
 });
+
+// properties grid view
+const gridViewIcon = document.querySelector(".properties__view-grid-icon");
+const propertiesTable = document.querySelector(".properties__table");
+
+function gridView() {
+  propertiesElements.classList.remove("properties__elements--hidden");
+  propertiesTable.classList.add("properties__table--hidden");
+  loadMoreButton.classList.remove("properties__button--load-more-hidden");
+  paginationLink.classList.remove("properties__page-reference--hidden");
+  paginationLink;
+  renderList();
+}
+
+gridViewIcon.addEventListener("click", gridView);
+
+// properties list view
+const listViewIcon = document.querySelector(".properties__view-list-icon");
+
+function listView() {
+  propertiesElements.classList.add("properties__elements--hidden");
+  propertiesTable.classList.remove("properties__table--hidden");
+  loadMoreButton.classList.add("properties__button--load-more-hidden");
+  paginationLink.classList.add("properties__page-reference--hidden");
+  listViewToggleColumns();
+  listViewRenderList();
+}
+
+function listViewToggleColumns() {
+  const tableHeadersHidden = document.querySelectorAll(".properties__table-header--hidden");
+  const tableCellsHidden = document.querySelectorAll(".properties__table-cell--hidden");
+  if (screen.width >= 1400) {
+    tableHeadersHidden.forEach((tableHeader) => {
+      tableHeader.classList.remove("properties__table-header--hidden");
+    });
+    tableCellsHidden.forEach((tableCell) => {
+      tableCell.classList.remove("properties__table-cell--hidden");
+    });
+  } else {
+    tableHeadersHidden.forEach((tableHeader) => {
+      tableHeader.classList.add("properties__table-header--hidden");
+    });
+    tableCellsHidden.forEach((tableCell) => {
+      tableCell.classList.add("properties__table-cell--hidden");
+    });
+  }
+}
+
+listViewIcon.addEventListener("click", listView);
+window.addEventListener("resize", listViewToggleColumns);
+
+// sort list / table view title
+const tableTitleHeader = document.querySelector(".properties__table-header--title");
+let sortAscending = true; // track sorting order
+
+function sortPropertyTitle() {
+  const tableIcon = document.querySelector(".properties__table-icon--title");
+  if (sortAscending) {
+    tableIcon.src = tableIconDown;
+  } else {
+    tableIcon.src = tableIconUp;
+  }
+  sortAscending = !sortAscending;
+
+  // Nach Titel oder Datum sortieren?
+  /*filteredProperties.sort(function (a, b) {
+    const titleA = a.title.toLowerCase();
+    const titleB = b.title.toLowerCase();
+    if (sortAscending) {
+      if (titleA < titleB) return -1;
+      if (titleA > titleB) return 1;
+    } else {
+      if (titleA < titleB) return 1;
+      if (titleA > titleB) return -1;
+    }
+    return 0;
+  });*/
+  filteredProperties.sort(function (a, b) {
+    const dateA = new Date(a.created_at);
+    const dateB = new Date(b.created_at);
+    if (sortAscending) {
+      if (dateA < dateB) return -1;
+      if (dateA > dateB) return 1;
+    } else {
+      if (dateA < dateB) return 1;
+      if (dateA > dateB) return -1;
+    }
+    return 0;
+  });
+  listViewRenderList();
+}
+
+tableTitleHeader.addEventListener("click", sortPropertyTitle);
+
+// sort list / table view location
+const tableLocationHeader = document.querySelector(".properties__table-header--location");
+
+function sortPropertyLocation() {
+  const tableIcon = document.querySelector(".properties__table-icon--location");
+  if (sortAscending) {
+    tableIcon.src = tableIconDown;
+  } else {
+    tableIcon.src = tableIconUp;
+  }
+  sortAscending = !sortAscending;
+
+  filteredProperties.sort(function (a, b) {
+    if (sortAscending) {
+      return a.zip - b.zip;
+    } else {
+      return b.zip - a.zip;
+    }
+  });
+  listViewRenderList();
+}
+
+tableLocationHeader.addEventListener("click", sortPropertyLocation);
+
+// sort list / table view area
+const tableAreaHeader = document.querySelector(".properties__table-header--area");
+
+function sortPropertyArea() {
+  const tableIcon = document.querySelector(".properties__table-icon--area");
+  if (sortAscending) {
+    tableIcon.src = tableIconDown;
+  } else {
+    tableIcon.src = tableIconUp;
+  }
+  sortAscending = !sortAscending;
+
+  filteredProperties.sort(function (a, b) {
+    if (sortAscending) {
+      return a.usable_area - b.usable_area;
+    } else {
+      return b.usable_area - a.usable_area;
+    }
+  });
+  listViewRenderList();
+}
+
+tableAreaHeader.addEventListener("click", sortPropertyArea);
+
+// sort list / table view price
+const tablePriceHeader = document.querySelector(".properties__table-header--price");
+
+function sortPropertyPrice() {
+  const tableIcon = document.querySelector(".properties__table-icon--price");
+  if (sortAscending) {
+    tableIcon.src = tableIconDown;
+  } else {
+    tableIcon.src = tableIconUp;
+  }
+  sortAscending = !sortAscending;
+
+  filteredProperties.sort(function (a, b) {
+    if (sortAscending) {
+      return a.prize - b.prize;
+    } else {
+      return b.prize - a.prize;
+    }
+  });
+  listViewRenderList();
+}
+
+tablePriceHeader.addEventListener("click", sortPropertyPrice);

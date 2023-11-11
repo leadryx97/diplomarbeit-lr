@@ -160,6 +160,19 @@
     }
     color: $txt-secondary;
   }
+  /* table / list view */
+  &__table-header {
+    text-align: left;
+    color: $txt-secondary;
+  }
+  &__table-cell {
+    &--title {
+      font-weight: $font-weight-bold;
+    }
+    &--price {
+      text-align: right;
+    }
+  }
 }
 
 /* news overview page */
