@@ -19,11 +19,13 @@
         <style type="text/css"></style>
         <path class="st0" d="M8,1L1,8l7,7" />
       </svg>
-      <p class="property-back__text">zurück zur Übersicht</p>
+      <p class="property-back__text">
+        <a href="http://localhost:8080/" class="property-back__link">zurück zur Übersicht</a>
+      </p>
     </div>
     <!-- page title -->
     <h1 class="page-title page-title--property">
-      Zu verkaufen <span class="page-title--property-bold">Bijou am See</span>
+      <span class="page-title page-title--property-bold"></span>
     </h1>
     <div class="grid">
       <!-- property image slider -->
@@ -33,10 +35,12 @@
           <source
             srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
             type="image/avif"
+            class="slider__picture slider__picture--avif"
           />
           <source
             srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
             type="image/webp"
+            class="slider__picture slider__picture--webp"
           />
           <img
             src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
@@ -59,45 +63,51 @@
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
                 type="image/avif"
+                class="slider__thumbnail-picture--avif-first"
               />
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
                 type="image/webp"
+                class="slider__thumbnail-picture--webp-first"
               />
               <img
                 src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
                 alt="Thumbnail Foto Immobilienobjekt"
-                class="slider__thumbnail-picture-img"
+                class="slider__thumbnail-picture-img slider__thumbnail-picture-img--first"
               />
             </picture>
             <picture class="slider__thumbnail-picture">
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
                 type="image/avif"
+                class="slider__thumbnail-picture--avif-second"
               />
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
                 type="image/webp"
+                class="slider__thumbnail-picture--webp-second"
               />
               <img
                 src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
                 alt="Thumbnail Foto Immobilienobjekt"
-                class="slider__thumbnail-picture-img"
+                class="slider__thumbnail-picture-img slider__thumbnail-picture-img--second"
               />
             </picture>
             <picture class="slider__thumbnail-picture">
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
                 type="image/avif"
+                class="slider__thumbnail-picture--avif-third"
               />
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
                 type="image/webp"
+                class="slider__thumbnail-picture--webp-third"
               />
               <img
                 src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
                 alt="Thumbnail Foto Immobilienobjekt"
-                class="slider__thumbnail-picture-img"
+                class="slider__thumbnail-picture-img slider__thumbnail-picture-img--third"
               />
             </picture>
           </div>
@@ -111,28 +121,24 @@
       <div class="grid">
         <div class="property-information__category">
           <p class="property-information__title">Verfügbarkeit</p>
-          <p class="property-information__specs">Ab sofort</p>
+          <p class="property-information__specs property-information__specs--available"></p>
         </div>
         <div class="property-information__category">
           <p class="property-information__title">Location</p>
-          <p class="property-information__specs">6210 Sursee, Luzern</p>
+          <p class="property-information__specs property-information__specs--location"></p>
         </div>
         <div class="property-information__category">
           <p class="property-information__title">Preis</p>
-          <p class="property-information__specs">CHF 2'800'000</p>
+          <p class="property-information__specs property-information__specs--price"></p>
         </div>
         <div class="property-information__category">
           <p class="property-information__title">Nutzfläche</p>
-          <p class="property-information__specs">Fläche 300m²</p>
+          <p class="property-information__specs property-information__specs--area"></p>
         </div>
         <!-- property information description -->
         <div class="property-information__category property-information__category--right">
           <p class="property-information__title">Beschreibung</p>
-          <p class="property-information__specs">
-            An mystischer Lage in der Nähe des berühmten Sursee-Waldes verkaufen wir das vollständig
-            renovierten Gebäude. Das Haus bietet mit den 13 attraktiven Räumen einem grosszügigen
-            Umschwung am See eine nicht alltägliche und einzigartige Atmosphäre.
-          </p>
+          <p class="property-information__specs property-information__specs--description"></p>
         </div>
         <!-- property information map -->
         <div class="property-information__map"></div>

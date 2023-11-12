@@ -10,7 +10,7 @@ import {
   setActiveItem,
 } from "./header.js";
 
-// import pagination icon
+// import icons
 import paginationIcon from "../assets/images/svg/next-page-arrow.svg";
 import tableIconUp from "../assets/images/svg/table-arrow-up.svg";
 import tableIconDown from "../assets/images/svg/table-arrow-down.svg";
@@ -152,6 +152,7 @@ function renderList() {
 
     const div = document.createElement("div");
     div.classList.add("properties__element");
+    div.dataset.propertyId = property.id;
     div.innerHTML = `
         <picture class="properties__element-picture">
                   <source
@@ -623,3 +624,23 @@ function sortPropertyPrice() {
 }
 
 tablePriceHeader.addEventListener("click", sortPropertyPrice);
+
+// property detail pages
+// get property id of clicked element
+
+function getPropertyId(event) {
+  if (
+    event.target.parentNode.parentNode.matches(".properties__element") ||
+    event.target.parentNode.matches(".properties__element")
+  ) {
+    const property = event.target.parentNode.parentNode; // only click on image
+    const propertyId = property.dataset.propertyId;
+    console.log(propertyId);
+
+    // open property detail page
+    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+  }
+}
+
+const propertiesElementsContainer = document.querySelector(".properties__elements");
+propertiesElementsContainer.addEventListener("click", getPropertyId);

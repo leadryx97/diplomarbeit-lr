@@ -240,6 +240,10 @@
   &__text {
     font-weight: $font-weight-bold;
   }
+  &__link {
+    text-decoration: none;
+    color: $txt-primary;
+  }
 }
 
 .property-information {
