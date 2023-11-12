@@ -195,6 +195,7 @@ function listViewRenderList() {
 
     let tableRow = table.insertRow();
     tableRow.classList.add("properties__table-row");
+    tableRow.dataset.propertyId = property.id;
     let tableCellTitle = tableRow.insertCell(0);
     tableCellTitle.classList.add("properties__table-cell", "properties__table-cell--title");
     let cellTextTitle = document.createTextNode(`${property.title}`);
@@ -626,16 +627,32 @@ function sortPropertyPrice() {
 tablePriceHeader.addEventListener("click", sortPropertyPrice);
 
 // property detail pages
-// get property id of clicked element
-
+// get property id of grid view elements
 function getPropertyId(event) {
-  if (
-    event.target.parentNode.parentNode.matches(".properties__element") ||
-    event.target.parentNode.matches(".properties__element")
-  ) {
-    const property = event.target.parentNode.parentNode; // only click on image
+  // click on image
+  if (event.target.parentNode.parentNode.matches(".properties__element")) {
+    const property = event.target.parentNode.parentNode;
     const propertyId = property.dataset.propertyId;
     console.log(propertyId);
+
+    // open property detail page
+    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+  }
+  // click on text
+  else if (event.target.parentNode.matches(".properties__element")) {
+    const property = event.target.parentNode;
+    const propertyId = property.dataset.propertyId;
+    console.log(propertyId);
+
+    // open property detail page
+    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+  }
+}
+// get property id of list view elements
+function getPropertyTableId(event) {
+  if (event.target.parentNode.matches(".properties__table-row")) {
+    const property = event.target.parentNode;
+    const propertyId = property.dataset.propertyId;
 
     // open property detail page
     window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
@@ -644,3 +661,6 @@ function getPropertyId(event) {
 
 const propertiesElementsContainer = document.querySelector(".properties__elements");
 propertiesElementsContainer.addEventListener("click", getPropertyId);
+
+const propertiesTableRows = document.querySelector(".properties__table");
+propertiesTableRows.addEventListener("click", getPropertyTableId);

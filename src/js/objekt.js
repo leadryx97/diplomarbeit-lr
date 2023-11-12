@@ -24,6 +24,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const propertyId = urlParams.get("propertyId");
 console.log(urlParams, propertyId);
 
+// google maps parameter
+let mapsLat = [];
+let mapsLong = [];
+
 // graphql request
 async function createDetailPage(propertyId) {
   try {
@@ -40,6 +44,8 @@ async function createDetailPage(propertyId) {
           prize
           usable_area
           description
+          lat
+          long
           images {
             image_path
           }
@@ -110,6 +116,10 @@ async function createDetailPage(propertyId) {
 
       /* modal */
       document.querySelector(".property-information__modal-property").textContent = property.title;
+
+      /* google maps */
+      mapsLat = property.lat;
+      mapsLong = property.long;
     } else {
       console.error("Property not found.");
     }
@@ -117,7 +127,7 @@ async function createDetailPage(propertyId) {
     console.error("Error:", error);
   }
 }
-
+console.log(mapsLat, mapsLong);
 if (propertyId) {
   createDetailPage(propertyId);
 }
@@ -165,7 +175,8 @@ let map;
 
 async function initMap() {
   // location
-  const position = { lat: 47.178561307288355, lng: 9.451303899836864 };
+  const position = { lat: mapsLat, lng: mapsLong };
+  console.log(mapsLat);
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
