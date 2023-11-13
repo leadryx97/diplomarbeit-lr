@@ -76,6 +76,7 @@ if (screen.width >= 1400) {
   displayedResults = 6;
 }
 
+// filter properties
 function filterProperties() {
   filteredProperties = [];
 

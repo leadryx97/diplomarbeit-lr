@@ -24,14 +24,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const propertyId = urlParams.get("propertyId");
 console.log(urlParams, propertyId);
 
-// google maps parameter
-let mapsLat = [];
-let mapsLong = [];
-
 // graphql request
 async function createDetailPage(propertyId) {
   try {
-    const idQuery = gql`
+    const propertyQuery = gql`
       query GetProperty($propertyId: ID!) {
         estate(id: $propertyId) {
           id
@@ -52,7 +48,7 @@ async function createDetailPage(propertyId) {
         }
       }
     `;
-    const response = await graphQLClient.request(idQuery, { propertyId });
+    const response = await graphQLClient.request(propertyQuery, { propertyId });
     const property = response.estate;
     // format price to swiss franc
     const formattedPrice = property.prize.toLocaleString("de-CH", {
@@ -65,6 +61,11 @@ async function createDetailPage(propertyId) {
     const secondImagePath = property.images[1] ? property.images[1].image_path : "";
     const thirdImagePath = property.images[2] ? property.images[2].image_path : "";
     const fourthImagePath = property.images[3] ? property.images[3].image_path : "";
+
+    /* google maps */
+    mapsLat = property.lat;
+    mapsLong = property.long;
+
     // load dynamic property content
     if (property) {
       /* title */
@@ -116,10 +117,6 @@ async function createDetailPage(propertyId) {
 
       /* modal */
       document.querySelector(".property-information__modal-property").textContent = property.title;
-
-      /* google maps */
-      mapsLat = property.lat;
-      mapsLong = property.long;
     } else {
       console.error("Property not found.");
     }
@@ -127,10 +124,14 @@ async function createDetailPage(propertyId) {
     console.error("Error:", error);
   }
 }
-console.log(mapsLat, mapsLong);
+
 if (propertyId) {
   createDetailPage(propertyId);
 }
+
+// google maps property parameter
+let mapsLat = null;
+let mapsLong = null;
 
 // google maps
 ((g) => {
@@ -176,7 +177,7 @@ let map;
 async function initMap() {
   // location
   const position = { lat: mapsLat, lng: mapsLong };
-  console.log(mapsLat);
+  console.log(mapsLat, mapsLong);
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -190,7 +191,7 @@ async function initMap() {
     mapId: "560e1e5e3f75ad8c",
   });
 
-  // The marker, positioned at home & house
+  // The marker, positioned at the property location
   const iconSize = new google.maps.Size(50, 50);
 
   new google.maps.Marker({
@@ -204,7 +205,9 @@ async function initMap() {
   });
 }
 
-initMap();
+createDetailPage(propertyId).then(() => {
+  initMap();
+});
 
 // modal form
 const requestButton = document.querySelector(".property-information__button-interest");
@@ -227,3 +230,116 @@ checkbox.forEach((checkboxElement) => {
     checkboxElement.classList.toggle("property-information__modal-checkbox--checked");
   });
 });
+
+// list of current properties
+let properties = [];
+
+// graphql: show properties
+async function showProperties() {
+  try {
+    const showQuery = gql`
+      query {
+        estates {
+          id
+          estate_type
+          availability
+          canton
+          city
+          zip
+          title
+          usable_area
+          prize
+          created_at
+          country
+          images {
+            image_path
+          }
+          ref_type {
+            title
+          }
+        }
+      }
+    `;
+    const response = await graphQLClient.request(showQuery);
+    const allProperties = response.estates;
+
+    properties = allProperties;
+    renderList();
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+const latestProperties = document.querySelector(".latest-properties");
+
+// limit results
+let displayedResults = 3;
+let firstDisplayedResult = 0;
+
+// render properties
+function renderList() {
+  latestProperties.innerHTML = "";
+  properties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
+    const firstImagePath = property.images[0] ? property.images[0].image_path : ""; // check if first image object exists, if so, return image_path
+    const formattedPrice = property.prize.toLocaleString("de-CH", {
+      style: "currency",
+      currency: "CHF",
+      maximumFractionDigits: 0,
+    }); // format price to swiss franc
+
+    const div = document.createElement("div");
+    div.classList.add("latest-properties__element");
+    div.dataset.propertyId = property.id;
+    div.innerHTML = `
+        <picture class="latest-properties__element-picture">
+                  <source
+                    srcset="${firstImagePath}?as=avif"
+                    type="image/avif"
+                  />
+                  <source
+                    srcset="${firstImagePath}?as=webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${firstImagePath}"
+                    alt="Immobilienobjekt Bijou am See"
+                    class="latest-properties__element-img"
+                  />
+                </picture>
+        <p class="latest-properties__element-status">${property.estate_type}, ${property.availability}</p>
+        <p class="latest-properties__element-location">${property.zip} ${property.city}, ${property.canton}</p>
+        <h3 class="latest-properties__element-title">${property.title}</h3>
+        <p class="latest-properties__element-value">Fläche ${property.usable_area}m², Preis: ${formattedPrice}</p>
+        `;
+    latestProperties.appendChild(div);
+  });
+}
+
+// call function to load latest properties
+showProperties();
+
+// latest properties detail pages
+// get property id
+function getPropertyId(event) {
+  // click on image
+  if (event.target.parentNode.parentNode.matches(".latest-properties")) {
+    const property = event.target.parentNode.parentNode;
+    const propertyId = property.dataset.propertyId;
+    console.log(propertyId);
+
+    // open property detail page
+    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+  }
+  // click on text
+  else if (event.target.parentNode.matches(".latest-properties")) {
+    const property = event.target.parentNode;
+    const propertyId = property.dataset.propertyId;
+    console.log(propertyId);
+
+    // open property detail page
+    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+  }
+}
+
+const latestPropertiesContainer = document.querySelector(".latest-properties");
+latestPropertiesContainer.addEventListener("click", getPropertyId);

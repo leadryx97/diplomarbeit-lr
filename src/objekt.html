@@ -279,41 +279,15 @@
       <!-- end of property information -->
     </div>
     <div class="grid grid--latest-properties">
+      <!-- latest properties title (only on desktop) -->
+      <h2 class="latest-properties__title">Aktuellste Objekte</h2>
       <!-- latest properties -->
       <div class="latest-properties">
-        <!-- latest properties title (only on desktop) -->
-        <h2 class="latest-properties__title">Aktuellste Objekte</h2>
-        <!-- latest properties object -->
-        <div class="latest-properties__element">
-          <!-- latest properties object image -->
-          <picture class="latest-properties__element-picture">
-            <source
-              srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
-              type="image/avif"
-            />
-            <source
-              srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
-              type="image/webp"
-            />
-            <img
-              src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
-              alt="Foto Immobilienobjekt"
-              class="latest-properties__element-picture-img"
-            />
-          </picture>
-          <!-- latest properties object information -->
-          <div class="latest-properties__object-information">
-            <p class="latest-properties__object-status">Zu verkaufen ab sofort</p>
-            <p class="latest-properties__object-location">6210 Sursee, Luzern</p>
-            <p class="latest-properties__object-title">Bijou am See</p>
-            <p class="latest-properties__object-size">Fläche 300m²</p>
-            <p class="latest-properties__object-price">Preis: CHF 2'800'000</p>
-          </div>
-          <!-- end of latest properties object -->
+         <!-- properties of graphql request -->
         </div>
         <!-- latest properties link to all objects -->
         <div class="latest-properties__all">
-          <p class="latest-properties__all-link">Alle Objekte anzeigen</p>
+          <p><a href="http://localhost:8080/" class="latest-properties__all-link">Alle Objekte anzeigen</a></p>
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"

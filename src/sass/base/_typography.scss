@@ -295,5 +295,7 @@
   }
   &__all-link {
     font-weight: $font-weight-bold;
+    text-decoration: none;
+    color: $txt-primary;
   }
 }
