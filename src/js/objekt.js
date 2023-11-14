@@ -22,7 +22,6 @@ import markerIcon from "../assets/images/svg/map-location-marker.svg";
 // handling of url
 const urlParams = new URLSearchParams(window.location.search);
 const propertyId = urlParams.get("propertyId");
-console.log(urlParams, propertyId);
 
 // graphql request
 async function createDetailPage(propertyId) {
@@ -177,7 +176,6 @@ let map;
 async function initMap() {
   // location
   const position = { lat: mapsLat, lng: mapsLong };
-  console.log(mapsLat, mapsLong);
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
@@ -273,8 +271,12 @@ async function showProperties() {
 const latestProperties = document.querySelector(".latest-properties");
 
 // limit results
-let displayedResults = 3;
+let displayedResults = 2;
 let firstDisplayedResult = 0;
+
+if (screen.width >= 1400) {
+  displayedResults = 3;
+}
 
 // render properties
 function renderList() {
@@ -321,20 +323,18 @@ showProperties();
 // latest properties detail pages
 // get property id
 function getPropertyId(event) {
-  // click on image
-  if (event.target.parentNode.parentNode.matches(".latest-properties")) {
-    const property = event.target.parentNode.parentNode;
+  // click on text
+  if (event.target.parentNode.matches(".latest-properties__element")) {
+    const property = event.target.parentNode;
     const propertyId = property.dataset.propertyId;
-    console.log(propertyId);
 
     // open property detail page
     window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
   }
-  // click on text
-  else if (event.target.parentNode.matches(".latest-properties")) {
-    const property = event.target.parentNode;
+  // click on image
+  else if (event.target.parentNode.parentNode.matches(".latest-properties__element")) {
+    const property = event.target.parentNode.parentNode;
     const propertyId = property.dataset.propertyId;
-    console.log(propertyId);
 
     // open property detail page
     window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
