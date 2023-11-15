@@ -59,7 +59,7 @@
         <!-- property slider thumbnails (on desktop) -->
         <div class="slider__thumbnails">
           <div class="slider__thumbnail-column">
-            <picture class="slider__thumbnail-picture">
+            <picture class="slider__thumbnail-picture slider__thumbnail-picture--first">
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
                 type="image/avif"
@@ -76,7 +76,7 @@
                 class="slider__thumbnail-picture-img slider__thumbnail-picture-img--first"
               />
             </picture>
-            <picture class="slider__thumbnail-picture">
+            <picture class="slider__thumbnail-picture slider__thumbnail-picture--second">
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
                 type="image/avif"
@@ -93,7 +93,7 @@
                 class="slider__thumbnail-picture-img slider__thumbnail-picture-img--second"
               />
             </picture>
-            <picture class="slider__thumbnail-picture">
+            <picture class="slider__thumbnail-picture slider__thumbnail-picture--third">
               <source
                 srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
                 type="image/avif"
@@ -151,11 +151,13 @@
               class="property-information__close-modal"
             />
             <h2 class="property-information__modal-title">Interesse am Objekt</h2>
-            <h3 class="property-information__modal-property">Bijou am See</h3>
+            <h3 class="property-information__modal-property"></h3>
           </div>
-          <form class="property-information__modal-form">
+          <form method="POST" class="property-information__modal-form">
             <div class="grid grid--modal-inside">
               <div class="property-information__modal-element">
+                <input type="hidden" name="property-id" class="property-information__modal-input property-information__modal-input--id" />
+                <input type="hidden" name="property-title" class="property-information__modal-input property-information__modal-input--title" />
                 <label for="firstname" class="property-information__modal-label">Vorname</label>
                 <input
                   type="text"

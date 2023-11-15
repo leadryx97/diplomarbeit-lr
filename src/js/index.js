@@ -634,7 +634,6 @@ function getPropertyId(event) {
   if (event.target.parentNode.parentNode.matches(".properties__element")) {
     const property = event.target.parentNode.parentNode;
     const propertyId = property.dataset.propertyId;
-    console.log(propertyId);
 
     // open property detail page
     window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
@@ -643,7 +642,6 @@ function getPropertyId(event) {
   else if (event.target.parentNode.matches(".properties__element")) {
     const property = event.target.parentNode;
     const propertyId = property.dataset.propertyId;
-    console.log(propertyId);
 
     // open property detail page
     window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
