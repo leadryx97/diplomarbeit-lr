@@ -488,6 +488,7 @@ function listView() {
   loadMoreButton.classList.add("properties__button--load-more-hidden");
   paginationLink.classList.add("properties__page-reference--hidden");
   listViewToggleColumns();
+  sortPropertyLocation();
   listViewRenderList();
 }
 
@@ -527,19 +528,6 @@ function sortPropertyTitle() {
   }
   sortAscending = !sortAscending;
 
-  // Nach Titel oder Datum sortieren?
-  /*filteredProperties.sort(function (a, b) {
-    const titleA = a.title.toLowerCase();
-    const titleB = b.title.toLowerCase();
-    if (sortAscending) {
-      if (titleA < titleB) return -1;
-      if (titleA > titleB) return 1;
-    } else {
-      if (titleA < titleB) return 1;
-      if (titleA > titleB) return -1;
-    }
-    return 0;
-  });*/
   filteredProperties.sort(function (a, b) {
     const dateA = new Date(a.created_at);
     const dateB = new Date(b.created_at);
