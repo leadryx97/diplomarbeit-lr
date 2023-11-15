@@ -23,8 +23,8 @@ import markerIcon from "../assets/images/svg/map-location-marker.svg";
 const urlParams = new URLSearchParams(window.location.search);
 const propertyId = urlParams.get("propertyId");
 
-// graphql request
-async function createDetailPage(propertyId) {
+// graphql request to load property details
+async function loadPropertyDetails(propertyId) {
   try {
     const propertyQuery = gql`
       query GetProperty($propertyId: ID!) {
@@ -54,7 +54,7 @@ async function createDetailPage(propertyId) {
     mapsLat = property.lat;
     mapsLong = property.long;
 
-    // load dynamic property content
+    // render dynamic property content
     renderProperty(property);
   } catch (error) {
     console.error("Error:", error);
@@ -82,13 +82,12 @@ function renderProperty(property) {
   const thirdImageContainer = document.querySelector(".slider__thumbnail-picture--second");
   const fourthImageContainer = document.querySelector(".slider__thumbnail-picture--third");
 
-  // title
+  // assign title
   document.querySelector(".page-title--property").childNodes[0].textContent =
     property.estate_type + " ";
   document.querySelector(".page-title--property-bold").textContent = property.title;
 
-  // images / slideshow
-  // if
+  // if image exists, assign path; otherwise, remove element
   if (firstImagePath) {
     document.querySelector(".slider__picture-img").src = firstImagePath;
     document.querySelector(".slider__picture--avif").srcset = `${firstImagePath}?avif`;
@@ -107,8 +106,6 @@ function renderProperty(property) {
   } else {
     secondImageContainer.remove();
   }
-
-  // !!to be fixed
   if (thirdImagePath) {
     document.querySelector(".slider__thumbnail-picture-img--second").src = thirdImagePath;
     document.querySelector(
@@ -117,10 +114,9 @@ function renderProperty(property) {
     document.querySelector(
       ".slider__thumbnail-picture--webp-second"
     ).srcset = `${thirdImagePath}?webp`;
-  } /*else {
-    console.log("thirdImagePath:", thirdImagePath, thirdImageContainer);
+  } else {
     thirdImageContainer.remove();
-  }*/
+  }
   if (fourthImagePath) {
     document.querySelector(".slider__thumbnail-picture-img--third").src = fourthImagePath;
     document.querySelector(
@@ -129,12 +125,11 @@ function renderProperty(property) {
     document.querySelector(
       ".slider__thumbnail-picture--webp-third"
     ).srcset = `${fourthImagePath}?webp`;
-  } /* else {
-    console.log("fourthImagePath:", fourthImagePath);
+  } else {
     fourthImageContainer.remove();
-  }*/
+  }
 
-  // information
+  // assign detailed information
   document.querySelector(".property-information__specs--available").textContent =
     property.availability;
   document.querySelector(
@@ -147,7 +142,7 @@ function renderProperty(property) {
   document.querySelector(".property-information__specs--description").textContent =
     property.description;
 
-  // modal
+  // assign title in modal
   document.querySelector(".property-information__modal-property").textContent = property.title;
   // hidden form information
   const id = (document.querySelector(".property-information__modal-input--id").textContent =
@@ -156,20 +151,11 @@ function renderProperty(property) {
     property.title);
 }
 
-// load property content after DOM has been fully loaded
-if (propertyId) {
-  document.addEventListener("DOMContentLoaded", function () {
-    createDetailPage(propertyId);
-  });
-} else {
-  console.error("Property not found.");
-}
-
 // google maps property parameter
 let mapsLat = null;
 let mapsLong = null;
 
-// google maps
+// implemented google maps
 ((g) => {
   var h,
     a,
@@ -218,7 +204,7 @@ async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
-  // The map, centered at home & house
+  // The map, centered at property location
   map = new Map(document.querySelector(".property-information__map"), {
     zoom: 15.7,
     center: position,
@@ -226,7 +212,7 @@ async function initMap() {
     mapId: "560e1e5e3f75ad8c",
   });
 
-  // The marker, positioned at the property location
+  // The marker, positioned at property location
   const iconSize = new google.maps.Size(50, 50);
 
   new google.maps.Marker({
@@ -240,11 +226,7 @@ async function initMap() {
   });
 }
 
-createDetailPage(propertyId).then(() => {
-  initMap();
-});
-
-// modal form
+// handle modal form
 const requestButton = document.querySelector(".property-information__button-interest");
 const modal = document.querySelector(".property-information__modal");
 const closeModal = document.querySelector(".property-information__close-modal");
@@ -269,8 +251,8 @@ checkbox.forEach((checkboxElement) => {
 // list of current properties
 let properties = [];
 
-// graphql: show properties
-async function showProperties() {
+// graphql request to load latest properties
+async function loadLatestProperties() {
   try {
     const showQuery = gql`
       query {
@@ -307,7 +289,7 @@ async function showProperties() {
 
 const latestProperties = document.querySelector(".latest-properties");
 
-// limit results
+// limit results of lates properties
 let displayedResults = 2;
 let firstDisplayedResult = 0;
 
@@ -315,7 +297,7 @@ if (screen.width >= 1400) {
   displayedResults = 3;
 }
 
-// render properties
+// render latest properties
 function renderList() {
   latestProperties.innerHTML = "";
   properties.slice(firstDisplayedResult, displayedResults).forEach(function (property) {
@@ -354,11 +336,8 @@ function renderList() {
   });
 }
 
-// call function to load latest properties
-showProperties();
-
-// latest properties detail pages
-// get property id
+// handle links to detail pages of latest properties
+// get property id of clicked latest property & navigate to related detail page
 function getPropertyId(event) {
   // click on text
   if (event.target.parentNode.matches(".latest-properties__element")) {
@@ -380,3 +359,12 @@ function getPropertyId(event) {
 
 const latestPropertiesContainer = document.querySelector(".latest-properties");
 latestPropertiesContainer.addEventListener("click", getPropertyId);
+
+// render page content (property details, map & latest properties)
+async function renderPage() {
+  await loadPropertyDetails(propertyId);
+  initMap();
+  loadLatestProperties();
+}
+
+renderPage();
