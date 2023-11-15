@@ -102,6 +102,8 @@ function filterProperties() {
     sortDateAscending();
   } else if (sortSelection === "date-descending") {
     sortDateDescending();
+  } else {
+    sortDateDescending();
   }
 
   if (propertiesTable.classList.contains("properties__table--hidden")) {

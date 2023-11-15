@@ -281,6 +281,7 @@ async function loadLatestProperties() {
     const allProperties = response.estates;
 
     properties = allProperties;
+    sortDateDescending();
     renderList();
   } catch (error) {
     console.error("Error:", error);
@@ -295,6 +296,15 @@ let firstDisplayedResult = 0;
 
 if (screen.width >= 1400) {
   displayedResults = 3;
+}
+
+// sort latest properties: date descending
+function sortDateDescending() {
+  properties.sort(function (a, b) {
+    const dateA = new Date(a.created_at);
+    const dateB = new Date(b.created_at);
+    return dateB - dateA;
+  });
 }
 
 // render latest properties
