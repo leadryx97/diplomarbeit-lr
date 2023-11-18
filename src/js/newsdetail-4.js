@@ -1,4 +1,4 @@
-// import header navigation
+// import header
 import {
   nav,
   navItems,
@@ -8,4 +8,7 @@ import {
   body,
   toggleMenu,
   setActiveItem,
-} from "./header.js";
+} from "./site-wide.js";
+
+// import footer
+import { scrollToTopBtn, rootElement } from "./footer.js";

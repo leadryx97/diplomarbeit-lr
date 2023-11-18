@@ -1,5 +1,6 @@
 // import scss
 import "../sass/main.scss";
+// header
 // header navigation
 const nav = document.querySelector(".header__nav-menu");
 const navItems = document.querySelectorAll(".header__nav-link");

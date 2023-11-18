@@ -1,4 +1,4 @@
-// import header navigation
+// import header
 import {
   nav,
   navItems,
@@ -8,7 +8,7 @@ import {
   body,
   toggleMenu,
   setActiveItem,
-} from "./header.js";
+} from "./site-wide.js";
 
 // import location icon
 import markerIcon from "../assets/images/svg/map-location-marker.svg";

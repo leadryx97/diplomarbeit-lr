@@ -4,7 +4,8 @@
   "description": "- [Abstract / Management Summary](#abstract--management-summary)\r - [Setup Guide](#setup-guide)\r - [URL der lauffähigen Version](#url-der-lauffähigen-version)\r - [Zeitplan / Meilensteine](#zeitplan--meilensteine)\r - [Technologiekonzept inkl. Evaluation der eingesetzten Technologien, Begründung](#technologiekonzept-inkl-evaluation-der-eingesetzten-technologien-begründung)\r - [Technische Dokumentation bei Eigenleistungen](#technische-dokumentation-bei-eigenleistungen)\r - [Zusammenfassung und Ausblick, persönliche Anmerkungen](#zusammenfassung-und-ausblick-persönliche-anmerkungen)\r - [Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code](#literaturverzeichnis-quellenangaben-bei-nutzung-von-externem-code)\r - [Eidesstattliche Erklärung ](#eidesstattliche-erklärung)",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "dev": "webpack-dev-server --config webpack.dev.js --open",
+    "start": "node server.js",
     "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,6 +37,7 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0"
   }

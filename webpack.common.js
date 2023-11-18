@@ -4,14 +4,11 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 const includePreprocessor = (content, loaderContext) => {
-  return content.replace(
-    /<include src="(.+)"\s*\/?>(?:<\/include>)?/gi,
-    (m, src) => {
-      const filePath = path.resolve(loaderContext.context, src);
-      loaderContext.dependency(filePath);
-      return fs.readFileSync(filePath, "utf8");
-    }
-  );
+  return content.replace(/<include src="(.+)"\s*\/?>(?:<\/include>)?/gi, (m, src) => {
+    const filePath = path.resolve(loaderContext.context, src);
+    loaderContext.dependency(filePath);
+    return fs.readFileSync(filePath, "utf8");
+  });
 };
 
 const pages = [

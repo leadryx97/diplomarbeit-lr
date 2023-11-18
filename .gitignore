@@ -1,2 +1,4 @@
 dist/
 node_modules
+ssh-key-heroku
+ssh-key-heroku.pub
