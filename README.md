@@ -143,6 +143,7 @@ Ich verwende die Technologien, die wir im Unterricht erlernt haben:
 - Recherche bzgl. SCSS color variables / entschieden für "tier 1 & tier 2" Vorgehensweise [Quelle](https://markus.oberlehner.net/blog/two-tier-sass-variables-and-css-custom-properties/)
 - Einbau Google Maps anhand [Google Artikel](https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=de#javascript)
   - Ich habe das Copyright & die Nutzungsbedingungen mit CSS ausgeblendet. Auf einer produktiven Seite ist dies vermutlich aufgrund der [Nutzungsbedingungen](https://cloud.google.com/maps-platform/terms/) nicht erlaubt.
+- Wollte Footer JS-Code in die "site-wide.js"-Datei nehmen. Da auf der Kontakt-Seite, der Footer nicht sichtbar ist, hat dies jedoch zu Problemen geführt. Nach kurzem Probieren dazu entschieden, Footer in separate JS-Datei zu nehmen.
 
 ## Literaturverzeichnis, Quellenangaben bei Nutzung von externem Code
 
@@ -153,6 +154,10 @@ Für die Mobile Hamburger Navigation habe ich mich an folgendem Artikel orientie
 ### Toggle Switch
 
 Für den Toggle Switch habe ich mich am ersten Switch "Light" aus folgendem Code orientiert: [Codepen: CSS Toggle Switch button](https://codepen.io/alvarotrigo/pen/RwjEZeJ). Auch hier habe ich den Code für meine Zwecke modifiziert.
+
+### Scroll-to-Top Button
+
+Für den Scroll-to-Top Button habe ich mich am Code aus folgendem Artikel orientiert (Option 1): [How to Make an Unobtrusive Scroll-to-Top Button](https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/)
 
 ## Eidesstattliche Erklärung
 
