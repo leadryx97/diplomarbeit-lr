@@ -53,12 +53,9 @@ async function loadPropertyDetails(propertyId) {
     const response = await graphQLClient.request(propertyQuery, { propertyId });
     const property = response.estate;
 
-    /* google maps */
-    mapsLat = property.lat;
-    mapsLong = property.long;
-
     // render dynamic property content
     renderProperty(property);
+    return property;
   } catch (error) {
     console.error("Error:", error);
   }
@@ -154,60 +151,25 @@ function renderProperty(property) {
     property.title);
 }
 
-// google maps property parameter
-let mapsLat = null;
-let mapsLong = null;
+// google maps
+import { Loader } from "@googlemaps/js-api-loader";
 
-// implemented google maps
-((g) => {
-  var h,
-    a,
-    k,
-    p = "The Google Maps JavaScript API",
-    c = "google",
-    l = "importLibrary",
-    q = "__ib__",
-    m = document,
-    b = window;
-  b = b[c] || (b[c] = {});
-  var d = b.maps || (b.maps = {}),
-    r = new Set(),
-    e = new URLSearchParams(),
-    u = () =>
-      h ||
-      (h = new Promise(async (f, n) => {
-        await (a = m.createElement("script"));
-        e.set("libraries", [...r] + "");
-        for (k in g)
-          e.set(
-            k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
-            g[k]
-          );
-        e.set("callback", c + ".maps." + q);
-        a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-        d[q] = f;
-        a.onerror = () => (h = n(Error(p + " could not load.")));
-        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-        m.head.append(a);
-      }));
-  d[l]
-    ? console.warn(p + " only loads once. Ignoring:", g)
-    : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-})({
-  key: "AIzaSyAWGZmIJEj81w1nCFltoYGn-V_PXQHVae0",
-});
-// Initialize and add the map
 let map;
 
-async function initMap() {
+const loader = new Loader({
+  apiKey: "AIzaSyAWGZmIJEj81w1nCFltoYGn-V_PXQHVae0",
+  version: "weekly",
+});
+
+async function initMap(propertyLat, propertyLong) {
+  const { Map } = await loader.importLibrary("maps");
+  // loader.importLibrary("maps").then(({ Map }) => {
   // location
-  const position = { lat: mapsLat, lng: mapsLong };
+  const position = { lat: propertyLat, lng: propertyLong };
   // Request needed libraries.
   //@ts-ignore
-  const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
-  // The map, centered at property location
+  // The map, centered at home & house
   map = new Map(document.querySelector(".property-information__map"), {
     zoom: 15.7,
     center: position,
@@ -215,13 +177,13 @@ async function initMap() {
     mapId: "560e1e5e3f75ad8c",
   });
 
-  // The marker, positioned at property location
+  // The marker, positioned at home & house
   const iconSize = new google.maps.Size(50, 50);
 
   new google.maps.Marker({
     position: position,
     map,
-    title: "Hello World!",
+    title: "location",
     icon: {
       url: markerIcon,
       scaledSize: iconSize,
@@ -375,8 +337,8 @@ latestPropertiesContainer.addEventListener("click", getPropertyId);
 
 // render page content (property details, map & latest properties)
 async function renderPage() {
-  await loadPropertyDetails(propertyId);
-  initMap();
+  const property = await loadPropertyDetails(propertyId);
+  await initMap(property.lat, property.long);
   loadLatestProperties();
 }
 
