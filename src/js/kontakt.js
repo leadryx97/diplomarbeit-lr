@@ -23,11 +23,10 @@ const loader = new Loader({
   version: "weekly",
 });
 
+// Request needed libraries.
 loader.importLibrary("maps").then(({ Map }) => {
   // location
   const position = { lat: 47.178561307288355, lng: 9.451303899836864 };
-  // Request needed libraries.
-  //@ts-ignore
 
   // The map, centered at home & house
   map = new Map(document.querySelector(".contact__maps"), {

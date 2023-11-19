@@ -52,7 +52,6 @@ async function loadPropertyDetails(propertyId) {
     `;
     const response = await graphQLClient.request(propertyQuery, { propertyId });
     const property = response.estate;
-
     // render dynamic property content
     renderProperty(property);
     return property;
@@ -144,11 +143,6 @@ function renderProperty(property) {
 
   // assign title in modal
   document.querySelector(".property-information__modal-property").textContent = property.title;
-  // hidden form information
-  const id = (document.querySelector(".property-information__modal-input--id").textContent =
-    property.id);
-  const title = (document.querySelector(".property-information__modal-input--title").textContent =
-    property.title);
 }
 
 // google maps
@@ -162,14 +156,12 @@ const loader = new Loader({
 });
 
 async function initMap(propertyLat, propertyLong) {
+  // Request needed libraries
   const { Map } = await loader.importLibrary("maps");
-  // loader.importLibrary("maps").then(({ Map }) => {
   // location
   const position = { lat: propertyLat, lng: propertyLong };
-  // Request needed libraries.
-  //@ts-ignore
 
-  // The map, centered at home & house
+  // The map, centered at property location
   map = new Map(document.querySelector(".property-information__map"), {
     zoom: 15.7,
     center: position,
@@ -177,7 +169,7 @@ async function initMap(propertyLat, propertyLong) {
     mapId: "560e1e5e3f75ad8c",
   });
 
-  // The marker, positioned at home & house
+  // The marker, positioned at property location
   const iconSize = new google.maps.Size(50, 50);
 
   new google.maps.Marker({
@@ -202,6 +194,129 @@ requestButton.addEventListener("click", () => {
 
 closeModal.addEventListener("click", () => {
   modal.close();
+});
+
+// transmit form information to graphql
+async function createMessage(
+  firstname,
+  lastname,
+  address,
+  postalcode,
+  city,
+  email,
+  phonenumber,
+  content,
+  estate_id,
+  information,
+  visit
+) {
+  try {
+    const create = gql`
+      mutation createMessage(
+        $firstname: String = ""
+        $lastname: String = ""
+        $address: String = ""
+        $postalcode: String = ""
+        $city: String = ""
+        $email: String = ""
+        $phonenumber: String = ""
+        $content: String = ""
+        $estate_id: ID = ""
+        $information: Boolean = false
+        $visit: Boolean = false
+      ) {
+        createMessage(
+          firstname: $firstname
+          lastname: $lastname
+          address: $address
+          postalcode: $postalcode
+          city: $city
+          email: $email
+          phonenumber: $phonenumber
+          content: $content
+          estate_id: $estate_id
+          information: $information
+          visit: $visit
+        ) {
+          id
+          firstname
+          lastname
+          address
+          postalcode
+          city
+          email
+          phonenumber
+          content
+          estate_id
+          information
+          visit
+        }
+      }
+    `;
+    const response = await graphQLClient.request(create, {
+      firstname,
+      lastname,
+      address,
+      postalcode,
+      city,
+      email,
+      phonenumber,
+      content,
+      estate_id,
+      information,
+      visit,
+    });
+
+    const newMessage = response.createMessage;
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
+function sendMessage(propertyId) {
+  const inputFirstName = document.querySelector(".property-information__modal-input--firstname");
+  const inputLastName = document.querySelector(".property-information__modal-input--lastname");
+  const inputAddress = document.querySelector(".property-information__modal-input--address");
+  const inputPostal = document.querySelector(".property-information__modal-input--postal");
+  const inputLocation = document.querySelector(".property-information__modal-input--location");
+  const inputEmail = document.querySelector(".property-information__modal-input--email");
+  const inputTel = document.querySelector(".property-information__modal-input--tel");
+  const inputMessage = document.querySelector(".property-information__modal-textarea");
+  const checkboxInformation = document.querySelector(
+    ".property-information__modal-checkbox--information"
+  );
+  const checkboxVisit = document.querySelector(".property-information__modal-checkbox--visit");
+
+  const firstName = inputFirstName.value;
+  const lastName = inputLastName.value;
+  const address = inputAddress.value;
+  const postal = inputPostal.value;
+  const location = inputLocation.value;
+  const email = inputEmail.value;
+  const tel = inputTel.value;
+  const message = inputMessage.value;
+  const estateId = propertyId;
+  let information = checkboxInformation.checked;
+  let visit = checkboxVisit.checked;
+
+  createMessage(
+    firstName,
+    lastName,
+    address,
+    postal,
+    location,
+    email,
+    tel,
+    message,
+    estateId,
+    information,
+    visit
+  );
+}
+
+const sendButton = document.querySelector(".property-information__modal-button");
+sendButton.addEventListener("click", () => {
+  sendMessage(propertyId);
 });
 
 // icon checkbox
