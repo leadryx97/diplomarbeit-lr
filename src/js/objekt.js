@@ -60,6 +60,35 @@ async function loadPropertyDetails(propertyId) {
   }
 }
 
+// render images: create picture element, if image_path exists
+function renderImages(images) {
+  const imagesContainer = document.querySelector(".slider");
+  imagesContainer.innerHTML = "";
+
+  images.forEach(function (image, i) {
+    const picture = document.createElement("picture");
+    picture.classList.add("slider__picture", `slider__picture--${i}`);
+    picture.innerHTML = `
+      <source
+        srcset="${image.image_path}?as=avif"
+        type="image/avif"
+        class="slider__picture slider__picture--avif-${i}"
+      />
+      <source
+        srcset="${image.image_path}?as=webp"
+        type="image/webp"
+        class="slider__picture slider__picture--webp-${i}"
+      />
+      <img
+        src="${image.image_path}"
+        alt="Foto Immobilienobjekt"
+        class="slider__picture-img slider__picture-img--${i}"
+      />
+    `;
+    imagesContainer.appendChild(picture);
+  });
+}
+
 // render property content
 function renderProperty(property) {
   // format price to swiss franc
@@ -69,64 +98,15 @@ function renderProperty(property) {
     maximumFractionDigits: 0,
   });
 
-  // check if image object exists, if so, return image_path
-  const firstImagePath = property.images[0] && property.images[0].image_path;
-  const secondImagePath = property.images[1] && property.images[1].image_path;
-  const thirdImagePath = property.images[2] && property.images[2].image_path;
-  const fourthImagePath = property.images[3] && property.images[3].image_path;
-
-  // image container variables
-  const firstImageContainer = document.querySelector(".slider__picture");
-  const secondImageContainer = document.querySelector(".slider__thumbnail-picture--first");
-  const thirdImageContainer = document.querySelector(".slider__thumbnail-picture--second");
-  const fourthImageContainer = document.querySelector(".slider__thumbnail-picture--third");
+  // declare images variable, to create picture elements
+  const images = property.images;
+  // call renderImages function, to create picture elements
+  renderImages(images);
 
   // assign title
   document.querySelector(".page-title--property").childNodes[0].textContent =
     property.estate_type + " ";
   document.querySelector(".page-title--property-bold").textContent = property.title;
-
-  // if image exists, assign path; otherwise, remove element
-  if (firstImagePath) {
-    document.querySelector(".slider__picture-img").src = firstImagePath;
-    document.querySelector(".slider__picture--avif").srcset = `${firstImagePath}?avif`;
-    document.querySelector(".slider__picture--webp").srcset = `${firstImagePath}?webp`;
-  } else {
-    firstImageContainer.remove();
-  }
-  if (secondImagePath) {
-    document.querySelector(".slider__thumbnail-picture-img--first").src = secondImagePath;
-    document.querySelector(
-      ".slider__thumbnail-picture--avif-first"
-    ).srcset = `${secondImagePath}?avif`;
-    document.querySelector(
-      ".slider__thumbnail-picture--webp-first"
-    ).srcset = `${secondImagePath}?webp`;
-  } else {
-    secondImageContainer.remove();
-  }
-  if (thirdImagePath) {
-    document.querySelector(".slider__thumbnail-picture-img--second").src = thirdImagePath;
-    document.querySelector(
-      ".slider__thumbnail-picture--avif-second"
-    ).srcset = `${thirdImagePath}?avif`;
-    document.querySelector(
-      ".slider__thumbnail-picture--webp-second"
-    ).srcset = `${thirdImagePath}?webp`;
-  } else {
-    thirdImageContainer.remove();
-  }
-  if (fourthImagePath) {
-    document.querySelector(".slider__thumbnail-picture-img--third").src = fourthImagePath;
-    document.querySelector(
-      ".slider__thumbnail-picture--avif-third"
-    ).srcset = `${fourthImagePath}?avif`;
-    document.querySelector(
-      ".slider__thumbnail-picture--webp-third"
-    ).srcset = `${fourthImagePath}?webp`;
-  } else {
-    fourthImageContainer.remove();
-  }
 
   // assign detailed information
   document.querySelector(".property-information__specs--available").textContent =

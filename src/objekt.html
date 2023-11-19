@@ -29,92 +29,7 @@
     </h1>
     <div class="grid">
       <!-- property image slider -->
-      <div class="slider">
-        <!-- property slider image (big on desktop) -->
-        <picture class="slider__picture">
-          <source
-            srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=avif"
-            type="image/avif"
-            class="slider__picture slider__picture--avif"
-          />
-          <source
-            srcset="./assets/images/jpg/bijou-am-see-luzern-1.jpg?as=webp"
-            type="image/webp"
-            class="slider__picture slider__picture--webp"
-          />
-          <img
-            src="./assets/images/jpg/bijou-am-see-luzern-1.jpg"
-            alt="Foto Immobilienobjekt"
-            class="slider__picture-img"
-          />
-        </picture>
-        <!-- property slider next button (only mobile?) -->
-        <div class="slider__next-button-container">
-          <span class="slider__next-button"></span>
-        </div>
-        <!-- property slider previous button (only mobile?) -->
-        <div class="slider__previous-button-container">
-          <span class="slider__previous-button"></span>
-        </div>
-        <!-- property slider thumbnails (on desktop) -->
-        <div class="slider__thumbnails">
-          <div class="slider__thumbnail-column">
-            <picture class="slider__thumbnail-picture slider__thumbnail-picture--first">
-              <source
-                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
-                type="image/avif"
-                class="slider__thumbnail-picture--avif-first"
-              />
-              <source
-                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
-                type="image/webp"
-                class="slider__thumbnail-picture--webp-first"
-              />
-              <img
-                src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
-                alt="Thumbnail Foto Immobilienobjekt"
-                class="slider__thumbnail-picture-img slider__thumbnail-picture-img--first"
-              />
-            </picture>
-            <picture class="slider__thumbnail-picture slider__thumbnail-picture--second">
-              <source
-                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
-                type="image/avif"
-                class="slider__thumbnail-picture--avif-second"
-              />
-              <source
-                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
-                type="image/webp"
-                class="slider__thumbnail-picture--webp-second"
-              />
-              <img
-                src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
-                alt="Thumbnail Foto Immobilienobjekt"
-                class="slider__thumbnail-picture-img slider__thumbnail-picture-img--second"
-              />
-            </picture>
-            <picture class="slider__thumbnail-picture slider__thumbnail-picture--third">
-              <source
-                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=avif"
-                type="image/avif"
-                class="slider__thumbnail-picture--avif-third"
-              />
-              <source
-                srcset="./assets/images/jpg/bijou-am-see-luzern-2.jpg?as=webp"
-                type="image/webp"
-                class="slider__thumbnail-picture--webp-third"
-              />
-              <img
-                src="./assets/images/jpg/bijou-am-see-luzern-2.jpg"
-                alt="Thumbnail Foto Immobilienobjekt"
-                class="slider__thumbnail-picture-img slider__thumbnail-picture-img--third"
-              />
-            </picture>
-          </div>
-          <!-- end of property slider thumbnails -->
-        </div>
-        <!-- end of property image slider -->
-      </div>
+      <div class="slider"><!-- dynamic content --></div>
     </div>
     <!-- property information -->
     <div class="property-information">
@@ -156,8 +71,6 @@
           <form method="dialog" class="property-information__modal-form">
             <div class="grid grid--modal-inside">
               <div class="property-information__modal-element">
-                <input type="hidden" name="property-id" class="property-information__modal-input property-information__modal-input--id" />
-                <input type="hidden" name="property-title" class="property-information__modal-input property-information__modal-input--title" />
                 <label for="firstname" class="property-information__modal-label">Vorname</label>
                 <input
                   type="text"
