@@ -20,6 +20,8 @@ const graphQLClient = new GraphQLClient("https://dev22-api.web-professionals.ch/
 
 // import location icon
 import markerIcon from "../assets/images/svg/map-location-marker.svg";
+import sliderRight from "../assets/images/svg/next-arrow-white-right.svg";
+import sliderLeft from "../assets/images/svg/next-arrow-white-left.svg";
 
 // dynamic property page
 // handling of url
@@ -65,6 +67,28 @@ function renderImages(images) {
   const imagesContainer = document.querySelector(".slider");
   imagesContainer.innerHTML = "";
 
+  const navLeft = document.createElement("div");
+  const navRight = document.createElement("div");
+
+  navLeft.classList.add("slider__nav", "slider__nav--prev");
+  navRight.classList.add("slider__nav", "slider__nav--next");
+
+  navLeft.innerHTML = `
+    <img
+    src="${sliderLeft}"
+    alt="Schliessen Kreuz-Icon"
+    class="slider__nav-icon"
+    />`;
+
+  navRight.innerHTML = `
+    <img
+    src="${sliderRight}"
+    alt="Schliessen Kreuz-Icon"
+    class="slider__nav-icon"
+    />`;
+
+  let imageArray = [];
+
   images.forEach(function (image, i) {
     const picture = document.createElement("picture");
     picture.classList.add("slider__picture", `slider__picture--${i}`);
@@ -82,11 +106,17 @@ function renderImages(images) {
       <img
         src="${image.image_path}"
         alt="Foto Immobilienobjekt"
-        class="slider__picture-img slider__picture-img--${i}"
+        class="slider__picture-img slider__picture-img--${i} slider__picture-img--small"
       />
     `;
     imagesContainer.appendChild(picture);
+
+    imageArray.push(picture);
   });
+  imagesContainer.appendChild(navLeft);
+  imagesContainer.appendChild(navRight);
+
+  imageSlider(imageArray);
 }
 
 // render property content
@@ -438,3 +468,74 @@ async function renderPage() {
 }
 
 renderPage();
+
+// imageSlider: handles functionality of image slider
+function imageSlider(imageArray) {
+  let index = 0;
+  // initialize first image as visible
+  imageArray[index].classList.add("slider__picture--visible");
+  // function to navigate to next image
+  function nextImg() {
+    // remove visibility from the current image
+    imageArray[index].classList.remove("slider__picture--visible");
+    // increment the index
+    index++;
+    // check if index exceeds the array length, if so, reset it to the first image
+    if (index === imageArray.length) {
+      index = 0;
+    }
+    // add visibility to the next image
+    imageArray[index].classList.add("slider__picture--visible");
+  }
+  // function to navigate to previous image
+  function prevImg() {
+    imageArray[index].classList.remove("slider__picture--visible");
+    // decrement the index
+    index--;
+    // check if index is negative, if so, set it to last image
+    if (index === -1) {
+      index = imageArray.length - 1;
+    }
+    // add visibility to the next image
+    imageArray[index].classList.add("slider__picture--visible");
+  }
+
+  const imageContainer = document.querySelector(".slider");
+
+  // adding an event listener to next & previous image buttons using event delegation
+  imageContainer.addEventListener("click", (event) => {
+    if (event.target.matches(".slider__nav--next, .slider__nav--next *")) {
+      nextImg();
+    }
+    if (event.target.matches(".slider__nav--prev, .slider__nav--prev *")) {
+      prevImg();
+    }
+  });
+
+  // desktop image slider
+  imageArray[index].querySelector("img").classList.remove("slider__picture-img--small");
+  let prevClickedImg = null;
+  function desktopSlider() {
+    imageArray.forEach((img) => {
+      img.querySelector("img").classList.add("slider__picture-img--small");
+    });
+
+    imageArray[index].classList.remove("slider__picture--visible");
+
+    if (prevClickedImg !== null) {
+      prevClickedImg.classList.add("slider__picture-img--small");
+      prevClickedImg.parentNode.classList.remove("slider__picture--visible");
+    }
+
+    event.target.classList.remove("slider__picture-img--small");
+    event.target.parentNode.classList.add("slider__picture--visible");
+
+    prevClickedImg = event.target;
+  }
+
+  imageContainer.addEventListener("click", (event) => {
+    if (event.target.matches(".slider__picture, .slider__picture *")) {
+      desktopSlider();
+    }
+  });
+}

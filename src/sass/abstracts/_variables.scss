@@ -13,6 +13,7 @@ $bg-primary: $brand-secondary; /* light-green */
 $bg-secondary: $brand-primary; /* dark-green */
 $bg-secondary-transp: $brand-primary-transp; /* dark-green transparent */
 $bg-tertiary: $base-primary; /* white */
+$bg-tertiary-transp: rgba($base-primary, 0.45);
 /* text (tier 2) */
 $txt-primary: $base-secondary; /* black */
 $txt-secondary: $brand-primary; /* dark-green */
