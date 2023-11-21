@@ -56,7 +56,6 @@ async function showProperties() {
 
     properties = allProperties;
     filterProperties();
-    pagination();
   } catch (error) {
     console.error("Error:", error);
   }
@@ -108,6 +107,8 @@ function filterProperties() {
   } else {
     sortDateDescending();
   }
+
+  pagination(filteredProperties);
 
   if (propertiesTable.classList.contains("properties__table--hidden")) {
     renderList();
@@ -249,12 +250,14 @@ let endPage = 1;
 let resultsPerPage = 6;
 const paginationLink = document.querySelector(".properties__page-reference");
 
-function calculateEndPage() {
-  endPage = Math.ceil(properties.length / resultsPerPage);
+function calculateEndPage(displayedProperties) {
+  /* calculates the needed number of pages to show all properties
+  and assigns it to the endPage variable */
+  endPage = Math.ceil(displayedProperties.length / resultsPerPage);
 }
 
-function pagination() {
-  calculateEndPage();
+function pagination(displayedProperties) {
+  calculateEndPage(displayedProperties);
   paginationLink.innerHTML = `<p class="properties__pagination">
     Seite <span class="properties__current-page">${currentPage}</span> von
     <span class="properties__total-pages">${endPage}</span>
@@ -266,23 +269,16 @@ function pagination() {
   />`;
 }
 
-function paginationIncrease() {
-  if (currentPage < endPage) {
-    currentPage++;
-  }
-}
-
-paginationLink.addEventListener("click", () => {
-  paginationIncrease();
-});
-
 // load next page (desktop)
 const loadNextPage = document.querySelector(".properties__page-reference");
 
 loadNextPage.addEventListener("click", () => {
-  displayedResults += 6;
-  firstDisplayedResult += 6;
-  showProperties();
+  currentPage++;
+  if (currentPage <= endPage) {
+    displayedResults += resultsPerPage;
+    firstDisplayedResult += resultsPerPage;
+    showProperties();
+  }
 });
 
 // graphql properties filter/select
@@ -407,7 +403,7 @@ locationSelect.addEventListener("change", locationSelectValue);
 sortSelect.addEventListener("change", sortSelectValue);
 estateTypeCheckbox.addEventListener("change", estateTypeCheckboxValue);
 
-// sort select: handle placeholder text
+// sort select: handle placeholder text / text before dropdown is clicked ("select")
 function sortSelectPlaceholder() {
   const placeholderOption = document.querySelector(".properties__option--placeholder");
   if (placeholderOption && placeholderOption.selected) {
@@ -629,7 +625,7 @@ function getPropertyId(event) {
     const propertyId = property.dataset.propertyId;
 
     // open property detail page
-    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+    window.location.href = `https://home-and-house-19aa48ad56c8.herokuapp.com/objekt.html?propertyId=${propertyId}`;
   }
   // click on text
   else if (event.target.parentNode.matches(".properties__element")) {
@@ -637,7 +633,7 @@ function getPropertyId(event) {
     const propertyId = property.dataset.propertyId;
 
     // open property detail page
-    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+    window.location.href = `https://home-and-house-19aa48ad56c8.herokuapp.com/objekt.html?propertyId=${propertyId}`;
   }
 }
 // get property id of list view elements
@@ -647,7 +643,7 @@ function getPropertyTableId(event) {
     const propertyId = property.dataset.propertyId;
 
     // open property detail page
-    window.location.href = `http://localhost:8080/objekt.html?propertyId=${propertyId}`;
+    window.location.href = `https://home-and-house-19aa48ad56c8.herokuapp.com/objekt.html?propertyId=${propertyId}`;
   }
 }
 
