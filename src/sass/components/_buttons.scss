@@ -6,6 +6,7 @@
     border: none;
     background-color: $btn-primary; /* dark green */
     color: $btn-txt; /* white */
+    cursor: pointer;
     &:hover {
       background-color: $btn-secondary; /* grey */
     }
@@ -62,12 +63,16 @@
     grid-column: 2 / 3;
     width: 115px;
     height: 45px;
-    background-color: $btn-primary;
-    color: $btn-txt;
+    background-color: $btn-primary; /* dark-green */
+    color: $btn-txt; /* white */
     border: none;
+    cursor: pointer;
     @include for-size(xx-large) {
       width: 150px;
       height: 45px;
+    }
+    &:hover {
+      background-color: $btn-secondary; /* grey */
     }
   }
 }
@@ -82,6 +87,7 @@
     color: $btn-txt; /* white */
     grid-column: 2 / 3;
     margin: 20px 0px 80px 0px;
+    cursor: pointer;
     &:hover {
       background-color: $btn-secondary; /* grey */
     }
@@ -99,9 +105,13 @@
     color: $btn-txt; /* white */
     height: 45px;
     width: 100%;
+    cursor: pointer;
     @include for-size(xx-large) {
       margin: 10px 0 0 0;
       width: 400px;
+    }
+    &:hover {
+      background-color: $btn-secondary; /* grey */
     }
   }
   &__modal-button {
@@ -111,10 +121,14 @@
     height: 45px;
     width: 100%;
     margin: 15px 0 70px 0;
+    cursor: pointer;
     @include for-size(xx-large) {
       margin: 0;
       width: 300px;
       align-self: end;
+    }
+    &:hover {
+      background-color: $btn-primary; /* dark-green */
     }
   }
 }

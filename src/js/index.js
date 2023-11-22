@@ -17,6 +17,10 @@ import { scrollToTopBtn, rootElement } from "./footer.js";
 import paginationIcon from "../assets/images/svg/next-page-arrow.svg";
 import tableIconUp from "../assets/images/svg/table-arrow-up.svg";
 import tableIconDown from "../assets/images/svg/table-arrow-down.svg";
+import gridIcon from "../assets/images/svg/view-grid.svg";
+import listIcon from "../assets/images/svg/view-list.svg";
+import gridHoverIcon from "../assets/images/svg/view-grid-hover.svg";
+import listHoverIcon from "../assets/images/svg/view-list-hover.svg";
 
 // import graphql
 import { GraphQLClient, gql } from "graphql-request";
@@ -417,6 +421,7 @@ filterButton.addEventListener("click", (event) => {
   event.preventDefault(); // Prevent the form from actually submitting
   estateTypeCheckboxValue();
   displayedResults = 3; // show only 3 results after changing filter
+  console.log(displayedResults);
   if (screen.width >= 1400) {
     displayedResults = 6;
   }
@@ -511,7 +516,60 @@ function listViewToggleColumns() {
   }
 }
 
+/*function hoverIcon(view) {
+  if (view === "list") {
+    // change icon of list view, when list view is active
+    listViewIcon.src = listHoverIcon;
+    // change icon of grid view, when list view is active
+    gridViewIcon.src = gridIcon;
+  } else if (view === "grid") {
+    // change icon of grid view, when grid view is active
+    gridViewIcon.src = gridHoverIcon;
+    // change icon of list view, when grid view is active
+    listViewIcon.src = listIcon;
+  }
+}
+*/
 listViewIcon.addEventListener("click", listView);
+
+// handle hover & active states for grid and list view icons
+// track if the grid view is active or not
+let isGridViewActive = true;
+// handle hover state of list view icon
+listViewIcon.addEventListener("mouseover", () => {
+  listViewIcon.src = listHoverIcon;
+});
+// handle mouseout state to list view icon
+listViewIcon.addEventListener("mouseout", () => {
+  if (isGridViewActive) {
+    listViewIcon.src = listIcon;
+  }
+});
+// handle hover state of grid view icon
+gridViewIcon.addEventListener("mouseover", () => {
+  gridViewIcon.src = gridHoverIcon;
+});
+// handle mouseout state to grid view icon
+gridViewIcon.addEventListener("mouseout", () => {
+  if (!isGridViewActive) {
+    gridViewIcon.src = gridIcon;
+  } else {
+    gridViewIcon.src = gridHoverIcon;
+  }
+});
+// handle click events for grid view icon
+gridViewIcon.addEventListener("click", () => {
+  isGridViewActive = true;
+  gridViewIcon.src = gridHoverIcon;
+  listViewIcon.src = listIcon;
+});
+// handle click events for list view icon
+listViewIcon.addEventListener("click", () => {
+  isGridViewActive = false;
+  listViewIcon.src = listHoverIcon;
+  gridViewIcon.src = gridIcon;
+});
+
 window.addEventListener("resize", listViewToggleColumns);
 
 // sort list / table view title

@@ -7,9 +7,11 @@
     grid-column: 2 / 3;
     height: 250px;
     width: 100%;
+    border: 1.5px solid $bg-secondary; /* dark-green */
     @include for-size(xx-large) {
       grid-column: 3 / 13;
       height: 350px;
+      border-width: 1px;
     }
   }
   &__information {

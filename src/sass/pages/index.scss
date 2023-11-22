@@ -145,6 +145,7 @@
       position: right 20px center;
       size: 20px;
     }
+    cursor: pointer;
     &--active {
       background-image: url(../assets/images/svg/arrow-drop-down-up.svg);
       border: none;
@@ -171,6 +172,12 @@
       margin-top: 140px;
     }
   }
+  &__view-grid-icon {
+    cursor: pointer;
+  }
+  &__view-list-icon {
+    cursor: pointer;
+  }
   &__elements {
     grid-column: 2 / 3;
     border-top: solid 3px $bg-secondary; /* dark green */
@@ -187,6 +194,7 @@
     }
   }
   &__element {
+    cursor: pointer;
     @include for-size(xx-large) {
       width: 29%;
     }
@@ -228,6 +236,7 @@
   &__table-header {
     height: 60px;
     border-top: 2px solid $bg-secondary;
+    cursor: pointer;
     &--hidden {
       display: none;
     }
@@ -264,6 +273,7 @@
     height: 60px;
     border-top: 2px solid $bg-secondary;
     border-bottom: 2px solid $bg-secondary;
+    cursor: pointer;
   }
   &__table-cell {
     &--hidden {
@@ -273,6 +283,7 @@
   /* page reference */
   &__page-reference {
     display: none;
+    cursor: pointer;
     @include for-size(xx-large) {
       display: block;
       grid-column: 11 / 14;

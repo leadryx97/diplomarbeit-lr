@@ -8,20 +8,20 @@
   <body class="page">
     <!-- header -->
     <include src="./partials/header.html"></include>
+    <!-- back to all properties -->
     <div class="property-back">
-      <svg
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 10 16"
-        class="property-back__arrow"
-      >
-        <style type="text/css"></style>
-        <path class="st0" d="M8,1L1,8l7,7" />
-      </svg>
-      <p class="property-back__text">
-        <a href="https://home-and-house-19aa48ad56c8.herokuapp.com/" class="property-back__link">zurück zur Übersicht</a>
-      </p>
+      <a href="https://home-and-house-19aa48ad56c8.herokuapp.com/" class="property-back__link">
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 10 16"
+          class="property-back__arrow">
+          <style type="text/css"></style>
+          <path class="st0" d="M8,1L1,8l7,7" />
+        </svg>
+        <p class="property-back__text">zurück zur Übersicht</p>  
+      </a>
     </div>
     <!-- page title -->
     <h1 class="page-title page-title--property">
@@ -218,7 +218,8 @@
         </div>
         <!-- latest properties link to all objects -->
         <div class="latest-properties__all">
-          <p><a href="https://home-and-house-19aa48ad56c8.herokuapp.com/" class="latest-properties__all-link">Alle Objekte anzeigen</a></p>
+          <a href="https://home-and-house-19aa48ad56c8.herokuapp.com/" class="latest-properties__all-link">
+          <p class="latest-properties__text">Alle Objekte anzeigen</p>
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -228,6 +229,7 @@
           >
             <path d="M1,15l7-7L1,1" />
           </svg>
+          </a>
         </div>
         <!-- end of latest properties -->
       </div>
