@@ -180,7 +180,7 @@ function renderList() {
                     class="properties__element-img"
                   />
                 </picture>
-        <p class="properties__element-status">${property.estate_type}, ${property.availability}</p>
+        <p class="properties__element-status">${property.estate_type} ${property.availability}</p>
         <p class="properties__element-location">${property.zip} ${property.city}, ${property.canton}</p>
         <h3 class="properties__element-title">${property.title}</h3>
         <p class="properties__element-value">Fläche ${property.usable_area}m², Preis: ${formattedPrice}</p>
@@ -421,10 +421,11 @@ filterButton.addEventListener("click", (event) => {
   event.preventDefault(); // Prevent the form from actually submitting
   estateTypeCheckboxValue();
   displayedResults = 3; // show only 3 results after changing filter
-  console.log(displayedResults);
   if (screen.width >= 1400) {
     displayedResults = 6;
+    firstDisplayedResult = 0;
   }
+  currentPage = 1;
   showProperties();
 });
 
@@ -516,20 +517,6 @@ function listViewToggleColumns() {
   }
 }
 
-/*function hoverIcon(view) {
-  if (view === "list") {
-    // change icon of list view, when list view is active
-    listViewIcon.src = listHoverIcon;
-    // change icon of grid view, when list view is active
-    gridViewIcon.src = gridIcon;
-  } else if (view === "grid") {
-    // change icon of grid view, when grid view is active
-    gridViewIcon.src = gridHoverIcon;
-    // change icon of list view, when grid view is active
-    listViewIcon.src = listIcon;
-  }
-}
-*/
 listViewIcon.addEventListener("click", listView);
 
 // handle hover & active states for grid and list view icons

@@ -9,6 +9,9 @@
     flex-direction: row;
     justify-content: space-around;
   }
+  @include for-size(xx-large) {
+    padding: 90px 40px 90px 40px;
+  }
   &__logo {
     display: none;
     @include for-size(large) {

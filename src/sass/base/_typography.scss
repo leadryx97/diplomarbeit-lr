@@ -11,7 +11,7 @@
   }
   line-height: 1.5;
   @include for-size(large) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
@@ -51,8 +51,11 @@
   }
   line-height: 1.5;
   text-align: center;
+  margin: 0;
+  padding: 25px 20px 25px 20px;
   @include for-size(large) {
     font-size: 3.5rem;
+    padding: 50px 300px 100px 300px;
   }
 }
 /* page home properties title */
@@ -65,7 +68,7 @@
   line-height: 1.5;
   text-align: center;
   @include for-size(large) {
-    font-size: 3.1rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -122,6 +125,9 @@
 .properties {
   &__label {
     font-weight: $font-weight-bold;
+    @include for-size(large) {
+      font-size: 1.3rem;
+    }
   }
   &__select {
     font: {
@@ -135,6 +141,9 @@
       weight: $font-weight-bold;
       size: 1rem;
     }
+    @include for-size(large) {
+      font-size: 1.3rem;
+    }
     &--load-more {
       font-size: 1.3rem;
     }
@@ -142,6 +151,9 @@
   /* toggle switch */
   &__switch-value {
     font-weight: $font-weight-bold;
+    @include for-size(large) {
+      font-size: 1.3rem;
+    }
   }
   &__switch-value--unchecked {
     color: $txt-secondary; /* dark green */
@@ -164,6 +176,14 @@
   &__table-header {
     text-align: left;
     color: $txt-secondary;
+    @include for-size(large) {
+      font-size: 1.3rem;
+    }
+  }
+  &__table-row {
+    @include for-size(large) {
+      font-size: 1.3rem;
+    }
   }
   &__table-cell {
     &--title {
@@ -171,6 +191,12 @@
     }
     &--price {
       text-align: right;
+    }
+  }
+  /* title of property */
+  &__element-title {
+    @include for-size(large) {
+      font-size: 1.5rem;
     }
   }
 }
