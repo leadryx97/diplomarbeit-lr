@@ -134,8 +134,7 @@ function renderProperty(property) {
   renderImages(images);
 
   // assign title
-  document.querySelector(".page-title--property").childNodes[0].textContent =
-    property.estate_type + " ";
+  document.querySelector(".page-title--property-regular").textContent = property.estate_type + " ";
   document.querySelector(".page-title--property-bold").textContent = property.title;
 
   // assign detailed information
