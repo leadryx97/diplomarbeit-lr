@@ -349,9 +349,9 @@
   &__modal-title {
     font-weight: $font-weight-regular;
     font-size: 1.7rem;
+    margin: 50px 0 -5px 0;
     @include for-size(xx-large) {
       font-size: 2rem;
-      margin: 50px 0 -5px 0;
     }
   }
   &__modal-property {
@@ -363,6 +363,24 @@
   &__modal-label {
     &--bold {
       font-weight: $font-weight-bold;
+    }
+    @include for-size(xx-large) {
+      font-size: 1.3rem;
+    }
+  }
+  &__modal-input {
+    font: {
+      family: $font-family-body;
+      size: 1rem;
+    }
+    @include for-size(xx-large) {
+      font-size: 1.3rem;
+    }
+  }
+  &__modal-textarea {
+    font: {
+      family: $font-family-body;
+      size: 1rem;
     }
     @include for-size(xx-large) {
       font-size: 1.3rem;
