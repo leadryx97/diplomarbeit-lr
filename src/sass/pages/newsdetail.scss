@@ -11,8 +11,9 @@
       height: 350px;
     }
     @include for-size(xx-large) {
-      height: 450px;
+      height: 500px;
       object-position: center;
+      margin-bottom: 70px;
     }
     &--pos-top {
       @include for-size(small) {

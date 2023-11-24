@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: flex-start;
+  font-size: 1.1rem;
   @include for-size(medium) {
     flex-direction: row;
     justify-content: space-around;
   }
   @include for-size(xx-large) {
-    padding: 90px 40px 90px 40px;
+    padding: 120px 40px 120px 40px;
   }
   &__logo {
     display: none;

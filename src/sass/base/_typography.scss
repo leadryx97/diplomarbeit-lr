@@ -27,10 +27,10 @@
   text-align: center;
   margin-top: 30px;
   @include for-size(large) {
-    font-size: 3.1rem;
+    font-size: 3.4rem;
   }
   &--subpage {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     @include for-size(xx-large) {
       margin: 70px 0px 80px 0px;
     }
@@ -38,8 +38,30 @@
   &--news {
     text-align: left;
   }
+  &--property {
+    margin-top: 45px;
+    margin: 45px 0 15px 0;
+    @include for-size(xx-large) {
+      margin: 45px 0 35px 0;
+    }
+  }
+  &--property-regular {
+    font-size: 1.4rem;
+    @include for-size(xx-large) {
+      font-size: 2.4rem;
+    }
+  }
+  &--contact {
+    margin: 60px 0 60px 0;
+  }
   &--property-bold {
-    font-weight: $font-weight-bold;
+    font: {
+      weight: $font-weight-bold;
+      size: 1.4rem;
+    }
+    @include for-size(xx-large) {
+      font-size: 2.4rem;
+    }
   }
 }
 /* page home title */
@@ -59,16 +81,21 @@
   }
 }
 /* page home properties title */
-.properties__title {
-  font: {
-    family: $font-family-heading;
-    weight: $font-weight-regular;
-    size: 1.5rem;
+.properties {
+  &__title {
+    font: {
+      family: $font-family-heading;
+      weight: $font-weight-regular;
+      size: 1.5rem;
+    }
+    line-height: 1.5;
+    text-align: center;
+    @include for-size(large) {
+      font-size: 2.5rem;
+    }
   }
-  line-height: 1.5;
-  text-align: center;
-  @include for-size(large) {
-    font-size: 2.5rem;
+  &__element-title {
+    font-size: 1.3rem;
   }
 }
 
@@ -111,6 +138,12 @@
 .footer {
   &__address {
     font-style: normal;
+  }
+  &__location {
+    margin-bottom: 30px;
+  }
+  &__link-list {
+    margin-bottom: 30px;
   }
   &__link-item {
     color: $txt-primary; /* black */
@@ -221,6 +254,11 @@
       font-size: 1rem;
     }
   }
+  &__element-teaser {
+    @include for-size(large) {
+      font-size: 1.2rem;
+    }
+  }
 }
 
 /* news page */
@@ -252,6 +290,12 @@
   }
   &__information-address {
     font-style: normal;
+  }
+  &__information-location {
+    margin: 0 0 30px 0;
+  }
+  &__link-list {
+    margin-bottom: 30px;
   }
   &__link-item {
     color: $txt-primary; /* black */
@@ -288,6 +332,9 @@
       size: 1rem;
     }
     margin-top: 25px;
+    @include for-size(xx-large) {
+      font-size: 1.3rem;
+    }
   }
   &__modal-button {
     font: {
@@ -296,7 +343,7 @@
       size: 1rem;
     }
     @include for-size(xx-large) {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
   &__modal-title {
@@ -304,6 +351,7 @@
     font-size: 1.7rem;
     @include for-size(xx-large) {
       font-size: 2rem;
+      margin: 50px 0 -5px 0;
     }
   }
   &__modal-property {
@@ -316,6 +364,9 @@
     &--bold {
       font-weight: $font-weight-bold;
     }
+    @include for-size(xx-large) {
+      font-size: 1.3rem;
+    }
   }
 }
 
@@ -323,6 +374,9 @@
   &__title {
     text-align: center;
     padding: 0 0 30px 0;
+    @include for-size(xx-large) {
+      font-size: 2.4rem;
+    }
   }
   &__all {
     &:hover {
@@ -335,5 +389,29 @@
     font-weight: $font-weight-bold;
     text-decoration: none;
     color: $txt-primary;
+  }
+  &__element {
+    @include for-size(xx-large) {
+      font-size: 1.1rem;
+    }
+  }
+  &__element-title {
+    font-size: 1.3rem;
+    @include for-size(xx-large) {
+      font-size: 1.7rem;
+    }
+  }
+  &__text {
+    font-size: 1.1rem;
+  }
+}
+
+/* privacy policy page */
+.privacy-policy {
+  &__title {
+    font: {
+      weight: $font-weight-regular;
+      size: 1.3rem;
+    }
   }
 }

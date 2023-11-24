@@ -60,7 +60,6 @@
 /* news overview page */
 .news-overview {
   &__element-button {
-    grid-column: 2 / 3;
     width: 115px;
     height: 45px;
     background-color: $btn-primary; /* dark-green */
@@ -118,9 +117,9 @@
     border: none;
     background-color: $btn-tertiary; /* black */
     color: $btn-txt; /* white */
-    height: 45px;
+    height: 50px;
     width: 100%;
-    margin: 15px 0 70px 0;
+    margin: 25px 0 70px 0;
     cursor: pointer;
     @include for-size(xx-large) {
       margin: 0;

@@ -30,15 +30,19 @@
       grid-template: 1fr / repeat(14, 1fr);
     }
   }
+  /* property detail pages */
+  &--property-information {
+    grid-row-gap: 30px;
+  }
   /* news overview page */
   &--news-overview {
-    margin-bottom: 60px;
+    margin-bottom: 75px;
     @include for-size(xx-large) {
       margin-bottom: 120px;
     }
   }
   &--news-overview-last {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     @include for-size(xx-large) {
       margin-bottom: 100px;
     }
@@ -54,13 +58,26 @@
     background-color: $bg-secondary;
     margin-top: 50px;
     padding: 30px 0 30px 0;
+    grid-template-columns: 1fr 10fr 1fr;
+    @include for-size(xx-large) {
+      grid-template: 1fr / repeat(14, 1fr);
+      margin-top: 70px;
+      padding: 30px 0 70px 0;
+    }
   }
   &--modal {
-    gap: 0pxs;
+    gap: 0px;
+    grid-template-columns: 0.2fr 10fr 0.2fr;
+    @include for-size(xx-large) {
+      grid-template: 1fr / repeat(14, 1fr);
+    }
   }
   &--modal-inside {
+    grid-template-columns: 0.2fr 10fr 0.2fr;
+    grid-row-gap: 10px;
     @include for-size(xx-large) {
       gap: 30px 50px;
+      grid-template: 1fr / repeat(14, 1fr);
     }
   }
 }
