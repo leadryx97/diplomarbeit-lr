@@ -1,28 +1,32 @@
 /* colors */
 /* base (tier 1) */
 $base-primary: #ffffff; /* white */
-$base-secondary: #000000; //* black */
+$base-secondary: #000000; /* black */
 
 /* brand (tier 1) */
 $brand-primary: #92b9af; /* dark-green */
 $brand-secondary: #e5eeec; /* light-green */
 $brand-primary-transp: rgba($brand-primary, 0.85); /* dark-green transparent */
 $brand-tertiary: #878787; /* grey */
+
 /* background (tier 2) */
 $bg-primary: $brand-secondary; /* light-green */
 $bg-secondary: $brand-primary; /* dark-green */
 $bg-secondary-transp: $brand-primary-transp; /* dark-green transparent */
 $bg-tertiary: $base-primary; /* white */
-$bg-tertiary-transp: rgba($base-primary, 0.45);
+$bg-tertiary-transp: rgba($base-primary, 0.45); /* white transparent */
+
 /* text (tier 2) */
 $txt-primary: $base-secondary; /* black */
 $txt-secondary: $brand-primary; /* dark-green */
 $txt-tertiary: $base-primary; /* white */
+
 /* button (tier 2) */
 $btn-primary: $brand-primary; /* dark-green */
 $btn-secondary: $brand-tertiary; /* grey */
 $btn-tertiary: $base-secondary; /* black */
 $btn-txt: $base-primary; /* white */
+
 /* typography */
 /* font family */
 $font-family-heading: "Montserrat", Verdana, sans-serif;
