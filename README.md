@@ -365,7 +365,7 @@ Auf Desktop soll gemäss Figma die aktuelle Seite in der Navigation gekennzeichn
 
 **Navigation auf Mobile umgesetzt**
 
-![Alle Objekte anzeigen](src/assets/images/documentation/)
+![Alle Objekte anzeigen](src/assets/images/documentation/navigation-mobile-implemented.png)
 
 ### Hosting
 
@@ -426,6 +426,10 @@ Für den Toggle Switch habe ich mich am ersten Switch "Light" aus folgendem Code
 ### Scroll-to-Top Button
 
 Für den Scroll-to-Top Button habe ich mich am Code aus folgendem Artikel orientiert (Option 1): [How to Make an Unobtrusive Scroll-to-Top Button](https://css-tricks.com/how-to-make-an-unobtrusive-scroll-to-top-button/)
+
+### Aktives Navigationselement
+
+Um das aktive Navigationselement zu kennzeichnen, habe ich mich an dem YouTube-Tutorial [Active Nav Link Indicator with Vanilla Javascript](https://www.youtube.com/watch?v=JkuiKeNS2mg&t=337s) orientiert. Ich habe den Code entsprechend modifiziert, damit er auf meiner Website wie gewünscht funktioniert.
 
 ### ChatGPT
 
