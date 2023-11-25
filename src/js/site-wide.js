@@ -9,7 +9,7 @@ const hamburgerIcon = document.querySelector(".header__nav-hamburger-img");
 const closeIcon = document.querySelector(".header__nav-hamburger-img--close");
 const body = document.querySelector("body");
 
-// hamburger menu
+// handle hamburger menu
 function toggleMenu() {
   if (nav.classList.contains("header__nav-menu--show")) {
     nav.classList.remove("header__nav-menu--show");
@@ -30,15 +30,13 @@ navItems.forEach((navItem) => {
   navItem.addEventListener("click", toggleMenu);
 });
 
-// active menu element
-function setActiveItem(event) {
-  navItems.forEach((item) => item.classList.remove("header__nav-link--active"));
-  event.target.classList.add("header__nav-link--active");
-}
-
-navItems.forEach((navItem) => {
-  navItem.addEventListener("click", setActiveItem);
+// add active class to navigation item of current page
+const activePage = window.location.href;
+navItems.forEach((link) => {
+  if (link.href === `${activePage}`) {
+    link.classList.add("header__nav-link--active");
+  }
 });
 
 // Export
-export { nav, navItems, hamburger, hamburgerIcon, closeIcon, body, toggleMenu, setActiveItem };
+export { nav, navItems, hamburger, hamburgerIcon, closeIcon, body, toggleMenu, activePage };

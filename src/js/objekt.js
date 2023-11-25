@@ -7,7 +7,7 @@ import {
   closeIcon,
   body,
   toggleMenu,
-  setActiveItem,
+  activePage,
 } from "./site-wide.js";
 
 // import footer
