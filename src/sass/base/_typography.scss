@@ -124,9 +124,10 @@
       }
     }
     &--active {
-      @include for-size(large) {
-        color: $txt-tertiary; /* white */
-      }
+      color: $txt-tertiary; /* white */
+    }
+    &:hover {
+      color: $txt-tertiary; /* white */
     }
     &--sm {
       font-size: 1rem;
@@ -336,6 +337,7 @@
       font-size: 1.3rem;
     }
   }
+  /* modal */
   &__modal-button {
     font: {
       family: $font-family-body;
