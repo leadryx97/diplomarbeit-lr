@@ -30,21 +30,21 @@ Nachdem ich mich mit der Aufgabenstellung und den Zielen auseinandergesetzt habe
 
 Bezüglich der eingeplanten Zeit pro Task hat es während der Entwicklung einige Verschiebungen gegeben, da ich oft zu wenig oder auch zu viel Zeit eingeplant hatte.
 
-Detailliertere Informationen zum Zeitplan sind [hier](#zeitplan--meilensteine) beschrieben.
+Detaillierte Informationen zum Zeitplan sind [hier](#zeitplan--meilensteine) beschrieben.
 
 ### Entwicklung
 
-Nach der Erstellung des Zeitplans habe ich mit der eigentlichen Entwicklung begonnen. Ich konnte mich zu einem grossen Teil an die Reihenfolge aus meinem Zeitplan halten. Als erstes habe ich die HTML-Struktur der Website entwickelt. Anschliessend habe ich mich um die Gestaltung mit SCSS gekümmert und danach habe ich die JavaScript Programmierung durchgeführt. Ausführliche Informationen zur Entwicklung und Evaluation können [hier](#technologiekonzept-inkl-evaluation-der-eingesetzten-technologien-begründung) eingesehen werden.
+Nach der Erstellung des Zeitplans habe ich mit der eigentlichen Entwicklung begonnen. Ich konnte mich zu einem grossen Teil an die Reihenfolge aus meinem Zeitplan halten. Als erstes habe ich die HTML-Struktur der Website entwickelt. Anschliessend habe ich mich um die Gestaltung mit SCSS gekümmert und danach habe ich die JavaScript-Programmierung durchgeführt. Ausführliche Informationen zur Entwicklung und Evaluation können [hier](#technologiekonzept-inkl-evaluation-der-eingesetzten-technologien-begründung) eingesehen werden.
 
 ### Probleme / Schwierigkeiten
 
-Mein grösstes Problem bei der Diplomarbeit war der zeitlich vorgebene Rahmen. Obwohl ich seit Beginn fast täglich am Projekt gearbeitet habe, stand ich unter Zeitdruck. Dazu geführt hat vermutlich zum einen, dass ich mich zu Beginn zu sehr auf Details fokussiert hatte und mir im Allgemeinen viel Zeit für alles genommen habe.
+Mein grösstes Problem bei der Diplomarbeit war der zeitlich vorgegebene Rahmen. Obwohl ich seit Beginn fast täglich am Projekt gearbeitet habe, stand ich unter Zeitdruck. Dazu führte vermutlich zum einen, dass ich mich zu Beginn zu sehr auf Details fokussiert hatte und mir im Allgemeinen viel Zeit für alles genommen habe.
 
 ## Setup Guide
 
 ### npm-Pakete installieren
 
-Nachem das Git-Repository geklont wurde, das Projekt im Code Editor öffnen und den folgenden Befehl ausführen:
+Nachdem das Git-Repository geklont wurde, das Projekt im Code Editor öffnen und den folgenden Befehl ausführen:
 
 ```
 npm install
@@ -96,7 +96,7 @@ Meinen Projekt- und Zeitplan habe ich mit dem Tool [ClickUp](https://clickup.com
 - Definition von Milestones
 - Schätzung der benötigten Zeit pro Task
 
-Ich habe versucht, die Planung möglichst detailliert, aber dennoch mit Bedenken des zeitlich vorgegeben Rahmens, zu erarbeiten. Die Planung bringt für mich folgende Vorteile:
+Ich habe versucht, die Planung möglichst detailliert, aber dennoch mit Bedenken des zeitlich vorgegebenen Rahmens, zu erarbeiten. Die Planung bringt für mich folgende Vorteile:
 
 - Genaue Befassung mit den Anforderungen vor der Entwicklung
 - Risikominimierung, dass Anforderungen oder Tasks untergehen
@@ -120,13 +120,13 @@ Folgend ist der Projekt-/Zeitplan im Ist-Zustand:
 
 #### Zusammenfassung
 
-An meinen Zeitplan konnte ich mich leider nicht so gut halten. Ich kam bereits zu Beginn in Verzug. Zum einen habe ich für das Projektmanagement, genauer gesagt die Projektplanung, mehr Zeit gebraucht als erwartet. Ich finde aber, sie hat mir die Arbeit während des Projektes erheblich erleichtert. Mit dem eingesetzten Tool, konnte ich ganz einfach meine Zeit pro Task erfassen und habe so auch für die Zukunft ein besseres Gefühl für die Zeitplanung erhalten. Daneben war auch die Installation aller Tools etwas zeitaufwändiger als angenommen.
+An meinen Zeitplan konnte ich mich leider nicht so gut halten. Ich kam bereits zu Beginn in Verzug. Zum einen habe ich für das Projektmanagement, genauer gesagt die Projektplanung, mehr Zeit gebraucht als erwartet. Ich finde aber, sie hat mir die Arbeit während des Projektes erheblich erleichtert. Mit dem eingesetzten Tool konnte ich ganz einfach meine Zeit pro Task erfassen und habe so auch für die Zukunft ein besseres Gefühl für die Zeitplanung erhalten. Daneben war auch die Installation aller Tools etwas zeitaufwändiger als angenommen.
 
-Während ich bei der HTML-Entwicklung zu viel Zeit eingeplant hatte, habe ich für die SCSS-Entwicklung zu wenig einberechnet. Ein Grund dafür war sicher, dass ich einige Aufgaben nicht eingeplant hatte, die ich dann noch nachträglich in meiner Projektplanung ergänzt und auch getrackt habe. Ich wollte mir am Anfang eine saubere Struktur aufbauen und habe dabei etwas Zeit verloren. Daneben habe ich auch für Dinge länger gebraucht, die ich bisher noch nie so umgesetzt hatte, wie beispielsweise die Hamburger Navigation.
+Während ich bei der HTML-Entwicklung zu viel Zeit eingeplant hatte, habe ich für die SCSS-Entwicklung zu wenig eingerechnet. Ein Grund dafür war sicher, dass ich einige Aufgaben nicht eingeplant hatte, die ich dann noch nachträglich in meiner Projektplanung ergänzt und auch getrackt habe. Ich wollte mir am Anfang eine saubere Struktur aufbauen und habe dabei etwas Zeit verloren. Daneben habe ich auch für Dinge länger gebraucht, die ich bisher noch nie so umgesetzt hatte, wie beispielsweise die Hamburger Navigation.
 
 Ich hatte mir bei der Projektplanung für JavaScript absichtlich etwas grosszügiger Zeit eingeplant, da ich bei den Übungen oft gemerkt hatte, dass ich bei der Umsetzung dann deutlich länger gebraucht hatte, als ursprünglich angenommen. Schlussendlich war es dann aber doch etwas zu viel Zeit, die ich in Zukunft eher bei der Entwicklung von SCSS einplanen würde.
 
-Zusammengefasst lässt sich sagen, dass ich tendenziell etwas zu wenig Zeit für die einzelnen Aufgaben eingeplant hatte, was ich bei der nächsten Projektplanung berücksichtigen würde. Schlussendlich konnte ich die Aufgaben dann aber in der vorgegebenen Zeit erledigen, wobei ich aber auf Extra Tasks verzichten musste.
+Zusammengefasst lässt sich sagen, dass ich tendenziell etwas zu wenig Zeit für die einzelnen Aufgaben eingeplant hatte, was ich bei der nächsten Projektplanung berücksichtigen würde. Schliesslich konnte ich die Aufgaben dann aber in der vorgegebenen Zeit erledigen, wobei ich aber auf Extra Tasks verzichten musste.
 
 ## Technologiekonzept inkl. Evaluation der eingesetzten Technologien, Begründung
 
@@ -162,7 +162,7 @@ Zusätzlich dazu habe ich folgende Tools verwendet:
 
 ### BEM Namenskonvention
 
-Ich habe mit der Namenskonvention BEM gearbeitet und mich anfangs zuerst etwas eingelesen. Ich habe versucht die Best-Practices anzuwenden. Je länger ich damit gearbeitet habe, desto leichter ist es mir gefallen. Mein Ziel war es, über alle HTML-Seiten und CSS-Klassen hinweg, eine gewisse Einheitlichkeit reinzubringen. Zu Beginn hatte ich noch versucht, jeweils mit einzelnen Wörtern zu arbeiten. Folgend ein kurzes Beispiel:
+Ich habe mit der Namenskonvention BEM gearbeitet und mich anfangs zuerst etwas eingelesen. Ich habe versucht, die Best-Practices anzuwenden. Je länger ich damit gearbeitet habe, desto leichter ist es mir gefallen. Mein Ziel war es, über alle HTML-Seiten und CSS-Klassen hinweg eine gewisse Einheitlichkeit reinzubringen. Zu Beginn hatte ich noch versucht, jeweils mit einzelnen Wörtern zu arbeiten. Folgend ein kurzes Beispiel:
 
 **Erster Ansatz:**
 
@@ -251,7 +251,7 @@ Ich habe in meinem Projekt Variablen für die Farben und Schriften verwendet. Et
 
 Ich bin auf die [Tier 1 und Tier 2 Struktur](https://markus.oberlehner.net/blog/two-tier-sass-variables-and-css-custom-properties/) gestossen, welche ich direkt sinnvoll und praktisch fand, weshalb ich dies bei der Diplomarbeit angewendet habe. Untenstehend gehe ich kurz genauer darauf ein.
 
-- **Tier 1:** Auf der ersten Stufe habe ich alle Farben festgelet, die aktuell für das Projekt verwendet werden. Diese habe ich noch in _Base_ und _Brand_ eingeteilt:
+- **Tier 1:** Auf der ersten Stufe habe ich alle Farben festgelegt, die aktuell für das Projekt verwendet werden. Diese habe ich noch in _Base_ und _Brand_ eingeteilt:
 
 ```scss
 /* base (tier 1) */
@@ -305,21 +305,21 @@ loader.load().then(async () => {
 
 ![VS Code Meldung](src/assets/images/documentation/google-maps-load-function.png)
 
-Mithilfe dieses [GitHub-Beispiels](https://github.com/googlemaps/js-api-loader#example), habe ich den Code mit der `importLibrary()` Funktion auf den neusten Stand gebracht. Bei der Umstellung der Google Maps Integration habe ich Unterstützung von meinem Dozenten Pascal Helfenstein erhalten.
+Mithilfe dieses [GitHub-Beispiels](https://github.com/googlemaps/js-api-loader#example), habe ich den Code mit der `importLibrary()` Funktion auf den neuesten Stand gebracht. Bei der Umstellung der Google Maps Integration habe ich Unterstützung von meinem Dozenten Pascal Helfenstein erhalten.
 
 Ich habe das Copyright & die Nutzungsbedingungen mit CSS ausgeblendet. Auf einer produktiven Seite ist dies vermutlich aufgrund der [Nutzungsbedingungen](https://cloud.google.com/maps-platform/terms/) nicht erlaubt.
 
 ### Struktur JavaScript-Dateien
 
-Ich habe für jede HTML-Datei eine eigene JavaScript-Datei. In einigen Dateien wird lediglich die Datei `site-wide.js` importiert. Dies ist der Header der Website. Anfangs hatte ich geplant, dort auch den Footer der Seite einzubauen. Da der Footer aber auf der Seite _Kontakt_ nicht zu sehen sein soll, hat dies nicht funktioniert. Ich habe mich deshalb entschieden, für den Footer eine separate JavaScript-Datei anzulegen und diese ebenfalls auf den einzelnen Seiten zu importieren.
+Ich habe für jede HTML-Datei eine eigene JavaScript-Datei. In einigen Dateien wird lediglich die Datei `site-wide.js` importiert. Dies ist der Header der Website. Anfangs hatte ich geplant, dort auch den Footer der Seite einzubauen. Da der Footer aber auf der _Kontaktseite_ nicht zu sehen sein soll, hat dies nicht funktioniert. Ich habe mich deshalb entschieden, für den Footer eine separate JavaScript-Datei anzulegen und diese ebenfalls auf den einzelnen Seiten zu importieren.
 
 ### Design Abweichungen
 
 Ich bin bei den untenstehenden Punkten vom Design im Figma abgewichen. Zur Veranschaulichung sind jeweils Screenshots integriert.
 
-#### Objekt Detailseite: Link
+#### Objekt-Detailseite: Link
 
-Auf der Objekt Detailseite unter dem Abschnitt "Aktuellste Objekte" gibt es den Link "Alle Objekte anzeigen". Laut Figma sollte der Link beim Hover die gleiche Farbe annehmen, wie der Hintergrund. Dies machte für mich keinen Sinn, weshalb ich mich für die Farbe weiss als Hover-State entschieden habe.
+Auf der Objekt-Detailseite unter dem Abschnitt "Aktuellste Objekte" gibt es den Link "Alle Objekte anzeigen". Laut Figma sollte der Link beim Hover die gleiche Farbe annehmen, wie der Hintergrund. Dies machte für mich keinen Sinn, weshalb ich mich für die Farbe weiss als Hover-State entschieden habe.
 
 **Link ohne Hover**
 
@@ -333,9 +333,9 @@ Auf der Objekt Detailseite unter dem Abschnitt "Aktuellste Objekte" gibt es den 
 
 ![Alle Objekte anzeigen Hover-State Figma](src/assets/images/documentation/design-all-properties-hover-implemented.png)
 
-#### Objekt Detailseite: Titel
+#### Objekt-Detailseite: Titel
 
-Gemäss Figma fehlt auf der Objekt Detailseite im Abschnitt "Aktuellste Objekte" der Titel. Ich finde, dass der Titel auch auf Mobile sinnvoll ist und zeige ihn deshalb auch dort an.
+Gemäss Figma fehlt auf der Objekt-Detailseite im Abschnitt "Aktuellste Objekte" der Titel. Ich finde, dass der Titel auch auf Mobile sinnvoll ist und zeige ihn deshalb auch dort an.
 
 **Titel auf Desktop gemäss Figma**
 
@@ -374,7 +374,7 @@ Für das Hosting habe ich mir die folgenden Anbieter angeschaut:
 - [Heroku](https://www.heroku.com/)
 - [Docker](https://www.docker.com/)
 
-Schlussendlich habe ich mich dann für die Umsetzung mit Heroku entschieden. Dies aus dem Grund, da ich dann noch die Möglichkeit hätte, ein Backend einzubauen und ich Heroku auch einfach einmal ausprobieren wollte. Die Umsetzung hat gut funktioniert aber ich musste noch zusätzliche [Vorkehrungen](#technische-dokumentation-bei-eigenleistungen) treffen, da ich kein eigenes Backend habe.
+Schlussendlich habe ich mich dann für die Umsetzung mit Heroku entschieden. Dies aus dem Grund, da ich dann noch die Möglichkeit hätte, ein Backend einzubauen und ich Heroku auch einfach einmal ausprobieren wollte. Die Umsetzung hat gut funktioniert, aber ich musste noch zusätzliche [Vorkehrungen](#technische-dokumentation-bei-eigenleistungen) treffen, da ich kein eigenes Backend habe.
 
 ### Umsetzung Detailseiten
 
@@ -383,17 +383,17 @@ Bei der Umsetzung der Detailseiten habe ich mit einer "Template HTML-Datei" gear
 
 Auf der Detailseite wird die ID aus der URL ausgelesen und dazu verwendet, die entsprechenden Inhalte mit GraphQL abzufragen und schlussendlich im Frontend auszugeben.
 
-Ich habe mich dafür entschieden, den grössten Teil des HTMLs aus dem Template zu laden und nicht alles in JavaScript zu generieren. Dies hatte ich Anfangs versucht, fand es dann aber aufgrund der Menge des HTMLs und der verschiedenen Klassen sehr unübersichtlich. Deshalb füllle ich jetzt nur die dynamischen Inhalte mit JavaScript ins HTML ein.
+Ich habe mich dafür entschieden, den grössten Teil des HTMLs aus dem Template zu laden und nicht alles in JavaScript zu generieren. Dies hatte ich Anfangs versucht, fand es dann aber aufgrund der Menge des HTMLs und der verschiedenen Klassen sehr unübersichtlich. Deshalb fülle ich jetzt nur die dynamischen Inhalte mit JavaScript ins HTML ein.
 
-Dies hatte ich zuerst auch bei den Bildern so gelöst. Sprich ich hatte 4 Bild-Elemente in meiner `objekt.html` Datei, die ich dann mit JavaScript befüllt habe. Sofern es weniger als 4 Bilder in der Datenbank hatte, wurden die leeren Bild-Elemente aus dem HTML entfernt. Dies bedeutete aber, dass die Anpassungsfähigkeit nicht gewährleistet war, wenn es irgendwann mehr wie 4 Bilder pro Immobilienobjekt in der Datenbank gibt. Deshalb habe ich es umstrukturiert und in JavaScript einen Loop für die Bildelemente eingebaut. Sofern ein Bildelement in der Datenbank vorhanden ist, wird das HTML-Element mithilfe von JavaScript erstellt. Input in Bezug auf die Implementierung der Bilder habe ich von meinem Dozenten Pascal Helfenstein erhalten.
+Dies hatte ich zuerst auch bei den Bildern so gelöst. Sprich ich hatte 4 Bildelemente in meiner `objekt.html` Datei, die ich dann mit JavaScript befüllt habe. Sofern es weniger als 4 Bilder in der Datenbank hatte, wurden die leeren Bildelemente aus dem HTML entfernt. Dies bedeutete aber, dass die Anpassungsfähigkeit nicht gewährleistet war, wenn es irgendwann mehr als 4 Bilder pro Immobilienobjekt in der Datenbank gibt. Deshalb habe ich es umstrukturiert und in JavaScript einen Loop für die Bildelemente eingebaut. Sofern ein Bildelement in der Datenbank vorhanden ist, wird das HTML-Element mithilfe von JavaScript erstellt. Input in Bezug auf die Implementierung der Bilder habe ich von meinem Dozenten Pascal Helfenstein erhalten.
 
 ### Prettier - Code Formatter
 
-Ich habe bei der Entwicklung des Codes zum ersten Mal mit dem [Prettier Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) gearbeitet. Damit wollte ich sicherstellen, dass mein Code einheitlich formatiert ist. Das Einzige was mich daran gestört hat, waren die automatischen Zeilenumbrüche, da diese im HTML ein paar Mal zu Fehlern geführt hat, sowie der Code im JavaScript teilweise etwas unschön aussieht. Ich habe die erlaubten Zeichen pro Zeile einige Male angepasst, um es etwas zu optimieren.
+Ich habe bei der Entwicklung des Codes zum ersten Mal mit dem [Prettier Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) gearbeitet. Damit wollte ich sicherstellen, dass mein Code einheitlich formatiert ist. Das Einzige, was mich daran gestört hat, waren die automatischen Zeilenumbrüche, da diese im HTML ein paar Mal zu Fehlern geführt haben, sowie der Code in JavaScript teilweise etwas unschön aussieht. Ich habe die erlaubten Zeichen pro Zeile einige Male angepasst, um es etwas zu optimieren.
 
 ### Github
 
-Da ich auch während der Unterrichtszeit mit GitHub gearbeitet habe, hatte ich die grundlegenden Git-Befehle bereits im Kopf. Ich war mir anfangs eher etwas unsicher bezüglich der Git Commits beziehungsweise der Commit-Messages. Ich habe versucht regelmässig und bei für mich sinnvollen Aufgabenfortschritten zu commiten. Nach den ersten paar vermutlich leicht zu langen Messages, habe ich versucht mich kürzer zu halten und in diesem Sinne auch weniger Fortschritte in einem einzelnen Commit zusammenzufassen.
+Da ich auch während der Unterrichtszeit mit GitHub gearbeitet habe, hatte ich die grundlegenden Git-Befehle bereits im Kopf. Ich war mir anfangs eher etwas unsicher bezüglich der Git Commits beziehungsweise der Commit-Messages. Ich habe versucht regelmässig und bei für mich sinnvollen Aufgaben Fortschritten zu commiten. Nach den ersten paar vermutlich leicht zu langen Messages, habe ich versucht mich kürzer zu halten und in diesem Sinne auch weniger Fortschritte in einem einzelnen Commit zusammenzufassen.
 
 ## Technische Dokumentation bei Eigenleistungen
 
@@ -415,11 +415,11 @@ Ich habe durch die Durchführung dieses Projektes vieles gelernt und freue mich,
 
 ### Mobile Hamburger Navigation
 
-Für die Mobile Hamburger Navigation habe ich mich an folgendem Artikel orientiert: ["Easy hamburger menu with JS - Beginners"](https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0). Den CSS und JavaScript Code habe ich in meine bereits bestehendes HTML-Struktur eingebaut. Um das gewünschte Ergebnis zu erzielen, habe ich ein paar Anpassungen und Ergänzungen vorgenommen (bspw. `overflowY`).
+Für die Mobile Hamburger Navigation habe ich mich an folgendem Artikel orientiert: ["Easy hamburger menu with JS - Beginners"](https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0). Den CSS und JavaScript Code habe ich in meine bereits bestehende HTML-Struktur eingebaut. Um das gewünschte Ergebnis zu erzielen, habe ich ein paar Anpassungen und Ergänzungen vorgenommen (bspw. `overflowY`).
 
 ### Toggle Switch
 
-Für den Toggle Switch habe ich mich am ersten Switch "Light" aus folgendem Code orientiert: [Codepen: CSS Toggle Switch button](https://codepen.io/alvarotrigo/pen/RwjEZeJ). Auch hier habe ich den Code für meine Zwecke modifiziert.
+Für den Toggle Switch habe ich mich am ersten Switch "Light" aus folgendem Code orientiert: [Codepen: CSS Toggle Switch Button](https://codepen.io/alvarotrigo/pen/RwjEZeJ). Auch hier habe ich den Code für meine Zwecke modifiziert.
 
 ### Scroll-to-Top Button
 
@@ -431,7 +431,7 @@ Um das aktive Navigationselement zu kennzeichnen, habe ich mich an dem YouTube-T
 
 ### ChatGPT
 
-Hauptsächlich bei der Entwicklung von JavaScript habe ich auch auf [ChatGPT](https://chat.openai.com/) als Recherche-Werkzeug zurückgegriffen. Es hat mich dabei unterstützt, Code-Snippets, beispielsweise aus Foren, besser zur verstehen und unterschiedliche Umsetzungsmöglichkeiten genauer zu analysieren. Zudem hat es mir dabei geholfen, unterschiedliche Denkansätze zu entwickeln, wie ich an Probleme herangehen könnte. Es ist zu beachten, dass mir ChatGPT nicht als primäre Informationsquelle diente sondern als ergänzendes Werkzeug genutzt wurde, um mein Verständnis und Wissen zu vertiefen. Ich bin die Aufgaben und Probleme immer selbständig angegangen und wollte in erster Linie auf diesem Weg eine gute Lösung erarbeiten.
+Hauptsächlich bei der Entwicklung von JavaScript habe ich auch auf [ChatGPT](https://chat.openai.com/) als Recherche-Werkzeug zurückgegriffen. Es hat mich dabei unterstützt, Code-Snippets, beispielsweise aus Foren, besser zu verstehen und unterschiedliche Umsetzungsmöglichkeiten genauer zu analysieren. Zudem hat es mir dabei geholfen, unterschiedliche Denkansätze zu entwickeln, wie ich an Probleme herangehen könnte. Es ist zu beachten, dass mir ChatGPT nicht als primäre Informationsquelle diente sondern als ergänzendes Werkzeug genutzt wurde, um mein Verständnis und Wissen zu vertiefen. Ich bin die Aufgaben und Probleme immer selbständig angegangen und wollte in erster Linie auf diesem Weg eine gute Lösung erarbeiten.
 
 ## Eidesstattliche Erklärung
 
