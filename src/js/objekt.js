@@ -18,7 +18,7 @@ import { GraphQLClient, gql } from "graphql-request";
 
 const graphQLClient = new GraphQLClient("https://dev22-api.web-professionals.ch/graphql");
 
-// import location icon
+// import icons
 import markerIcon from "../assets/images/svg/map-location-marker.svg";
 import sliderRight from "../assets/images/svg/next-arrow-white-right.svg";
 import sliderLeft from "../assets/images/svg/next-arrow-white-left.svg";
