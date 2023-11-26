@@ -377,7 +377,7 @@ function renderLocationSelect() {
 let propertySelection = "Alle Objekte";
 let locationSelection = "Alle Orte";
 let estateTypeSelection = "all";
-let sortSelection = null;
+let sortSelection = "null";
 
 const propertySelect = document.querySelector(".properties__select--properties");
 const locationSelect = document.querySelector(".properties__select--location");
@@ -408,11 +408,15 @@ sortSelect.addEventListener("change", sortSelectValue);
 estateTypeCheckbox.addEventListener("change", estateTypeCheckboxValue);
 
 // sort select: handle placeholder text / text before dropdown is clicked ("select")
-function sortSelectPlaceholder() {
+function sortSelectPlaceholder(event) {
   const placeholderOption = document.querySelector(".properties__option--placeholder");
   if (placeholderOption && placeholderOption.selected) {
     sortSelect.removeChild(placeholderOption);
+    // at first click on dropdown set sortSelection value to the first option "price-descending"
+    sortSelection = "price-descending";
   }
+  // update sortSelection value
+  sortSelection = event.target.value;
 }
 
 sortSelect.addEventListener("click", sortSelectPlaceholder);
