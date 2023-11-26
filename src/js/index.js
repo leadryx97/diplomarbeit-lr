@@ -377,7 +377,7 @@ function renderLocationSelect() {
 let propertySelection = "Alle Objekte";
 let locationSelection = "Alle Orte";
 let estateTypeSelection = "all";
-let sortSelection = "null";
+let sortSelection = null;
 
 const propertySelect = document.querySelector(".properties__select--properties");
 const locationSelect = document.querySelector(".properties__select--location");
