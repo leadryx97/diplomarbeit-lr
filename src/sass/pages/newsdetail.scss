@@ -3,7 +3,6 @@
     height: 240px;
     width: 100%;
     object-fit: cover;
-    //margin-bottom: 120px;
     @include for-size(medium) {
       height: 250px;
     }
@@ -36,7 +35,6 @@
 }
 .page-title {
   &--news {
-    //display: none;
     grid-column: 2 / 3;
     @include for-size(xx-large) {
       display: block;
