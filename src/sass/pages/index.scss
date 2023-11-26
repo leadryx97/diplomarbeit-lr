@@ -201,6 +201,15 @@
     height: 165px;
     object-fit: cover;
     margin: 30px 0 20px 0;
+    @include for-size(small) {
+      height: 250px;
+    }
+    @include for-size(large) {
+      height: 300px;
+    }
+    @include for-size(x-large) {
+      height: 350px;
+    }
     @include for-size(xx-large) {
       height: 220px;
     }
