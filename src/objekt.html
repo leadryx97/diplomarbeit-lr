@@ -16,11 +16,12 @@
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 10 16"
-          class="property-back__arrow">
+          class="property-back__arrow"
+        >
           <style type="text/css"></style>
           <path class="st0" d="M8,1L1,8l7,7" />
         </svg>
-        <p class="property-back__text">zurück zur Übersicht</p>  
+        <p class="property-back__text">zurück zur Übersicht</p>
       </a>
     </div>
     <!-- page title -->
@@ -33,18 +34,18 @@
       <div class="slider">
         <div class="slider__nav slider__nav--prev">
           <img
-          src="./assets/images/svg/next-arrow-white-left.svg"
-          alt="Schliessen Kreuz-Icon"
-          class="slider__nav-icon"
-        />
+            src="./assets/images/svg/next-arrow-white-left.svg"
+            alt="Schliessen Kreuz-Icon"
+            class="slider__nav-icon"
+          />
         </div>
         <!-- dynamic content -->
         <div class="slider__nav slider__nav--next">
           <img
-          src="./assets/images/svg/next-arrow-white-right.svg"
-          alt="Schliessen Kreuz-Icon"
-          class="slider__nav-icon"
-        />
+            src="./assets/images/svg/next-arrow-white-right.svg"
+            alt="Schliessen Kreuz-Icon"
+            class="slider__nav-icon"
+          />
         </div>
       </div>
     </div>
@@ -67,7 +68,6 @@
           <p class="property-information__title">Nutzfläche</p>
           <p class="property-information__specs property-information__specs--area"></p>
         </div>
-        <!-- property information description -->
         <div class="property-information__category property-information__category--right">
           <p class="property-information__title">Beschreibung</p>
           <p class="property-information__specs property-information__specs--description"></p>
@@ -109,7 +109,11 @@
               </div>
               <div class="property-information__modal-element">
                 <label for="address" class="property-information__modal-label">Adresse</label>
-                <input type="text" name="address" class="property-information__modal-input property-information__modal-input--address" />
+                <input
+                  type="text"
+                  name="address"
+                  class="property-information__modal-input property-information__modal-input--address"
+                />
               </div>
               <div
                 class="property-information__modal-element-sm property-information__modal-element-sm--right"
@@ -140,13 +144,21 @@
                   class="property-information__modal-element property-information__modal-element--flex"
                 >
                   <label for="email" class="property-information__modal-label">E-Mail</label>
-                  <input type="email" name="email" class="property-information__modal-input property-information__modal-input--email" />
+                  <input
+                    type="email"
+                    name="email"
+                    class="property-information__modal-input property-information__modal-input--email"
+                  />
                 </div>
                 <div
                   class="property-information__modal-element property-information__modal-element--flex"
                 >
                   <label for="tel" class="property-information__modal-label">Telefonnummer</label>
-                  <input type="tel" name="tel" class="property-information__modal-input property-information__modal-input--tel" />
+                  <input
+                    type="tel"
+                    name="tel"
+                    class="property-information__modal-input property-information__modal-input--tel"
+                  />
                 </div>
               </div>
               <div
@@ -210,16 +222,18 @@
       </div>
       <!-- end of property information -->
     </div>
+    <!-- latest properties -->
     <div class="grid grid--latest-properties">
-      <!-- latest properties title (only on desktop) -->
       <h2 class="latest-properties__title">Aktuellste Objekte</h2>
-      <!-- latest properties -->
       <div class="latest-properties">
-         <!-- properties of graphql request -->
-        </div>
-        <!-- latest properties link to all objects -->
-        <div class="latest-properties__all">
-          <a href="https://home-and-house-19aa48ad56c8.herokuapp.com/" class="latest-properties__all-link">
+        <!-- properties of graphql request -->
+      </div>
+      <!-- latest properties link to all objects -->
+      <div class="latest-properties__all">
+        <a
+          href="https://home-and-house-19aa48ad56c8.herokuapp.com/"
+          class="latest-properties__all-link"
+        >
           <p class="latest-properties__text">Alle Objekte anzeigen</p>
           <svg
             version="1.1"
@@ -230,10 +244,9 @@
           >
             <path d="M1,15l7-7L1,1" />
           </svg>
-          </a>
-        </div>
-        <!-- end of latest properties -->
+        </a>
       </div>
+      <!-- end of latest properties -->
     </div>
     <!-- footer -->
     <include src="./partials/footer.html"></include>
