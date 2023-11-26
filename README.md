@@ -40,8 +40,6 @@ Nach der Erstellung des Zeitplans habe ich mit der eigentlichen Entwicklung bego
 
 Mein grösstes Problem bei der Diplomarbeit war der zeitlich vorgebene Rahmen. Obwohl ich seit Beginn fast täglich am Projekt gearbeitet habe, stand ich unter Zeitdruck. Dazu geführt hat vermutlich zum einen, dass ich mich zu Beginn zu sehr auf Details fokussiert hatte und mir im Allgemeinen viel Zeit für alles genommen habe.
 
-Auf aufgetretene technische Schwierigkeiten gehe ich [hier](#technologiekonzept-inkl-evaluation-der-eingesetzten-technologien-begründung) genauer ein.
-
 ## Setup Guide
 
 ### npm-Pakete installieren
@@ -267,7 +265,7 @@ $brand-primary-transp: rgba($brand-primary, 0.85); /* dark-green transparent */
 $brand-tertiary: #878787; /* grey */
 ```
 
-- **Tier 2:** Anstelle direkt die Variablen aus dem Tier 1 im SCSS zu verwenden, habe ich eine zweite Stufe von Variablen erstellt. Diese bezieht sich auf die häufigsten Elemente und Anwendungsbereiche:
+- **Tier 2:** Anstelle direkt die Variablen aus Tier 1 im SCSS zu verwenden, habe ich eine zweite Stufe von Variablen erstellt. Diesen Variablen habe ich jeweils die Variablen aus Stufe 1 zugewiesen. Tier 2 bezieht sich hier auf die häufigsten Elemente und Anwendungsbereiche:
 
 ```scss
 /* background (tier 2) */
@@ -289,9 +287,9 @@ $btn-tertiary: $base-secondary; /* black */
 $btn-txt: $base-primary; /* white */
 ```
 
-Dadurch können in Zukunft einfacher Farbanpassungen implementiert werden. Wenn beispielsweise nur die Farbe des Textes auf der Website angepasst werden soll, kann dies aufgrund der zweiten Stufe gemacht werden, ohne bei anderen Elementen ebenfalls die Farbe zu beeinflussen oder diverse Stellen im Coda anpassen zu müssen.
+Dadurch können in Zukunft einfacher Farbanpassungen implementiert werden. Wenn beispielsweise nur die Farbe des Textes auf der Website angepasst werden soll, kann dies aufgrund der zweiten Stufe gemacht werden, ohne bei anderen Elementen ebenfalls die Farbe zu beeinflussen oder diverse Stellen im Code anpassen zu müssen.
 
-Wenn sich aber beispielsweise bei einem Rebranding eine oder mehrere Farben des Unternehmens ändern, kann dies auf Stufe 1 aktualisiert werden. Die Variablen aus dem Tier 2 werden dann automatisch angepasst.
+Wenn sich aber beispielsweise bei einem Rebranding eine oder mehrere Farben des Unternehmens ändern, kann dies auf Stufe 1 aktualisiert werden. Die entsprechenden Variablen auf Stufe 2 werden dann automatisch angepasst.
 
 ### Google Maps
 
@@ -313,7 +311,7 @@ Ich habe das Copyright & die Nutzungsbedingungen mit CSS ausgeblendet. Auf einer
 
 ### Struktur JavaScript-Dateien
 
-Ich habe für jede HTML-Datei eine eigene JavaScript-Datei. In einigen Dateien wird lediglich die Datei `site-wide.js` importiert. Dies ist der Header der Website. Anfangs hatte ich geplant, dort auch den Footer der Seite einzubauen. Da der Footer aber auf der Seite _Kontakt_ nicht zu sehen sein soll, hat dies nicht funktioniert. Ich habe mich deshalb entschieden, für den Footer eine separate JavaScript-Datei anzulegen und entsprechend auf den einzelnen Seiten zu importieren.
+Ich habe für jede HTML-Datei eine eigene JavaScript-Datei. In einigen Dateien wird lediglich die Datei `site-wide.js` importiert. Dies ist der Header der Website. Anfangs hatte ich geplant, dort auch den Footer der Seite einzubauen. Da der Footer aber auf der Seite _Kontakt_ nicht zu sehen sein soll, hat dies nicht funktioniert. Ich habe mich deshalb entschieden, für den Footer eine separate JavaScript-Datei anzulegen und diese ebenfalls auf den einzelnen Seiten zu importieren.
 
 ### Design Abweichungen
 
@@ -387,11 +385,11 @@ Auf der Detailseite wird die ID aus der URL ausgelesen und dazu verwendet, die e
 
 Ich habe mich dafür entschieden, den grössten Teil des HTMLs aus dem Template zu laden und nicht alles in JavaScript zu generieren. Dies hatte ich Anfangs versucht, fand es dann aber aufgrund der Menge des HTMLs und der verschiedenen Klassen sehr unübersichtlich. Deshalb füllle ich jetzt nur die dynamischen Inhalte mit JavaScript ins HTML ein.
 
-Dies hatte ich zuerst auch bei den Bildern so gelöst. Sprich ich hatte 4 Bild-Elemente in meiner `objekt.html` Datei, die ich dann mit JavaScript befüllt habe. Sofern es weniger als 4 Bilder in der Datenbank hatte, hatte ich die leeren Bild-Elemente entfernt. Dies bedeutete aber, dass die Anpassungsfähigkeit nicht gewährleistet war, wenn es irgendwann mehr wie 4 Bilder pro Immobilienobjekt in der Datenbank gibt. Deshalb habe ich es umstrukturiert und in JavaScript einen Loop für die Bildelemente eingebaut. Sofern ein Bildelement in der Datenbank vorhanden ist, wird das HTML-Element mithilfe von JavaScript erstellt. Input in Bezug auf die Implementierung der Bilder habe ich von meinem Dozenten Pascal Helfenstein erhalten.
+Dies hatte ich zuerst auch bei den Bildern so gelöst. Sprich ich hatte 4 Bild-Elemente in meiner `objekt.html` Datei, die ich dann mit JavaScript befüllt habe. Sofern es weniger als 4 Bilder in der Datenbank hatte, wurden die leeren Bild-Elemente aus dem HTML entfernt. Dies bedeutete aber, dass die Anpassungsfähigkeit nicht gewährleistet war, wenn es irgendwann mehr wie 4 Bilder pro Immobilienobjekt in der Datenbank gibt. Deshalb habe ich es umstrukturiert und in JavaScript einen Loop für die Bildelemente eingebaut. Sofern ein Bildelement in der Datenbank vorhanden ist, wird das HTML-Element mithilfe von JavaScript erstellt. Input in Bezug auf die Implementierung der Bilder habe ich von meinem Dozenten Pascal Helfenstein erhalten.
 
 ### Prettier - Code Formatter
 
-Ich habe bei der Entwicklung des Codes zum ersten Mal mit dem [Prettier Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) gearbeitet. Damit wollte ich sicherstellen, dass mein Code einheitlich formatiert ist. Das Einzige was mich daran gestört hat, waren die automatischen Zeilenumbrüche, da diese im HTML ein paar Mal zu Fehlern geführt hat, sowie im JavaScript teilweise etwas unschön aussieht. Ich habe die erlaubten Zeichen pro Zeile einige Male angepasst, um es etwas zu optimieren.
+Ich habe bei der Entwicklung des Codes zum ersten Mal mit dem [Prettier Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) gearbeitet. Damit wollte ich sicherstellen, dass mein Code einheitlich formatiert ist. Das Einzige was mich daran gestört hat, waren die automatischen Zeilenumbrüche, da diese im HTML ein paar Mal zu Fehlern geführt hat, sowie der Code im JavaScript teilweise etwas unschön aussieht. Ich habe die erlaubten Zeichen pro Zeile einige Male angepasst, um es etwas zu optimieren.
 
 ### Github
 
@@ -433,7 +431,7 @@ Um das aktive Navigationselement zu kennzeichnen, habe ich mich an dem YouTube-T
 
 ### ChatGPT
 
-Hauptsächlich bei der Entwicklung von JavaScript habe ich auch auf [ChatGPT](https://chat.openai.com/) als Recherche-Werkzeug zurückgegriffen. Es hat mich dabei unterstützt, Code-Snippets, beispielsweise aus Foren, besser zur verstehen und unterschiedliche Umsetzungsmöglichkeiten genauer zu analysieren. Zudem hat es mich dabei unterstützt, unterschiedliche Denkansätze zu entwickeln, wie ich an Probleme herangehen könnte. Es ist zu beachten, dass mir ChatGPT nicht als primäre Informationsquelle diente sondern als ergänzendes Werkzeug genutzt wurde, um mein Verständnis und Wissen zu vertiefen. Ich bin die Aufgaben und Probleme immer selbständig angegangen und wollte in erster Linie auf diesem Weg eine gute Lösung erarbeiten.
+Hauptsächlich bei der Entwicklung von JavaScript habe ich auch auf [ChatGPT](https://chat.openai.com/) als Recherche-Werkzeug zurückgegriffen. Es hat mich dabei unterstützt, Code-Snippets, beispielsweise aus Foren, besser zur verstehen und unterschiedliche Umsetzungsmöglichkeiten genauer zu analysieren. Zudem hat es mir dabei geholfen, unterschiedliche Denkansätze zu entwickeln, wie ich an Probleme herangehen könnte. Es ist zu beachten, dass mir ChatGPT nicht als primäre Informationsquelle diente sondern als ergänzendes Werkzeug genutzt wurde, um mein Verständnis und Wissen zu vertiefen. Ich bin die Aufgaben und Probleme immer selbständig angegangen und wollte in erster Linie auf diesem Weg eine gute Lösung erarbeiten.
 
 ## Eidesstattliche Erklärung
 
