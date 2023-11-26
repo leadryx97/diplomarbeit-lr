@@ -15,7 +15,7 @@
     grid-template: 1fr / repeat(14, 1fr);
     gap: 40px 100px;
   }
-  /* index page grid (properties search) */
+  /* index page */
   &--properties-search {
     grid-template-columns: 1fr 10fr 1fr;
     grid-row-gap: 30px;
@@ -30,30 +30,10 @@
       grid-template: 1fr / repeat(14, 1fr);
     }
   }
-  /* property detail pages */
+  /* property pages */
   &--property-information {
     grid-row-gap: 30px;
   }
-  /* news overview page */
-  &--news-overview {
-    margin-bottom: 75px;
-    @include for-size(xx-large) {
-      margin-bottom: 120px;
-    }
-  }
-  &--news-overview-last {
-    margin-bottom: 60px;
-    @include for-size(xx-large) {
-      margin-bottom: 100px;
-    }
-  }
-  /* news pages */
-  &--news {
-    @include for-size(xx-large) {
-      gap: 30px 100px;
-    }
-  }
-  /* property pages */
   &--latest-properties {
     background-color: $bg-secondary;
     margin-top: 50px;
@@ -78,6 +58,25 @@
     @include for-size(xx-large) {
       gap: 30px 50px;
       grid-template: 1fr / repeat(14, 1fr);
+    }
+  }
+  /* news overview page */
+  &--news-overview {
+    margin-bottom: 75px;
+    @include for-size(xx-large) {
+      margin-bottom: 120px;
+    }
+  }
+  &--news-overview-last {
+    margin-bottom: 60px;
+    @include for-size(xx-large) {
+      margin-bottom: 100px;
+    }
+  }
+  /* news pages */
+  &--news {
+    @include for-size(xx-large) {
+      gap: 30px 100px;
     }
   }
 }

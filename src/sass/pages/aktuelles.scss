@@ -47,9 +47,6 @@
     margin-bottom: 7px;
     display: flex;
     gap: 20px;
-    @include for-size(xx-large) {
-      //gap: 10px;
-    }
   }
   &__element-category {
     margin: 0;

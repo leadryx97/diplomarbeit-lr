@@ -16,7 +16,7 @@
 }
 
 /* headings */
-/* page title */
+/* page titles */
 .page-title {
   font: {
     family: $font-family-heading;
@@ -204,12 +204,12 @@
     font: {
       weight: $font-weight-bold;
     }
-    color: $txt-secondary;
+    color: $txt-secondary; /* dark green */
   }
   /* table / list view */
   &__table-header {
     text-align: left;
-    color: $txt-secondary;
+    color: $txt-secondary; /* dark green */
     @include for-size(large) {
       font-size: 1.3rem;
     }
@@ -321,7 +321,6 @@
     }
   }
 }
-
 .property-information {
   &__title {
     font-weight: $font-weight-bold;
@@ -389,7 +388,6 @@
     }
   }
 }
-
 .latest-properties {
   &__title {
     text-align: center;
@@ -408,7 +406,7 @@
   &__all-link {
     font-weight: $font-weight-bold;
     text-decoration: none;
-    color: $txt-primary;
+    color: $txt-primary; /* black */
   }
   &__element {
     @include for-size(xx-large) {

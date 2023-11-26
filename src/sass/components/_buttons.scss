@@ -1,4 +1,4 @@
-/* home properties buttons */
+/* index page */
 .properties {
   &__button {
     grid-column: 2 / 3;
@@ -26,7 +26,8 @@
     }
   }
 }
-/* footer scroll-to-top button */
+
+/* footer */
 .footer {
   &__scroll-to-top-button {
     display: none;
