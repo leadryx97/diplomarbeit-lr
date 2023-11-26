@@ -106,17 +106,11 @@ Ich habe versucht, die Planung möglichst detailliert, aber dennoch mit Bedenken
 
 ### Projekt-/Zeitplan
 
-Folgend ist der Projekt-/Zeitplan im Soll-Zustand:
-
 ![Zeitplan-1](src/assets/images//documentation/timetable-1.png)
 
 ![Zeitplan-2](src/assets/images//documentation/timetable-2.png)
 
 ![Zeitplan-2](src/assets/images//documentation/timetable-3.png)
-
-Folgend ist der Projekt-/Zeitplan im Ist-Zustand:
-
-**UPDATE FOLGT**
 
 #### Zusammenfassung
 
@@ -365,17 +359,6 @@ Auf Desktop soll gemäss Figma die aktuelle Seite in der Navigation gekennzeichn
 
 ![Alle Objekte anzeigen](src/assets/images/documentation/navigation-mobile-implemented.png)
 
-### Hosting
-
-Für das Hosting habe ich mir die folgenden Anbieter angeschaut:
-
-- [Netlify](https://www.netlify.com/)
-- [Vercel](https://vercel.com/)
-- [Heroku](https://www.heroku.com/)
-- [Docker](https://www.docker.com/)
-
-Schlussendlich habe ich mich dann für die Umsetzung mit Heroku entschieden. Dies aus dem Grund, da ich dann noch die Möglichkeit hätte, ein Backend einzubauen und ich Heroku auch einfach einmal ausprobieren wollte. Die Umsetzung hat gut funktioniert, aber ich musste noch zusätzliche [Vorkehrungen](#technische-dokumentation-bei-eigenleistungen) treffen, da ich kein eigenes Backend habe.
-
 ### Umsetzung Detailseiten
 
 Bei der Umsetzung der Detailseiten habe ich mit einer "Template HTML-Datei" gearbeitet (`objekt.html`). Sobald auf ein Immobilienobjekt geklickt wird, wird die zugehörige ID als Parameter der URL übergeben. Dadurch gibt es für jedes Immobilienobjekt eine separate URL mit folgendem Schema:
@@ -387,13 +370,24 @@ Ich habe mich dafür entschieden, den grössten Teil des HTMLs aus dem Template 
 
 Dies hatte ich zuerst auch bei den Bildern so gelöst. Sprich ich hatte 4 Bildelemente in meiner `objekt.html` Datei, die ich dann mit JavaScript befüllt habe. Sofern es weniger als 4 Bilder in der Datenbank hatte, wurden die leeren Bildelemente aus dem HTML entfernt. Dies bedeutete aber, dass die Anpassungsfähigkeit nicht gewährleistet war, wenn es irgendwann mehr als 4 Bilder pro Immobilienobjekt in der Datenbank gibt. Deshalb habe ich es umstrukturiert und in JavaScript einen Loop für die Bildelemente eingebaut. Sofern ein Bildelement in der Datenbank vorhanden ist, wird das HTML-Element mithilfe von JavaScript erstellt. Input in Bezug auf die Implementierung der Bilder habe ich von meinem Dozenten Pascal Helfenstein erhalten.
 
-### Prettier - Code Formatter
+### Hosting
 
-Ich habe bei der Entwicklung des Codes zum ersten Mal mit dem [Prettier Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) gearbeitet. Damit wollte ich sicherstellen, dass mein Code einheitlich formatiert ist. Das Einzige, was mich daran gestört hat, waren die automatischen Zeilenumbrüche, da diese im HTML ein paar Mal zu Fehlern geführt haben, sowie der Code in JavaScript teilweise etwas unschön aussieht. Ich habe die erlaubten Zeichen pro Zeile einige Male angepasst, um es etwas zu optimieren.
+Für das Hosting habe ich mir die folgenden Anbieter angeschaut:
+
+- [Netlify](https://www.netlify.com/)
+- [Vercel](https://vercel.com/)
+- [Heroku](https://www.heroku.com/)
+- [Docker](https://www.docker.com/)
+
+Schlussendlich habe ich mich dann für die Umsetzung mit Heroku entschieden. Dies aus dem Grund, da ich dann noch die Möglichkeit hätte, ein Backend einzubauen und ich Heroku auch einfach einmal ausprobieren wollte. Die Umsetzung hat gut funktioniert, aber ich musste noch zusätzliche [Vorkehrungen](#technische-dokumentation-bei-eigenleistungen) treffen, da ich kein eigenes Backend habe.
 
 ### Github
 
 Da ich auch während der Unterrichtszeit mit GitHub gearbeitet habe, hatte ich die grundlegenden Git-Befehle bereits im Kopf. Ich war mir anfangs eher etwas unsicher bezüglich der Git Commits beziehungsweise der Commit-Messages. Ich habe versucht regelmässig und bei für mich sinnvollen Aufgaben Fortschritten zu commiten. Nach den ersten paar vermutlich leicht zu langen Messages, habe ich versucht mich kürzer zu halten und in diesem Sinne auch weniger Fortschritte in einem einzelnen Commit zusammenzufassen.
+
+### Prettier - Code Formatter
+
+Ich habe bei der Entwicklung des Codes zum ersten Mal mit dem [Prettier Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) gearbeitet. Damit wollte ich sicherstellen, dass mein Code einheitlich formatiert ist. Das Einzige, was mich daran gestört hat, waren die automatischen Zeilenumbrüche, da diese im HTML ein paar Mal zu Fehlern geführt haben, sowie der Code in JavaScript teilweise etwas unschön aussieht. Ich habe die erlaubten Zeichen pro Zeile einige Male angepasst, um es etwas zu optimieren.
 
 ## Technische Dokumentation bei Eigenleistungen
 
