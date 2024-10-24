@@ -397,7 +397,7 @@ Da ich das Hosting Heroku ohne ein eigenes Backend verwende, musste ich einen kl
 
 ## Zusammenfassung und Ausblick, persönliche Anmerkungen
 
-Ich konnte die Applikation meines Erachtens gemäss der vorgegebenen Ziele entwickeln. Sie ist funktionsfähig und unter der folgenden URL erreichbar: [home-and-house-19aa48ad56c8.herokuapp.com](https://home-and-house-19aa48ad56c8.herokuapp.com/)
+Ich konnte die Applikation meines Erachtens gemäss der vorgegebenen Ziele entwickeln. Sie ist funktionsfähig und unter der folgenden URL erreichbar: [https://home-and-house-b311199811c4.herokuapp.com/](https://home-and-house-b311199811c4.herokuapp.com/)
 
 Ich musste relativ schnell feststellen, dass ich mich nicht ganz so gut an meinen Zeitplan halten kann. Dies aus dem Grund, da ich bereits zu Beginn in Verzug kam, aufgrund der Projektplanung, der Installation aller Tools und dem Aufbau der Struktur.
 
