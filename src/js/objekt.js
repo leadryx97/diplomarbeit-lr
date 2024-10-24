@@ -444,7 +444,7 @@ function getPropertyId(event) {
     const propertyId = property.dataset.propertyId;
 
     // open property detail page
-    window.location.href = `https://home-and-house-19aa48ad56c8.herokuapp.com/objekt.html?propertyId=${propertyId}`;
+    window.location.href = `/objekt.html?propertyId=${propertyId}`;
   }
   // click on image
   else if (event.target.parentNode.parentNode.matches(".latest-properties__element")) {
@@ -452,7 +452,7 @@ function getPropertyId(event) {
     const propertyId = property.dataset.propertyId;
 
     // open property detail page
-    window.location.href = `https://home-and-house-19aa48ad56c8.herokuapp.com/objekt.html?propertyId=${propertyId}`;
+    window.location.href = `/objekt.html?propertyId=${propertyId}`;
   }
 }
 
