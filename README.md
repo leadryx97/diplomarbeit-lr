@@ -72,7 +72,7 @@ npm run build
 
 ## URL der lauffähigen Version
 
-Diese Diplomarbeit ist unter der Domain [home-and-house-19aa48ad56c8.herokuapp.com](https://home-and-house-19aa48ad56c8.herokuapp.com/) erreichbar.
+Diese Diplomarbeit ist unter der Domain [https://home-and-house-b311199811c4.herokuapp.com/](https://home-and-house-b311199811c4.herokuapp.com/) erreichbar.
 
 ## Zeitplan / Meilensteine
 
